@@ -8,7 +8,7 @@ get_template_part('parts/breadcrumbs'); ?>
 
 //$bez_foto=array();							  
 ?>
-	
+	 
       <section id="content">	  
          <div class="container mt-3 mb-5">
             <div class="container-fluid bg-light pb-4">
