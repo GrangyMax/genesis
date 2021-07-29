@@ -15,7 +15,7 @@ set_query_var('title', 'Контакты');
 get_template_part('parts/breadcrumbs'); ?>
 <style>
    span.wpcf7-not-valid-tip {
-      position: relative;
+      position: relative; 
    }
 </style>
 <script defer type="text/javascript" charset="utf-8" id="ymaps-api-loader" src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU&amp;amp;apikey=df578316-6785-45a9-beaa-8c9ad78839de"></script>
