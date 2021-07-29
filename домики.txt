@@ -1,0 +1,60 @@
+
+    <div class="container clearfix mb-50">
+        <div class="fancy-title title-border title-center ">
+            <h2>Наши локации</h2>
+        </div>
+        <!-- Фильтр
+        ============================================= -->
+        <ul id="portfolio-filter" class="portfolio-filter clearfix" data-container="#portfolio">
+            <li class="activeFilter"><a href="#" data-filter="*">Все</a></li>
+            <?php $terms = get_terms( [
+                'taxonomy' => 'locations',
+                'hide_empty' => true,
+            ] ); 
+            foreach ($terms as $key => $value) { ?>
+               <li><a href="#" data-filter=".<?php echo $value->term_id; ?>"><?php echo $value->name; ?></a></li>
+            <?php }
+            ?>
+        </ul>
+		
+			
+        <div class="clear"></div>
+		
+		
+        <div id="portfolio" class="portfolio grid-container portfolio-4 mb-5 clearfix row-clinic-opacity" data-layout="fitRows" style="position: relative;">
+            <?php $query = new WP_Query( array(
+                        'post_type' => 'klinika'
+                    ) );
+            foreach ($query->posts as $key => $value) {
+                $terms = wp_get_post_terms( $value->ID, 'locations');
+                // var_dump($terms);
+                ?>        
+            <article class="portfolio-item <?php foreach ($terms as $term) echo $term->term_id.' '; ?> simferopol">
+                <div class="portfolio-image">
+                    <a href="<?php the_permalink($value); ?>">
+                        <!--						
+						<img loading="lazy" src="<?php echo get_the_post_thumbnail_url($value, 'medium') ?>" alt="<?php echo get_the_title($value); ?>"
+										 srcset="<?php echo get_the_post_thumbnail_url($value, 'medium') ?> 1x, 
+												 <?php echo get_the_post_thumbnail_url($value, 'full') ?> 2x">				
+							-->		
+						<img src="<?php echo get_the_post_thumbnail_url($value) ?>" alt="<?php echo get_the_title($value); ?>">
+																				  							
+                    </a>
+                </div>
+                <div class="portfolio-desc">
+                    <h3><a href="<?php the_permalink($value); ?>"><?php echo get_the_title($value); ?></a></h3>
+                    <span><?php /*the_field('адрес', $value->ID) */ 
+					$adress = get_field('адрес', $value->ID);
+					$town =  explode(",", $adress);
+					$street= strstr($adress, 'пр.');
+					if (!$street){$street= strstr($adress, 'ул');}	
+					if(stripos($town[1], 'Мирное')) {$town[1] = ", ".$town[1].","; } else{ unset($town[1]); $town[0]= $town[0].","; }		
+ 					echo $town[0].$town[1]."<br>".$street;
+					
+					?></span>
+                </div>
+            </article>
+            <?php } ?>
+        </div>
+
+    </div>
