@@ -192,7 +192,7 @@ foreach ($query->posts as $key => $clinic) {
                             $first_name = get_the_author_meta('first_name', $wEntry->post_author);
                             $last_name = get_the_author_meta('last_name', $wEntry->post_author);      
                             $doctor = $first_name.' '.$last_name;
-                        }
+                        } 
                 ?>    
                   <div class="entry">
 						 <div class="entry-image frontpage-img-blog">
