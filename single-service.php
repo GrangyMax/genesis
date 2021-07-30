@@ -131,12 +131,11 @@ span.wpcf7-not-valid-tip {
                   </div>
                   <?php
                   	  
-					if($is_onkolog){
+					if(isset($is_onkolog)){
 						include_once 'parts/onkolog_queue.php';
 					}
 					
-					if($is_oftalmolog){					
-						
+					if(isset($is_oftalmolog)){	
 						include_once 'parts/oftalmolog_queue.php';
 					}
 				  ?>
@@ -144,7 +143,7 @@ span.wpcf7-not-valid-tip {
 				                
                 <!--  <div class="accordion accordion-bg clearfix accordion-usluga" <?=$accordion_state?>>-->
 				<?php  foreach ($the_query->posts as $clinic){  
-								$clinic_select =  '';								
+								$clinic_select =  NULL;								
 								   $email = get_field('email', $clinic) ? get_field('email', $clinic) : get_option('admin_email');
 								   $clinic_select .= '<option value="'. $email .'">' . get_the_title($clinic) . '</option>';
 				?>

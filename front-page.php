@@ -7,21 +7,6 @@
 
 get_header();
 if (have_posts()) : while (have_posts()) : the_post();
-
-/*
-$query = new WP_Query(array(
-    'post_type' => 'klinika',
-    'posts_per_page' => -1
-));
-
-$clinic_select = '';
-foreach ($query->posts as $key => $clinic) {
-    $email = get_field('email', $clinic) ? get_field('email', $clinic) : get_option('admin_email');
-    $clinic_select .= '<option value="'. $email .'" class="chosen-select">' . get_the_title($clinic) . '</option>';
-}
-*/
-
-
 ?>
 
 <style>
@@ -285,7 +270,8 @@ $p_directions = get_posts( array(
                'post_type' => 'klinika',
                'posts_per_page' => -1
             ));
-            $clinic_select = '';
+            $clinic_select = ''; // перенести это в хидер !!! 
+			
             foreach ($query->posts as $key => $clinic) {
                $email = get_field('email', $clinic) ? get_field('email', $clinic) : get_option('admin_email');
                $clinic_select .= '<option value="'. $email .'">' . get_the_title($clinic) . '</option>';

@@ -75,19 +75,25 @@ get_template_part('parts/breadcrumbs'); ?>
                   -->
                 <?php while ( have_posts() ) : the_post();
                 $clinics = get_doctor_clinics(get_the_ID());
-               //  var_dump(array_search($clinics, $array));
-                
-                ?>
+               //  var_dump(array_search($clinics, $array));  ?>
+			   
                 <?php $spec = get_post_meta($post->ID, 'spec', 1); 
                 $rang = get_post_meta($post->ID, 'rang', 1);
                //  var_dump( array_search($spec, $specs_ids));
 
-               $clin_ids = [];
-               foreach ($clinics as $clin_id) {
-                  $clin_id_found = array_search($clin_id, $array);
-                  if ($clin_id_found === false) continue;
-                  $clin_ids[] = array_search($clin_id, $array) + 1;
-               }
+					$clin_ids = [];
+								  
+				if(is_array ($clinics)){
+					 foreach ($clinics as $clin_id) {
+					  
+					  $clin_id_found = array_search($clin_id, $array);
+					  if ($clin_id_found === false) continue;
+					  $clin_ids[] = array_search($clin_id, $array) + 1;
+				   }
+					
+				}				
+				
+              
                $clinics_str = implode(',', $clin_ids);
                 ?>
                 <div class="entry clearfix vrach-block" data-spec="<?php echo array_search($spec, $specs_ids) !== false ? array_search($spec, $specs_ids) + 1 : ''; ?>" data-clinic="<?=$clinics_str?>"
