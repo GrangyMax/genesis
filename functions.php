@@ -190,7 +190,8 @@ add_filter('pre_get_posts', function ($query) {
 	return $query;
 });
 
-function __search_by_title_only($search, &$wp_query)
+//function __search_by_title_only($search, &$wp_query)
+function __search_by_title_only($search, $wp_query)
 {
 	global $wpdb;
 	if (empty($search)) {
