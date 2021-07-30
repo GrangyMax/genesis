@@ -69,8 +69,8 @@ if (have_posts()) : while (have_posts()) : the_post();
 							$town =  explode(",", $adress);							
 							$street= strstr($adress, 'пр.');
 							if (!$street){$street= strstr($adress, 'ул');}	
-							if(stripos($town[1], 'Мирное')) {$town[1] = ", ".$town[1].",";} else{ unset($town[1]); $town[0]= $town[0].",";}					
-							echo $town[0].$town[1]."<br>".$street;
+							if(isset($town[1]) && stripos($town[1], 'Мирное')) {$town[1] = ", ".$town[1].","; } else{ unset($town[1]); $town[0]= $town[0].","; }		
+							if(isset($town[1])){ echo $town[0].$town[1]."<br>".$street;	} else { echo $town[0]."<br>".$street;	}
 						?></p>
                         <a onclick="showModalBy(this)" class="single-klinik-link" data-placemark-coord="[<?php the_field('метка_широта') ?>, <?php the_field('метка_долгота') ?>]" data-placemark-hint="<?php the_title() ?>" data-placemark-text="<?php the_field('адрес') ?>">
                            Показать на карте

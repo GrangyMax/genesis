@@ -8,7 +8,8 @@ $query = new WP_Query(array(
     'posts_per_page' => -1
 ));
 
-$clinic_select = '';
+$clinic_select = NULL;
+
 foreach ($query->posts as $key => $clinic) {
     $email = get_field('email', $clinic) ? get_field('email', $clinic) : get_option('admin_email');
     $clinic_select .= '<option value="'. $email .'" class="chosen-select">' . get_the_title($clinic) . '</option>';

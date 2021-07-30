@@ -83,11 +83,13 @@ get_template_part('parts/breadcrumbs'); ?>
                //  var_dump( array_search($spec, $specs_ids));
 
                $clin_ids = [];
-               foreach ($clinics as $clin_id) {
-                  $clin_id_found = array_search($clin_id, $array);
-                  if ($clin_id_found === false) continue;
-                  $clin_ids[] = array_search($clin_id, $array) + 1;
-               }
+			   if(is_array ($clinics)){
+				   foreach ($clinics as $clin_id) {
+					  $clin_id_found = array_search($clin_id, $array);
+					  if ($clin_id_found === false) continue;
+					  $clin_ids[] = array_search($clin_id, $array) + 1;
+				   }
+			   }
                $clinics_str = implode(',', $clin_ids);
                 ?>
                 <div class="entry clearfix vrach-block" data-spec="<?php echo array_search($spec, $specs_ids) !== false ? array_search($spec, $specs_ids) + 1 : ''; ?>" data-clinic="<?=$clinics_str?>"
