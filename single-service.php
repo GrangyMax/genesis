@@ -130,16 +130,7 @@ span.wpcf7-not-valid-tip {
                      </div>
                   </div>
                   <?php
-                     $accordion_state = 'data-state="closed"';
-                     if ($_GET['from']) {
-                        foreach($the_query->posts as $key => $clinic) {
-                           if ($clinic->ID == $_GET['from']) {
-                              $accordion_state = 'data-active="'.($key + 1).'"';
-                              break;
-                           }
-                        }
-                     }
-                 			  
+                  	  
 					if($is_onkolog){
 						include_once 'parts/onkolog_queue.php';
 					}
