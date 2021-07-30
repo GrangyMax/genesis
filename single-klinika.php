@@ -225,6 +225,13 @@ if (have_posts()) : while (have_posts()) : the_post();
       <div class="container">
          <div class="fancy-title title-border title-center ">
             <h2>Оставить заявку</h2>
+			<div style="display: none;">			
+				<?php 
+				$clinic_id = get_the_ID();
+				?> 				
+				<span class="clinicId" data-attr="<?=$clinic_id;?>"></span>		
+				
+			</div>
          </div>
       </div>
       <div id="contact-form-overlay" class="contact-form-overlay-clinic clearfix mt-5 mb-5">
@@ -232,13 +239,25 @@ if (have_posts()) : while (have_posts()) : the_post();
          <div class="form-widget">
 
             <div class="form-result"></div>
+			
 
             <!-- Contact Form
 						============================================= -->
             <?php
             $email = get_field('email') ? get_field('email') : get_option('admin_email');
-            echo str_replace('{{clinic_email}}', $email, str_replace('{{direct_list}}', $direct_select, do_shortcode('[contact-form-7 id="36234" title="Запись на прием(Клиника)" html_class="nobottommargin"]'))); ?>
-         </div>
+			
+            echo str_replace('{{clinic_email}}', $email, str_replace('{{direct_list}}', $direct_select, str_replace('{{clinic_id}}', $clinic_id ,do_shortcode('[contact-form-7 id="36234" title="Запись на прием(Клиника)" html_class="nobottommargin"]')))); 
+			
+			?>
+			<script>			
+					var form_clink = document.getElementById('template-contactform-submit');
+					form_clink.onclick = function() {				
+					$clinicID = $('.clinicId').attr('data-attr');					
+					ym(39014465, 'reachGoal', $clinicID); return true;	
+				}			
+				
+			</script>
+		</div>
       </div>
       </section>
 <?php endwhile;
