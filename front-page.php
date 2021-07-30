@@ -126,15 +126,18 @@ foreach ($query->posts as $key => $clinic) {
                 </div>
                 <div class="portfolio-desc">
                     <h3><a href="<?php the_permalink($value); ?>"><?php echo get_the_title($value); ?></a></h3>
-                    <span><?php /*the_field('адрес', $value->ID) */ 
-					$adress = get_field('адрес', $value->ID);
-					$town =  explode(",", $adress);
-					$street= strstr($adress, 'пр.');
-					if (!$street){$street= strstr($adress, 'ул');}	
-					if(stripos($town[1], 'Мирное')) {$town[1] = ", ".$town[1].","; } else{ unset($town[1]); $town[0]= $town[0].","; }		
- 					echo $town[0].$town[1]."<br>".$street;
-					
-					?></span>
+                    <span>
+						<?php /*the_field('адрес', $value->ID) */ 
+							$adress = get_field('адрес', $value->ID);
+							$town =  explode(",", $adress);
+							$street= strstr($adress, 'пр.');
+							if (!$street){$street= strstr($adress, 'ул');}	
+							if(isset($town[1]) && stripos($town[1], 'Мирное')) {$town[1] = ", ".$town[1].","; } else{ unset($town[1]); $town[0]= $town[0].","; }		
+							if(isset($town[1])){ echo $town[0].$town[1]."<br>".$street;	} else { echo $town[0]."<br>".$street;	}
+							
+								
+						?>
+					</span>
                 </div>
             </article>
             <?php } ?>
