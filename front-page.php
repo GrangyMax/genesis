@@ -357,11 +357,12 @@ $p_directions = get_posts( array(
                             "meta_key" => "acco",
                             "meta_value" => $wEntry->post_author
                         ));
-                        // var_dump($doctor[0]->ID);
+                       
                         $doc = $doctor[0]->ID;
-                        if ($doctor[0]->ID) {
-                            $doctor = get_the_title($doctor[0]->ID);
-                            $rang = get_post_meta($doctor[0]->ID, 'rang', 1);
+						
+                        if ($doc) {
+                            $doctor = get_the_title($doc);
+                            $rang = get_post_meta($doc, 'rang', 1);
                         } else {
                             $first_name = get_the_author_meta('first_name', $wEntry->post_author);
                             $last_name = get_the_author_meta('last_name', $wEntry->post_author);      
