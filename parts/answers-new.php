@@ -1,5 +1,8 @@
 <?php
-$q = $_POST['question'];
+
+if($_POST['question']){
+	$q = $_POST['question'];	
+}
 
 $answer_id = false;
 if ($q['name'] && $q['email'] && $q['question']) {
@@ -36,7 +39,8 @@ if ($q['name'] && $q['email'] && $q['question']) {
 		wp_mail($multiple_to_recipients, $mTitle, $mBody); 
       // wp_mail('klinikagenesis@yandex.ru', $mTitle, $mBody);  
         //wp_mail((get_option('admin_email')?get_option('admin_email'):'wgnss@mailinator.com'), $mTitle, $mBody, $headers);
-    }      }     
+		}      
+	}     
 }            
 }    
 ?>
