@@ -1,7 +1,8 @@
 <?php
 
-if($_POST['question']){
-	$q = $_POST['question'];	
+if(isset($_POST['question'])){
+	$q = $_POST['question'];
+	
 }
 
 $answer_id = false;
