@@ -130,13 +130,7 @@
 							Copyrights &copy; <?php echo date('Y'); ?>, Группа компаний «Генезис»
 						</div>
 
-						<div class="col-md-6 d-md-flex flex-md-column align-items-md-end mt-4 mt-md-0">
-							<div class="copyrights-menu copyright-links text-black-50 clearfix">
-								<?php foreach (get_field('меню_в_футере','options') as $key => $value) {?>
-									<a href="<?php echo $value['ссылка']['url'] ?>"><?php echo $value['ссылка']['title'] ?></a>/
-								<?php } ?>
-							</div>
-						</div>
+						
 					</div>
 
 				</div>
