@@ -63,7 +63,7 @@ position: relative;
 }
 
 .b24-widget-button-wrapper{
-	 z-index: 10111 !important;
+	 z-index: 99 !important;
 }
 
 
@@ -749,7 +749,7 @@ footer .list-unstyled li a,
 	}
 
 	.toggle .togglet i.toggle-open {
-		right: 0;
+		right: 0.5em;
 	}
 
 	#header-wrap .header-buttons {
@@ -887,9 +887,7 @@ footer .list-unstyled li a,
 	border-bottom: 1px solid #ccc;
 }
 
-.toggle.toggle-border .togglec {
-	padding: 0 6px;
-}
+
 
 section>#related-portfolio>div.owl-stage-outer>div>div>div>div>div.portfolio-desc {
 	position: sticky;
@@ -1108,6 +1106,18 @@ a.button.button-border.text-review__read-more:hover {
 	padding: 4px;
 }
 
+.icon-info-lab{
+	display: inline-block;
+	vertical-align: middle;
+	width: 16px; 
+	height: 16px;
+	background-image: url(/wp-content/uploads/2021/08/icons8-информация-16.png);	
+	
+}
+
+.va-middle{
+	vertical-align: middle;
+}
 .color-white-text {
 	color: white;
 }
@@ -1289,17 +1299,17 @@ section section .owl-carousel .owl-nav [class*='owl-'] {
 .contacts-usluga {
 	font-style: inherit;
 	margin-left: -2em;
-	cursor: pointer;
-	margin-top: -20px !important;
 	padding: 5px;
-	color: #ef7f1a !important;
+	cursor: pointer;
+	margin-top: -20px !important;	
+	color: #ef7f1a;
 	border: 1px solid #e5e5e5; 
 	/*text-decoration: underline !important;*/
 }
 
 .contacts-usluga:hover {
 	color: var(--themecolor);
-	border: 1px solid #ef7f1a;
+	border: 1px solid var(--themecolor);
 }
 
 .blocks-uslugi {
@@ -2476,35 +2486,63 @@ div.feature-box.fbox-center:not(.fbox-bg) h3:after {
 }
 .service_contact_block{
 	padding: 8px 15px 0px;
+	color: #ef7f1a;
 }
 .service_address_row{
 	display: inline-block; 
 	color: #9A9A9A;
 }
-	
+
 .service_price_klinic{
 	float: right;
 	padding: 0 25px;
 }
+	
+.analis_price_klinic{	
+	padding: 5px 0px;	
+	font-weight: 400;
+	color: var(--themecontrast);
+	font-size: 1rem;
+}
+
 .service_button_contacts{
 		display:inline-block;
 }
-
 .service_link_clinic{
 	display:inline-block;
 	float: right;
 }
 
+.block-head__shortname{	
+	 
+	 /*display: none;
+	 padding: 0 15px 15px 36px;
+	 */
+ }
+
 .noborder{
 	border: 0 !important;
 }
 
-.mbottom4{
-	margin-bottom: 4px;
+.color-theme{
+	color: var(--themecontrast);
 }
 
+.text-slider{
+color: #000;
+	
+}
+.btn-close{
+	border: 1px solid var(--themecolor);
+	font-weight: 500;
+	font-size: 1rem;
+	margin-top: -18px !important;
+}
+
+
 .block-feature{	
-	background-color: #EEE;
+	background-color: #efefef;
 	padding: 20px;
 	border-left: 4px solid var(--themecolor); 
 }
+

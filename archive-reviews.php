@@ -1,18 +1,23 @@
+
 <?php get_header();
 set_query_var('title', 'Отзывы');
 set_query_var('subtitle', 'Отзывы наших пациентов о нас');
 get_template_part('parts/breadcrumbs'); ?>
 <!-- тайтл страницы -->
-  <script src="https://www.google.com/recaptcha/api.js?render=6LcnscgaAAAAAPR4QxfFlMpJHZ95C2M-tgXlG0F_"></script>
+
+
+<?php 
+
+$clinic_list = get_posts( array(
+	
+	'post_type'   => 'klinika',
+   'posts_per_page' => -1
+	
+) );
+   ?>
+
+
 <div class="container clearfix">
- <script>
-        grecaptcha.ready(function () {
-            grecaptcha.execute('6LcnscgaAAAAAPR4QxfFlMpJHZ95C2M-tgXlG0F_', { action: 'contact' }).then(function (token) {
-                var recaptchaResponse = document.getElementById('recaptchaResponse');
-                recaptchaResponse.value = token;
-            });
-        });
-    </script>
 
    <!-- Post Content
                            ============================================= -->
@@ -37,15 +42,15 @@ get_template_part('parts/breadcrumbs'); ?>
                <?php while (have_posts()) : the_post(); ?>
                   <li>
                      <div class="testimonial">
-					 
-						
-                        <div class="testi-content">
-						<?php if (get_the_post_thumbnail_url($post)) {?>
-							<img src="<?php echo get_the_post_thumbnail_url($post, 'large') ?>" alt="<?php the_title(); ?>" class="review_image_archive">
+
+                        <p><strong><?php  echo get_field('clinic'); ?></strong></p>
+
+                        <div class="testi-content">                         
+                        <?php 
+                           if (get_the_post_thumbnail_url($post)) {?>
+                           <img src="<?php echo get_the_post_thumbnail_url($post, 'large') ?>" alt="<?php the_title(); ?>" class="review_image_archive">
                            
-								<?php 
-									}
-						   the_content(); ?>
+								   <?php  } the_content();  ?>
 
                            <div class="testi-meta">
                               <?php the_title(); ?>
@@ -80,13 +85,12 @@ get_template_part('parts/breadcrumbs'); ?>
                <div class="form-result"></div>
                <?php
                $q = $_POST['review'];
-			   $answer_id = false;
                if ($q['name'] && $q['email'] && $q['review']) {
                   if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])) {
 
                      // Build POST request:
                      $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
-                     $recaptcha_secret = '6LcnscgaAAAAAKO-MnqKVnB5P6OsOzz6lkAeJJlR';
+                     $recaptcha_secret = GOG_API;
                      $recaptcha_response = $_POST['recaptcha_response'];
 
                      // Make and decode POST request:
@@ -94,7 +98,7 @@ get_template_part('parts/breadcrumbs'); ?>
                      $recaptcha = json_decode($recaptcha);
 
                      // Take action based on the score returned:
-                     if ($recaptcha->score >= 0.5) {
+                     if ($recaptcha->score >= 0.5 || !GOG_API) {
                         $new_answer = array(
                            'post_title' => "* Новый отзыв ({$q[name]}, {$q[email]})",
                            'post_content' => $q['review'],
@@ -104,6 +108,7 @@ get_template_part('parts/breadcrumbs'); ?>
                         if ($answer_id) {
                            update_post_meta($answer_id, 'name', $q['name']);
                            update_post_meta($answer_id, 'email', $q['email']);
+                           update_post_meta($answer_id, 'clinic',  $q['type']);
                            add_filter('wp_mail_from', create_function('', 'return "' . get_option('admin_email') . '";'));
                            add_filter('wp_mail_from_name', create_function('', 'return "Клиника Genesis";'));
                            $mTitle = "* Новый отзыв ({$q[name]}, {$q[email]})";
@@ -114,18 +119,25 @@ get_template_part('parts/breadcrumbs'); ?>
                      }
                   }
                }
+
+                    
+          
+
+
                ?>
                <?php if (!$answer_id) { ?>
                   <form class="nobottommargin" id="template-contactform" name="template-contactform" action="" method="post" novalidate="novalidate">
                      <div class="form-process"></div>
                      <div class="form-group ">
                         <select id="inputState " name="review[type]" class="form-control valid">
-                           <option selected="" disabled>Клиника</option>
-                           <option>Онкология</option>
-                           <option>Многопрофильный центр</option>
-                           <option>Центр зрения</option>
-                           <option>Детская клиника</option>
-                           <option>Севастопольская клиника</option>
+                           <option selected="" disabled>Выберите клинику</option>
+                           
+                              <?php
+                               foreach ($clinic_list as $key => $clinic) {                       
+                                   echo '<option>'.$clinic->post_title.' </option>';
+                                } 
+                              ?>    
+                          
                         </select>
                      </div>
                      <div class="col_half">

@@ -3,7 +3,7 @@
       set_query_var('title', get_the_title());
       set_query_var('subtitle',  'Комплексную cтоимость услуг уточняйте в регистратуре');
       get_template_part('parts/breadcrumbs');
-      include_once 'parts/service-search-block_dir.php'; ?>
+      include_once 'parts/service-search-block.php'; ?>
       <!-- тайтл страницы -->
 
       <section id="content">

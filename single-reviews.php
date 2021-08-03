@@ -45,17 +45,18 @@ if(!$thumb)$thumb = false;
                                                 <!-- Entry Content
                                                 ============================================= -->
                                                 <div class="entry-content notopmargin">
-                
+                                                 
                                                     <!-- Entry Image
                                                     ============================================= -->
 													<div class="review-container">
+
                                                     <?php if($thumb){ ?>													
                                                         <div class="entry-image alignleft" >
                                                             <a><img loading="lazy" src="<?php echo $thumb;?>" alt="<?php the_title(); ?>" class="ocpc-image-reviews" ></a>															
                                                         </div>														
                                                     <?php } ?>
 													<div>
-														<span class="ocpc-title"><b><?php echo esc_html( get_the_title() );  ?></b></span><br>
+                                                    <p><strong><?php echo get_field('clinic'); ?></strong>
 														<span><?php echo esc_html( get_the_date('j F, Y', get_the_ID())); ?></span>
 													</div>
 													</div>
@@ -63,6 +64,8 @@ if(!$thumb)$thumb = false;
 												   <blockquote style="display: block; clear: both;">
                                                     <?php the_content(); ?>
 													</blockquote>	
+                                                    <span class="ocpc-title"><b><?php echo esc_html( get_the_title() );  ?></b></span><br>
+                                                    </p>
                                                     <!-- Post Single - Content End -->
                                              
                                                     <!-- Tag Cloud

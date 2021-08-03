@@ -4,20 +4,17 @@
 @media (min-height:768px) and (min-width: 1366px){
 	.no-click>a{
 		pointer-events: none;
-	}
-	
+	}	
 }
 
 
 @media (max-height:768px) {
 	.one-page-arrow{
-		transform: translateY(-300px) translateX(130px);
-		
+		transform: translateY(-300px) translateX(130px);		
 	}
 	.icon-angle-down{
 		color: #fff;
-	}
-	
+	}	
 }
 
 
@@ -54,7 +51,25 @@
 	.promo-uppercase>.container>span {
 		font-size: 14px;
 	}
-
+	
+	.template_switch{
+		display: none;
+			
+		}
+		
+	.btn-zapis{
+		position: relative !important; 
+		margin-left: 0px !important;
+		background: none !important;
+		width:100%;
+		text-align:left;		
+	}
+	.modal-frontpage{
+		width: auto !important;
+		height: auto !important;
+		background: none !important;
+	}
+	
 }
 
 
@@ -230,9 +245,9 @@
 
 @media (max-width: 991.98px) {
 	
+
 	
-
-
+	
 	#wrapper {
 		width: 100%;
 		margin: 0;
@@ -1812,6 +1827,10 @@
 	.news-carousel .overlay {
 		display: none;
 	}
+	
+	.title-adress-frontend{
+		display: none !important;
+	}
 
 	.landing-video {
 		position: relative;
@@ -1857,6 +1876,21 @@
 	}
 	.owl-carousel .owl-item img{
 		height: 60vw;
+	}
+		
+		/*Слайдер на главной */
+	.back-image{
+		background-image: url(https://xn----7sbkiambaglcj1ag7d.xn--p1ai/wp-content/uploads/2020/07/bg-2-1.png) !important;
+		background-repeat: no-repeat;
+		background-position: center center / 100% 100%; 
+		height: auto;
+		background-color: #0969A2 !important;	
+	}
+	.img-slider{
+		display: none;
+	}
+	.text-slider{
+		color: #FFF;
 	}
 
 }
@@ -2020,6 +2054,16 @@
 
 @media (max-width: 575.98px) {
 	
+	 p, li{
+		 font-size: 1.1rem;
+	 }
+	
+	 #content p, .analis_price_klinic{
+		font-size: 1.1rem;
+	}	
+	.analis_price_klinic{
+		padding: 0px 10px;	
+	}
 
 	.container,
 	#header.full-header .container,
@@ -2303,6 +2347,7 @@
 
 @media screen  and (min-width: 381px) and (max-width: 480px) {
 	
+	
 	.analis_price_klinic{
 		margin: 0 0 0 5px !important;
 	}
@@ -2317,30 +2362,43 @@
 		padding-right: 41px;
 	}
 	
-	.service_link_clinic{
-		display: block;
-		float: none;
-		font-style: normal;	
-		margin-left: -2em;
-		border: 0 !important;
-		font-size: medium;
-	}
-	
+		
 	.service_contact_block, .contacts-usluga, .service_button_contacts{
 		padding: 7px 0px 5px 0px;
 	}
 	
-	.contacts-usluga{
-		border: 0;
-		text-decoration: underline !important;
-		font-size: medium;
-		
+	.service_link_clinic{
+		display: block;
+		float: none;
+		padding-top: 8px;
 	}
-	.more-link{
-		font-style: normal !important;
-		border: 0 !important;
-		text-decoration: underline !important;
-	}
+	.service_button_contacts, .more-link{
+		display: block;
+		border: 1px solid #e1e1e1;
+		border-radius: 4px;		
+		position: relative;
+		cursor: pointer;
+		outline: none;
+		white-space: nowrap;		
+		padding: 0 22px;		
+		font-size: medium;		
+		line-height: 40px;
+		background-color: #fff !important;
+		color: #0969A2;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		text-align: center;	 
+	 }
+	 
+	 .contacts-usluga{
+		 border: 0;
+	 }
+	 .togglec, .block-head__shortname{	
+		padding: 5px !important;
+	 }
+	 
+	
 	
 	
 }

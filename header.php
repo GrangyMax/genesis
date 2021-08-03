@@ -6,8 +6,9 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />	
 	<meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
 	<!--<meta name="viewport" content="width=device-width">-->
+	
 	<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
-
+	
 	<?php wp_head(); ?>
 	
 	<meta name="ahrefs-site-verification" content="a9cde989244ba3e22a3f21b5f612dae48c2a2c152c337451ee92f33b60bbe983">

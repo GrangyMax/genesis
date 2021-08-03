@@ -1,9 +1,11 @@
 <?php 
 /* Template name: Лаборатории */
 get_header();
-set_query_var('title', 'Услуги лаборатории' );
-$subtitle="Цены, размещённые на сайте, не являются публичной офертой. <br>Уточняйте стоимость у администратора или в контакт-центре.";
-set_query_var('subtitle',  $subtitle );
+$title=get_the_title();
+set_query_var('title', $title );
+//$subtitle="Цены, размещённые на сайте, не являются публичной офертой. <br>Уточняйте стоимость у администратора или в контакт-центре.";
+$subtitle=get_the_content();
+set_query_var('subtitle', $subtitle );
 
 ?>
  		
@@ -60,12 +62,13 @@ set_query_var('subtitle',  $subtitle );
 												<?php
 													$postID = 52143;
 													$args = array(
-														'p' => $postID, // ID поста
-														'post_type' => 'page'
-														);
+													'p' => $postID, // ID поста
+													'post_type' => 'page'
+													);
 													$recent = new WP_Query($args);
 													while ( $recent->have_posts() ) : $recent->the_post();											
-														the_content();
+													the_content(); 									
+											
 													endwhile; ?>
 											</div>	
 										</div>											
@@ -150,9 +153,14 @@ set_query_var('subtitle',  $subtitle );
                                                         <i class="block-title-lab"></i>
                                                         <?php echo get_the_title($analiz->ID); ?>
                                                     </h3>
+													
+													
+											
                                                 </div>
                                                 <p class="mb-2 block-short-lab"><?php echo get_the_excerpt($analiz->ID); ?>
-                                                </p>				
+                                                </p>
+											
+																					
 											
                                             </div>
                                             <?php if(get_field('выезд_на_дом', $analiz->ID)) { ?><small class="iconlab-page"><i class="icon-car"></i> Возможен выезд на дом</small><?php } ?>
@@ -179,6 +187,7 @@ set_query_var('subtitle',  $subtitle );
                                 <div class="preloader-main"></div>
                                 <div class="tab-content clearfix ui-tabs-panel ui-corner-bottom ui-widget-content">
                                     <div class="list-group blocks-lab" style="display: none">
+
                                         
                                     </div>
                                 </div>

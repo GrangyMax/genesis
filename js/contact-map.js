@@ -54,9 +54,12 @@ $(document).ready(() => {
          * @description Функция выполняет создание всех меток на карте
          * @param {HTMLCollection} allClinicBlocks - все элементы клиник, каждый из которых должен содержать атрибуты: 
          * 1) data-placemark-coord (JSON: [Float, Float]);
-         * 2) data-placemark-text;
+         * 2) data-placemark-addess;
          * 3) data-placemark-hint;
-         * 4) data-placemark-image-src.
+         * 4) data-placemark-image-src;
+         * 5) data-placemark-timework;
+         * 6) data-placemark-phone;
+         * 7) data-placemark-url;
          */
         function createAllPlacemarks(allClinicBlocks) {
             let placemarkDescriptors = [];
@@ -69,8 +72,11 @@ $(document).ready(() => {
                 let placemarkDescriptor = {
                     coord: JSON.parse(clinicBlock.dataset.placemarkCoord),
                     hint: clinicBlock.dataset.placemarkHint,
-                    text: clinicBlock.dataset.placemarkText,
+                    address: clinicBlock.dataset.placemarkAddress,
+                    url: clinicBlock.dataset.placemarkUrl,
+                    timework: clinicBlock.dataset.placemarkTimework,
                     image: clinicBlock.dataset.placemarkImageSrc,
+                    phone: clinicBlock.dataset.placemarkPhone
                 };
                 placemarkDescriptors.push(placemarkDescriptor);
             }
@@ -137,7 +143,11 @@ $(document).ready(() => {
                             },
                             properties: {
                                 hintContent: placemarkDescriptor.hint,
-                                balloonContent: placemarkDescriptor.text,
+                                balloonContent: '<strong>' + placemarkDescriptor.hint + '</strong>' + 
+                                '<br><strong> Адрес: </strong>' + placemarkDescriptor.address + 
+                                '<br> <strong>График работы: </strong> <br>' + placemarkDescriptor.timework + 
+                                '<br><strong>Тел.:</strong>'+ placemarkDescriptor.phone+
+                                '<hr><a href='+placemarkDescriptor.url+'>Подробнее</a>',   
                                 clusterCaption: placemarkDescriptor.hint,
                             },
                             options: placemarkConfig

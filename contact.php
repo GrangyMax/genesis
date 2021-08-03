@@ -15,7 +15,7 @@ set_query_var('title', 'Контакты');
 get_template_part('parts/breadcrumbs'); ?>
 <style>
    span.wpcf7-not-valid-tip {
-      position: relative; 
+      position: relative;
    }
 </style>
 <script defer type="text/javascript" charset="utf-8" id="ymaps-api-loader" src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU&amp;amp;apikey=df578316-6785-45a9-beaa-8c9ad78839de"></script>
@@ -37,10 +37,23 @@ get_template_part('parts/breadcrumbs'); ?>
             foreach ($query->posts as $key => $clinic) {
                $email = get_field('email', $clinic) ? get_field('email', $clinic) : get_option('admin_email');
                $clinic_select .= '<option value="'. $email .'">' . get_the_title($clinic) . '</option>';
-			   $clinic_select_form .= '<option value="'.  get_the_title($clinic) .'" class="chosen-select">' . get_the_title($clinic) . '</option>';
             ?>
                <!-- STOP: new template -->
-               <div class="pricing-box pricing-extended bottommargin clearfix" data-placemark-coord="[<?php the_field('метка_широта', $clinic->ID); ?>, <?php the_field('метка_долгота', $clinic->ID); ?>]" data-placemark-text="<?php the_field('адрес', $clinic->ID); ?>" data-placemark-hint="<?php echo get_the_title($clinic); ?>" data-placemark-image-src="<?php echo get_stylesheet_directory_uri(); ?>/images/clinic-logo.png">
+               <div class="pricing-box pricing-extended bottommargin clearfix"
+                  data-placemark-coord="[<?php the_field('метка_широта', $clinic->ID); ?>, 
+					<?php the_field('метка_долгота', $clinic->ID); ?>]"
+                    data-placemark-address="<?php the_field('адрес', $clinic->ID); ?>"
+                    data-placemark-hint="<?php echo get_the_title($clinic); ?>"
+                    data-placemark-image-src="<?php echo get_stylesheet_directory_uri(); ?>/images/clinic-logo.png"      
+
+                    data-placemark-url="<?php echo get_permalink($clinic->ID); ?>"
+                    data-placemark-timework="<?php the_field('график_работы', $clinic->ID); ?>"
+                    data-placemark-phone="
+                            <?php foreach (get_field('номера_телефонов', $clinic->ID) as $key => $value) { ?>
+                                    <a href='tel:<?php echo $value['номер_телефона'] ?>'><?php echo $value['номер_телефона'] ?></a> <br>
+                            <?php } ?>"                    
+                    >                
+               
                   <!-- clinic.description -->
                   <div class="pricing-desc">
                      <div class="pricing-title">
@@ -67,7 +80,7 @@ get_template_part('parts/breadcrumbs'); ?>
                                  <div class="fbox-icon">
                                     <a><i class="icon-location"></i></a>
                                  </div>
-                                 <h3>Адрес:</h3>
+                                 <h3>Юридический адрес:</h3>
                                  <p><?php the_field('юридический_адрес', $clinic->ID); ?></p>
                               </div>
                            </div>
@@ -111,7 +124,7 @@ get_template_part('parts/breadcrumbs'); ?>
                <div class="form-result"></div>
                <!-- Contact Form
                            ============================================= -->
-               <?php echo str_replace('{{clinics_list}}', $clinic_select_form, do_shortcode('[contact-form-7 id="36233" title="Запись на прием(Контакты)" html_class="nobottommargin"]')); ?>
+               <?php echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36233" title="Запись на прием(Контакты)" html_class="nobottommargin"]')); ?>
             </div>
          </div>
       </div>
