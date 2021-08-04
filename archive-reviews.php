@@ -7,15 +7,11 @@ get_template_part('parts/breadcrumbs'); ?>
 
 
 <?php 
-
-$clinic_list = get_posts( array(
-	
+$clinic_list = get_posts( array(	
 	'post_type'   => 'klinika',
-   'posts_per_page' => -1
-	
+   'posts_per_page' => -1	
 ) );
    ?>
-
 
 <div class="container clearfix">
 
@@ -42,9 +38,7 @@ $clinic_list = get_posts( array(
                <?php while (have_posts()) : the_post(); ?>
                   <li>
                      <div class="testimonial">
-
                         <p><strong><?php  echo get_field('clinic'); ?></strong></p>
-
                         <div class="testi-content">                         
                         <?php 
                            if (get_the_post_thumbnail_url($post)) {?>
@@ -70,7 +64,6 @@ $clinic_list = get_posts( array(
                <?php endwhile; ?>
             </ul>
          </section>
-
       </section>
       <div class="entry clearfix lasts">
          <?php wp_pagenavi(); ?>
@@ -84,7 +77,10 @@ $clinic_list = get_posts( array(
             <div class="form-widget" data-alert-type="inline">
                <div class="form-result"></div>
                <?php
-               $q = $_POST['review'];
+			   if(isset($_POST['review'])){
+				   $q = $_POST['review'];
+               }
+			   $review_id = false;
                if ($q['name'] && $q['email'] && $q['review']) {
                   if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])) {
 
@@ -99,45 +95,38 @@ $clinic_list = get_posts( array(
 
                      // Take action based on the score returned:
                      if ($recaptcha->score >= 0.5 || !GOG_API) {
-                        $new_answer = array(
+                        $new_review = array(
                            'post_title' => "* Новый отзыв ({$q[name]}, {$q[email]})",
                            'post_content' => $q['review'],
                            'post_type' => 'reviews'
                         );
-                        $answer_id = wp_insert_post($new_answer);
-                        if ($answer_id) {
-                           update_post_meta($answer_id, 'name', $q['name']);
-                           update_post_meta($answer_id, 'email', $q['email']);
-                           update_post_meta($answer_id, 'clinic',  $q['type']);
+                        $review_id = wp_insert_post($new_review);
+                        if ($review_id) {
+                           update_post_meta($review_id, 'name', $q['name']);
+                           update_post_meta($review_id, 'email', $q['email']);
+                           update_post_meta($review_id, 'clinic',  $q['type']);
                            add_filter('wp_mail_from', create_function('', 'return "' . get_option('admin_email') . '";'));
                            add_filter('wp_mail_from_name', create_function('', 'return "Клиника Genesis";'));
                            $mTitle = "* Новый отзыв ({$q[name]}, {$q[email]})";
-                           $mLink = get_damn_edit_post_link($answer_id);
+                           $mLink = get_damn_edit_post_link($review_id);
                            $mBody = "Чтобы одобрить или изменить этот отзыв - перейдите по следующей ссылке: {$siteurl}{$mLink}";
                            // wp_mail((get_option('admin_email')?get_option('admin_email'):'wgnss@mailinator.com'), $mTitle, $mBody);                                                            
                         }
                      }
                   }
                }
-
-                    
-          
-
-
                ?>
-               <?php if (!$answer_id) { ?>
+               <?php if (!$review_id) { ?>
                   <form class="nobottommargin" id="template-contactform" name="template-contactform" action="" method="post" novalidate="novalidate">
                      <div class="form-process"></div>
                      <div class="form-group ">
                         <select id="inputState " name="review[type]" class="form-control valid">
-                           <option selected="" disabled>Выберите клинику</option>
-                           
+                           <option selected="" disabled>Выберите клинику</option>                           
                               <?php
                                foreach ($clinic_list as $key => $clinic) {                       
                                    echo '<option>'.$clinic->post_title.' </option>';
                                 } 
-                              ?>    
-                          
+                              ?> 
                         </select>
                      </div>
                      <div class="col_half">
@@ -172,23 +161,15 @@ $clinic_list = get_posts( array(
 
       <!-- Posts
                               ============================================= -->
-
-
    </div><!-- .postcontent end -->
 
    <!-- Sidebar
                            ============================================= -->
    <div class="sidebar nobottommargin col_last clearfix">
       <div class="sidebar-widgets-wrap">
-
-
-
-
          <?php get_template_part('parts/news', 'latest'); ?>
       </div>
-
    </div>
-
 </div><!-- .sidebar end -->
 
 </div>
