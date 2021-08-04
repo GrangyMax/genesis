@@ -71,10 +71,10 @@ if (have_posts()) : while (have_posts()) : the_post();
         data-autoplay="5000">
 
         <?php
-$sliders = get_posts( array(
-	'post_type'   => 'slider',
-	'showposts' => -1	
-) );
+    $sliders = get_posts( array(
+        'post_type'   => 'slider',
+        'showposts' => -1	
+    ) );
 
 foreach ($sliders as $slider) {
 	$slider_img_url = get_the_post_thumbnail_url($slider);	
@@ -91,7 +91,6 @@ foreach ($sliders as $slider) {
                         <div class="content-slider">
                             <?php echo $slider_content; ?>
                         </div>
-
                         <br>
                         <button type="button" class="slider-button btn btn-warning">Перейти</button>
                     </div>
@@ -102,10 +101,8 @@ foreach ($sliders as $slider) {
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
         <?php } ?>
     </div>
 </section>
@@ -115,11 +112,11 @@ foreach ($sliders as $slider) {
     <div class="content-wrap pt-0 pb-0 front-page">
         <div class="container ">
 
- <?php
-$p_directions = get_posts( array(
-	'post_type'   => 'popular_direction',
-	'showposts' => -1	
-) );
+        <?php
+        $p_directions = get_posts( array(
+            'post_type'   => 'popular_direction',
+            'showposts' => -1	
+        ) );
 
 ?>
             <div class="fancy-title title-border title-center ">

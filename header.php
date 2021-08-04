@@ -199,7 +199,7 @@ foreach ($query->posts as $key => $clinic) {
 							<!--<div class="wrapper_search ">
 							  <div class="search-box">
 										<form action="<?= site_url() . "/" ?>" method="get" class="search_form">
-											<!--<input type="text" name="s" class="input" value="<?php echo isset($_GET['s']) ? $_GET['s'] : ''; ?>" placeholder="Введите поисковый запрос" >
+											<input type="text" name="s" class="input" value="<?php echo isset($_GET['s']) ? $_GET['s'] : ''; ?>" placeholder="Введите поисковый запрос" >
 										<input type="text" name="s" class="input" placeholder="Введите поисковый запрос" >
 											 <div class="btn btn_search ">
 												<i class="icon-search3"></i>
