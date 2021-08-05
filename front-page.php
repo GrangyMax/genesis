@@ -122,44 +122,45 @@ foreach ($sliders as $slider) {
             <div class="fancy-title title-border title-center ">
                 <h2>Направления</h2>
             </div>
+
             <div id="oc-portfolio" class="owl-carousel portfolio-carousel carousel-widget owl-loaded owl-drag"
-                data-margin="0" data-nav="true" data-pagi="true" data-margin="20" data-items-xs="1" data-items-sm="3"
-                data-items-lg="5" data-items-xl="5">
+                data-margin="0" data-nav="true" data-pagi="true" data-margin="20" data-items-xs="2" data-items-sm="3"
+                data-items-lg="5" data-items-xl="6">
                 <div class="owl-stage-outer">
-                    <div class="owl-stage" style="transform: translate3d(-475px, 0px, 0px); transition: all 0.25s ease 0s; width: 3800px;">
-     
-                 <?php foreach ($p_directions as $p_direction) {
-                      $p_direction_img = get_the_post_thumbnail_url($p_direction);	
-                      $p_direction_title = $p_direction->post_title; 
-                      $link_direction = get_field('link_direction', $p_direction);     
-                 ?>
-                        
-                    <div class="owl-item" style="width: 92px !important; margin-right: 20px;">
-                            <div class="oc-item">
-                                <div class="iportfolio">
-                                    <a href="<?php echo $link_direction ?>"
-                                        target="blank">
-                                        <div class="portfolio-image">
-                                            <img loading="lazy"
-                                                src="<?php echo $p_direction_img; ?> "
-                                                style="width: auto; height: 120px; margin: 0 auto;">
+                        <div class="owl-stage" style="transform: translate3d(-475px, 0px, 0px); transition: all 0.25s ease 0s; width: 3800px;">
+            
+                        <?php foreach ($p_directions as $p_direction) {
+                            $p_direction_img = get_the_post_thumbnail_url($p_direction);	
+                            $p_direction_title = $p_direction->post_title; 
+                            $link_direction = get_field('link_direction', $p_direction);     
+                        ?>
+                                
+                            <div class="owl-item" style="width: 92px !important; margin-right: 20px;">
+                                    <div class="oc-item">
+                                        <div class="iportfolio">
+                                            <a href="<?php echo $link_direction ?>"
+                                                target="blank">
+                                                <div class="portfolio-image">
+                                                    <img loading="lazy"
+                                                        src="<?php echo $p_direction_img; ?> "
+                                                        style="width: auto; height: 120px; margin: 0 auto;">
+                                                </div>
+                                                <div class="portfolio-desc">
+                                                    <h3 style="text-align: center;">
+                                                    <?php echo $p_direction_title; ?>
+                                                    </h3>
+                                                </div>
+                                            </a>
                                         </div>
-                                        <div class="portfolio-desc">
-                                            <h3 style="text-align: center;">
-                                            <?php echo $p_direction_title; ?>
-                                            </h3>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>      
-                    <?php  } ?>
-                </div>
+                                    </div>
+                            </div>      
+                            <?php  } ?>
+                        </div>
+                     </div>
+
             </div>
-                <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i
-                            class="icon-angle-left"></i></button><button type="button" role="presentation"
-                        class="owl-next"><i class="icon-angle-right"></i></button></div>
-                <div class="owl-dots disabled"></div>
+          
+            <div class="owl-dots disabled"></div>
             </div>
         </div>
 
@@ -315,6 +316,7 @@ foreach ($sliders as $slider) {
                     <a href="<?=get_post_type_archive_link('news')?>" class="more-link fright">Все новости &rarr;</a>
                 </div>
             </div>
+			 <div class="clear"></div>
         </div>
 
 

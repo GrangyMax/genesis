@@ -5,12 +5,9 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />	
 	<meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
-	<!--<meta name="viewport" content="width=device-width">-->
 	<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
-
 	<?php wp_head(); ?>
 	<script type="text/javascript" charset="utf-8" id="ymaps-api-loader" src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU&amp;amp;apikey=df578316-6785-45a9-beaa-8c9ad78839de"></script>
-
 	<meta name="ahrefs-site-verification" content="a9cde989244ba3e22a3f21b5f612dae48c2a2c152c337451ee92f33b60bbe983">
 	
 </head>
@@ -44,10 +41,6 @@ foreach ($query->posts as $key => $clinic) {
 		<!-- Top Bar
 		============================================= -->
 		<div id="top-bar" class="transparent-topbar dark">
-		<?php
-		include_once 'parts/template_switch.php';
-	
-		?>
 			<div class="container clearfix">
 			<div class="col_half nobottommargin clearfix">
 					<div class="header-phones nobottommargin">						
@@ -91,8 +84,7 @@ foreach ($query->posts as $key => $clinic) {
 									<div class="tab-pane fade show active" id="appointment" role="tabpanel" aria-labelledby="appointment-tab">
 										<!-- <p class="mb-4">Введите ваши данные, место жительства, удобную для вас дату, необходимого специалиста, и мы организуем вам прием. Обязательно свяжемся с вами, для согласования деталей.</p> -->
 										<div class="form-widget">
-											<div class="form-result"></div>
-											
+											<div class="form-result"></div>											
 											<?php echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36216" title="Запись на прием(Главная)" html_class="row home-moving-form position-relative mb-0"]')); ?>
 														
 										</div>						
@@ -110,12 +102,13 @@ foreach ($query->posts as $key => $clinic) {
 											<?php echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36218" title="Задать вопрос(Главная)" html_class="row others-moving-form position-relative mb-0"]')); ?>
 										</div>
 									</div>
-
-									<div class="btn bgwhite btn-block py-2 mt-2 btn-close">									
-										<a href="#" onClick="$.magnificPopup.close(); return false;" >Закрыть</a>								
-							
-									</div>
-								</div>								
+									<a href="#" onClick="$.magnificPopup.close(); return false;">
+										<div class="btn bgwhite btn-block py-2 mt-2 btn-close">									
+											Закрыть
+										</div>
+									</a>		
+								</div>	
+																
 								</div>								
 							</div>							
 						</div>

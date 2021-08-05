@@ -2472,6 +2472,15 @@ div.feature-box.fbox-center:not(.fbox-bg) h3:after {
   _overflow: auto;
   margin: 0 0 1em;
 }
+
+.analis_price_klinic{	
+	padding: 10px 5px 0px 0px;
+	font-size: 15px;
+	font-weight: 400;
+	color: var(--themecontrast);
+}
+
+/*услуги правки*/
 .service_contact_block{
 	padding: 8px 15px 0px;
 	color: #ef7f1a;
@@ -2486,12 +2495,6 @@ div.feature-box.fbox-center:not(.fbox-bg) h3:after {
 	padding: 0 25px;
 }
 	
-.analis_price_klinic{	
-	padding: 10px 5px 0px 0px;
-	font-size: 15px;
-	font-weight: 400;
-	color: var(--themecontrast);
-}
 
 .service_button_contacts{
 		display:inline-block;
@@ -2500,6 +2503,10 @@ div.feature-box.fbox-center:not(.fbox-bg) h3:after {
 	display:inline-block;
 	float: right;
 }
+
+
+
+/*редизайн главной страницы*/
 
 .block-head__shortname{	
 	 
@@ -2524,12 +2531,13 @@ color: #000;
 	border: 1px solid var(--themecolor);
 	font-weight: 500;
 	font-size: 1rem;
-	margin-top: -18px !important;
+	color: #555;
 }
-
 
 .block-feature{	
 	background-color: #efefef;
 	padding: 20px;
 	border-left: 4px solid var(--themecolor); 
 }
+
+
