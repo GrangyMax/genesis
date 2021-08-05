@@ -2506,7 +2506,7 @@ div.feature-box.fbox-center:not(.fbox-bg) h3:after {
 
 
 
-/*редизайн главной страницы*/
+/*===============редизайн главной страницы=========================*/
 
 .block-head__shortname{	
 	 
@@ -2540,4 +2540,29 @@ color: #000;
 	border-left: 4px solid var(--themecolor); 
 }
 
+.btn-zapis{
+	background-color: var(--themecolor);
+	color: #FFF; 
+	border: 0; 
+	border-radius: 0px; 
+	line-height:2;
+}
 
+.col_half .btn-zapis:hover{
+	background-color: #EF6C00 !important;			
+		}
+a.nav-link {
+			color: #fff;
+}	
+
+.content-slider{
+	font-size: 15px;
+	font-weight: 200;
+	color: #FFF;
+}
+
+.modal-frontpage{
+	width: 600px;
+	height: 500px; 
+	background-color: #FFF;
+}

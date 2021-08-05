@@ -25,15 +25,7 @@ foreach ($query->posts as $key => $clinic) {
 ?>
 
 <body data-loader="12" data-loader-color="#EF7F1A" class="stretched">
-	<style>
-		.col_half .btn-zapis:hover{
-			background-color: #EF6C00 !important;			
-		}
-		a.nav-link {
-			color: #fff;
-		}	
-
-	</style>
+	
 	<?php $header = maybe_unserialize(get_option('gnss_header')); ?>
 	<!-- Document Wrapper
 	============================================= -->
@@ -58,7 +50,7 @@ foreach ($query->posts as $key => $clinic) {
 
 				<div class="col_half nobottommargin text-md-right btn-zapis" style="position: absolute; margin-left: 590px">	
 					<a href="#myModal1" data-lightbox="inline">
-							<button class="btn btn-zapis" style="background-color: var(--themecolor); color: #FFF; border: 0; border-radius: 0px; line-height:2; ">
+							<button class="btn btn-zapis">
 								<span><img src="http://migrate.genesis82.ru/wp-content/uploads/2021/07/outline_calendar_today_white_24dp.png"
 									style="width: 20px;  padding: 0px 3px 3px 0px;"></span>
 								<span>Записаться на приём </span>
@@ -68,7 +60,7 @@ foreach ($query->posts as $key => $clinic) {
 				<!-- Modal -->
 				<div class="container row clearfix">
 					<div class="modal1 mfp-hide" id="myModal1">
-						<div class="block divcenter rounded shadow modal-frontpage" style="width: 600px; height: 500px; background-color: #FFF;">
+						<div class="block divcenter rounded shadow modal-frontpage">
 							<div class="row nomargin clearfix">
 							
 								<div>
@@ -188,18 +180,7 @@ foreach ($query->posts as $key => $clinic) {
 						</div> 
 						
 					</nav>
-							<!--<div class="wrapper_search ">
-							  <div class="search-box">
-										<form action="<?= site_url() . "/" ?>" method="get" class="search_form">
-											<input type="text" name="s" class="input" value="<?php echo isset($_GET['s']) ? $_GET['s'] : ''; ?>" placeholder="Введите поисковый запрос" >
-										<input type="text" name="s" class="input" placeholder="Введите поисковый запрос" >
-											 <div class="btn btn_search ">
-												<i class="icon-search3"></i>
-											 
-											 </div>
-										</form>
-							  </div>
-							</div> -->
+							
 				</div>
 
 			</div>
