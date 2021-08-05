@@ -7,6 +7,10 @@
 	}	
 }
 
+@media (min-width: 1200px){
+	.mfp-content: max-width: 50%;
+	
+}
 
 @media (max-height:768px) {
 	.one-page-arrow{

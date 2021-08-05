@@ -55,8 +55,7 @@
 }
 
 .custom-content{
-position: relative;
- 
+  position: relative; 
   color: #fff !important;  
   padding: 10px;
   font-weight: 500;	
@@ -66,6 +65,9 @@ position: relative;
 	 z-index: 99 !important;
 }
 
+.b24-widget-button-shadow {
+     z-index: 10 !important;
+}
 
 /*поиск версии 2 (не активен)*/
 
