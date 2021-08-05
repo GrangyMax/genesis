@@ -9,61 +9,6 @@ get_header();
 if (have_posts()) : while (have_posts()) : the_post();
 ?>
 
-<style>
-
-.owl-carousel .owl-stage {
-    padding: 0 !important;
-}
-
-.b-gray {
-    background-color: #eaeaea;
-    width: 95%;
-}
-
-.back-image {
-    background-image: url(http://migrate.genesis82.ru/wp-content/uploads/2021/07/bg-2-1.png) !important;
-    height: 560px;
-    margin: 0 auto;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #0969A2;    
-}
-
-.h1-title-slider {
-    color: #FFF;
-    font-size: 30px;
-    font-weight: 500;
-}
-
-.img-slider {
-    margin: 30px 0px 0px 0px;
-    max-width: 500px;
-}
-
-.content-slider>h3,
-.content-slider>p,
-.content-slider>span,
-.content-slider>li {
-    color: #fff;
-    font-size: 18px;
-    font-weight: 200;
-}
-
-.slider-button {
-    width: 200px;
-    background: #FFF;
-    border: 1px solid #e1e1e1;
-}
-
-.slider-button:hover {
-    width: 200px;
-    background-color: #e2e2e2;
-    border: 1px solid #e1e1e1;
-}
-</style>
-
-
 
 <section id="slider" class="slider-element slider-parallax" style="background-color: #F5F5F5;">
     <div id="oc-slider" class="owl-carousel carousel-widget" data-margin="0" data-items="1" data-pagi="true"
@@ -171,24 +116,21 @@ foreach ($sliders as $slider) {
                 <input class="js-search-block form-control form-control-lg p-4 mb-4" type="text"
                     placeholder="Поиск услуги" />
 
-                <div class="row container" style=" justify-content:  flex-start; ">
-                    <div>
-                        <div style="        display: inline-block;
-											width: 25px;
-											height: 20px;
-											background-color: #0969A2;">
+                <div class="row container legend-row">
+                    <div class="legend-row__block">
+                        <div class="legend-row__first-visit-icon">
                         </div>
-
-                        <p style="padding: 10px 20px 3px 10px; display: inline-block; "> - Первичный прием</p>
+                        <div class="legend-row__text">
+							<p> - Первичный прием </p>
+						</div>						
                     </div>
-                    <div>
-                        <div style="      	display: inline-block;
-											width: 25px;
-											height: 20px;
-											background-color: #8a8a8a;">
-
+					
+                    <div class="legend-row__block">
+                        <div class="legend-row__last-visit-icon">
                         </div>
-                        <p style="padding: 10px 20px 3px 10px; display: inline-block;"> - Повторный прием</p>
+						<div class="legend-row__text">
+							<p> - Повторный прием</p>
+						</div>
                     </div>
                 </div>
 
@@ -206,7 +148,7 @@ foreach ($sliders as $slider) {
                             <div class="togglet block-head__title"><i class="toggle-closed icon-ok-circle"></i><i
                                     class="toggle-open icon-remove-circle block-head__title"></i><?=get_the_title($direction->ID)?>
                             </div>
-                            <div class="togglec block-head__shortname" style="display: none;">
+                            <div class="togglec block-head__shortname" style="display: none; padding: 0px 15px 15px 15px;">
 
                                 <?php 
                                             $services = get_posts(array(
