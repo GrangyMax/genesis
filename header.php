@@ -45,8 +45,12 @@ foreach ($query->posts as $key => $clinic) {
 			<div class="col_half nobottommargin clearfix">
 					<div class="header-phones nobottommargin">						
 						<div class="header-phones__main">
-							<a href="tel:+79787325000">
+							<a href="tel:+79787325000" class="phone_header_desctop">
 								<?php the_field('телефон_в_верхней_полоске', 'option'); ?>
+								
+							</a>	
+							<a href="tel:+79787325000" class="phone_header_mobile">								
+								<i class="icon-phone3"></i>&nbsp; +7 (978) 732 50 00
 							</a>							
 						</div>
 					</div>
@@ -57,8 +61,7 @@ foreach ($query->posts as $key => $clinic) {
 							<button class="btn btn-zapis" style="background-color: var(--themecolor); color: #FFF; border: 0; border-radius: 0px; line-height:2; ">
 								<span><img src="http://migrate.genesis82.ru/wp-content/uploads/2021/07/outline_calendar_today_white_24dp.png"
 									style="width: 20px;  padding: 0px 3px 3px 0px;"></span>
-								<span>
-										Записаться на приём  </span>
+								<span>Записаться на приём </span>
 							</button>
 					</a>
 				
@@ -102,11 +105,7 @@ foreach ($query->posts as $key => $clinic) {
 											<?php echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36218" title="Задать вопрос(Главная)" html_class="row others-moving-form position-relative mb-0"]')); ?>
 										</div>
 									</div>
-									<a href="#" onClick="$.magnificPopup.close(); return false;">
-										<div class="btn bgwhite btn-block py-2 mt-2 btn-close">									
-											Закрыть
-										</div>
-									</a>		
+										
 								</div>	
 																
 								</div>								
