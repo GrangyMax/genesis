@@ -13,7 +13,6 @@
 	} 
 }
 
-
 @media (max-height:768px) {
 	.one-page-arrow{
 		transform: translateY(-300px) translateX(130px);		
@@ -1909,6 +1908,10 @@
 	}
 	.text-slider{
 		color: #FFF;
+	}
+	
+	.service-tab__content{
+		display: block !important; 
 	}
 
 }
