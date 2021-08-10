@@ -99,12 +99,12 @@ set_query_var('subtitle', $subtitle );
                                 </div>
 								
                                 <div class="service-tab service-tab_root">
-								<!--
+								
                                     <div class="service-tab__title" data-action="get_kompleks">
                                         <i class="icon-lab2"></i> Комплексы
                                         <div class="service-tab__arrow"><i class="icon-caret-down1"></i></div>
                                     </div>
-								-->
+								
                                     <div class="service-tab__content">
                                         <?php $terms = get_terms( [
                                             'taxonomy' => 'kompleksi_cat',
@@ -159,9 +159,6 @@ set_query_var('subtitle', $subtitle );
                                                 </div>
                                                 <p class="mb-2 block-short-lab"><?php echo get_the_excerpt($analiz->ID); ?>
                                                 </p>
-											
-																					
-											
                                             </div>
                                             <?php if(get_field('выезд_на_дом', $analiz->ID)) { ?><small class="iconlab-page"><i class="icon-car"></i> Возможен выезд на дом</small><?php } ?>
                                             <?php if(get_field('акция', $analiz->ID)) { ?><small class="iconlab-page-red"><i class="icon-gift"></i> Акция</small><?php } ?>
@@ -174,7 +171,6 @@ set_query_var('subtitle', $subtitle );
                                                     <small class="lab-more">Подробнее</small>
                                                 </span>
                                             </div>
-
                                         </a>
                                         <?php }     
                                     } ?>
