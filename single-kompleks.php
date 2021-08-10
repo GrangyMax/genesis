@@ -47,27 +47,32 @@ span.wpcf7-not-valid-tip {
 			
                ?>
           
-			<section>
-					<div class="uslugi-row">	
+			<section>					
 					  <div class="blocks">
 						<!--<input class="js-search-block form-control form-control-lg p-4 mb-4" type="text" placeholder="Поиск услуги" />	-->				  
 						 <div class="togglec block-head__shortname">                      			
-																
-										<?php  				
-										foreach (get_field('услуги_и_анализы') as $key => $service) {																	
-											
-												$price = get_post_meta($service->ID, 'price', 1); ?>
-												<a class="row" href="<?php the_permalink($service->ID);?>">									
-													  <div class="col-lg-9">
-														 <li><?=get_the_title($service->ID)?></li>
-													  </div>
+								<div class="uslugi-row">
+									<table class="table">
+										<tbody>		
+										<tr><th>Состав комплекса "<?php echo get_the_title(); ?>"</th><th>Цена</th></tr>										
+											<?php foreach (get_field('услуги_и_анализы') as $key => $service) {																	
 													
-													  <div class="col-lg-3">										
-														  <span style="float: right; font-size: 1rem;"> <?=$price?$price.'&#8381;':'Уточняйте' ?></span>
-													  </div> 										  
-												</a>						   
-										<?php } ?>										
-								
+														$price = get_post_meta($service->ID, 'price', 1); 
+														$link = get_the_permalink($service->ID);
+														$title= get_the_title($service->ID); 
+														$price= $price ? $price .'&#8381;' : 'Уточняйте' ;?>	
+														<tr>
+															  <td>
+																<a href="<?php echo $link ?>"><?php echo $title; ?></a>	
+															  </td>														  
+															  <td>														
+																<a href="<?php echo $link ?>"><i class="price-usluga-single"><?php echo $price; ?></i></a>	
+															  </td>
+														</tr>
+																																				
+												<?php } ?>											
+										</tbody>	
+									</table>
 							</div>
 						 </div>
 					  </div>                
