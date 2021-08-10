@@ -1208,7 +1208,7 @@ section section .owl-carousel .owl-nav [class*='owl-'] {
 
 .content-text-uslugi {
 	/*текст в услугах*/
-	font-size: 1em;
+	font-size: 1rem;
 }
 
 .content-text-uslugi ul {

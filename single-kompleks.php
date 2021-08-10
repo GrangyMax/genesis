@@ -35,63 +35,18 @@ span.wpcf7-not-valid-tip {
             );
             $the_query = new WP_Query( $args );
             // var_dump(count($the_query->posts));
-
+			$query = new WP_Query(array(
+               'post_type' => 'klinika',
+               'posts_per_page' => -1
+            ));
+			$clinic_select = '';			
+            foreach ($query->posts as $clinic) {
+               $email = get_field('email', $clinic) ? get_field('email', $clinic) : get_option('admin_email');
+               $clinic_select .= '<option value="'. $email .'">' . get_the_title($clinic) . '</option>';
+			}
+			
                ?>
-               <section>
-                  <div class="modal fade" id="clinic_modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                     style="display: none;" aria-hidden="true">
-                     <div class="modal-dialog">
-                        <div class="modal-body">
-                           <div class="modal-content">
-                              <div class="modal-header">
-                                 <i class="icon-et-map-pin"></i>
-                                 <h4 class="modal-title" id="myModalLabel">Контакты клиники</h4>
-                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                              </div>
-                              <div class="modal-body">
-                                 <p>
-                                    <div class="feature-box fbox-plain">
-                                       <div class="fbox-icon">
-                                          <a href="#"><i class="icon-calendar21"></i></a>
-                                       </div>
-                                       <h3>График работы:</h3>
-                                       <p class="modal__schedule-block">Пн. – вс.: 8:00 - 21:00</p>
-                                    </div>
-                                 </p>
-                                 <hr>
-
-                                 <p>
-                                    <div class="feature-box fbox-plain">
-                                       <div class="fbox-icon">
-                                          <a href="#"><i class="icon-phone3"></i></a>
-                                       </div>
-                                       <h3>Номера телефонов:</h3>
-                                       <p class="modal__phones-block"><a href="tel:+73652604900">+7 (3652) 604 900</a>
-                                          <br> <a href="tel:+79787325000">+7 (978) 732 50
-                                             00</a></p>
-                                    </div>
-                                 </p>
-                                 <hr>
-
-                                 <p>
-                                    <div class="feature-box fbox-plain">
-                                       <div class="fbox-icon">
-                                          <a href="#"><i class="icon-location"></i></a>
-                                       </div>
-                                       <h3>Адрес:</h3>
-                                       <p class="modal__address-block">г.Симферополь, ул.Семашко, 4-А</p>
-                                    </div>
-                                 </p>
-                                 <section class="clinic-map" id="modalMap" style="height: 300px"></section>
-                              </div>
-                              <div class="modal-footer">
-                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-     </section>
+          
 			<section>
 					<div class="uslugi-row">	
 					  <div class="blocks">
@@ -106,9 +61,9 @@ span.wpcf7-not-valid-tip {
 													  <div class="col-lg-9">
 														 <li><?=get_the_title($service->ID)?></li>
 													  </div>
-													  
+													
 													  <div class="col-lg-3">										
-														  <i style="float: right; font-style: normal;"><?=$price?$price.'р':'Уточняйте' ?></i>
+														  <span style="float: right; font-size: 1rem;"> <?=$price?$price.'&#8381;':'Уточняйте' ?></span>
 													  </div> 										  
 												</a>						   
 										<?php } ?>										
@@ -117,7 +72,13 @@ span.wpcf7-not-valid-tip {
 						 </div>
 					  </div>                
 				</section>
-
+				
+				<div class="container">
+					 <div class="fancy-title title-border title-center ">
+							<h2>Оставить заявку</h2>
+						</div>
+				</div>
+			   
                <div id="contact-form-overlay" class="contact-form-overlay-clinic clearfix mt-5 mb-5">
 
                   <div class="form-widget">
@@ -126,7 +87,10 @@ span.wpcf7-not-valid-tip {
 
                      <!-- Contact Form
       ============================================= -->
-                    <?php echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36239" title="Запись на прием(Услуга)" html_class="nobottommargin"]')); ?>
+		
+                    <?php 
+					
+					echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36239" title="Запись на прием(Услуга)" html_class="nobottommargin"]')); ?>
                   </div>
                </div>
             </div>
