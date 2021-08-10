@@ -7,8 +7,7 @@
       <!-- тайтл страницы -->
 
       <section id="content">
-         <div class="content-wrap mobile-usluga pt-0 pb-0">
-
+         <div class="content-wrap mobile-usluga pt-0 pb-0">		 
             <div class="container mt-0 p-0">
 
                <section>

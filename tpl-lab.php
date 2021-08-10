@@ -29,9 +29,10 @@ set_query_var('subtitle', $subtitle );
                             <input class="js-search-block-lab form-control form-control-lg p-4 mb-4" type="text"
                                 placeholder="Поиск анализа" />
 
-                            <!-- <i class="icon-lab"></i> Анализы
+                       <!-- <i class="icon-lab"></i> Анализы
                             <i class="icon-lab2"></i> Комплексы
-                            <i class="icon-gift1"></i> Акции -->
+                            <i class="icon-gift1"></i> Акции 
+							-->
 
                             <div class="service-tabs-block">
 						
@@ -99,12 +100,12 @@ set_query_var('subtitle', $subtitle );
                                 </div>
 								
                                 <div class="service-tab service-tab_root">
-								<!--
+								
                                     <div class="service-tab__title" data-action="get_kompleks">
                                         <i class="icon-lab2"></i> Комплексы
                                         <div class="service-tab__arrow"><i class="icon-caret-down1"></i></div>
                                     </div>
-								-->
+								
                                     <div class="service-tab__content">
                                         <?php $terms = get_terms( [
                                             'taxonomy' => 'kompleksi_cat',
