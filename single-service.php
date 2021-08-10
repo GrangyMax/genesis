@@ -130,12 +130,13 @@ span.wpcf7-not-valid-tip {
                      </div>
                   </div>
                   <?php
-                  	  
-					if(isset($is_onkolog)){
+				  	  
+					if($is_onkolog){
 						include_once 'parts/onkolog_queue.php';
 					}
 					
-					if(isset($is_oftalmolog)){	
+					if($is_oftalmolog){					
+						
 						include_once 'parts/oftalmolog_queue.php';
 					}
 				  ?>
@@ -143,9 +144,10 @@ span.wpcf7-not-valid-tip {
 				                
                 <!--  <div class="accordion accordion-bg clearfix accordion-usluga" <?=$accordion_state?>>-->
 				<?php  foreach ($the_query->posts as $clinic){  
-								$clinic_select =  NULL;								
+								$clinic_select =  '';								
 								   $email = get_field('email', $clinic) ? get_field('email', $clinic) : get_option('admin_email');
 								   $clinic_select .= '<option value="'. $email .'">' . get_the_title($clinic) . '</option>';
+								   $clinic_select_form .= '<option value="'.  get_the_title($clinic) .'" class="chosen-select">' . get_the_title($clinic) . '</option>';
 				?>
 			<div class="block">
 				<div class="block-head">
@@ -207,7 +209,7 @@ span.wpcf7-not-valid-tip {
 								
 							 </div>
 																
-							   <div class="togglec block-head__shortname">	<!--блок с контактами -->
+							   <div class="togglec block-head__shortname" style="display: none; padding: 0 15px 15px 36px">	<!--блок с контактами -->
 							   
 									<div class="service_contact_block">
 										<div class="service_button_contacts">
@@ -226,7 +228,7 @@ span.wpcf7-not-valid-tip {
 										</a>
 										</div>
 										<div class="service_link_clinic">
-											<a href="<?= get_permalink($clinic->ID) ?>" class="more-link">Страница клиники →</a>
+											<a href="<?= get_permalink($clinic->ID) ?>" class="service_button_contacts">Страница клиники →</a>
 										</div>
 									</div> 
 									
@@ -298,7 +300,7 @@ span.wpcf7-not-valid-tip {
                      <!-- Contact Form
       ============================================= -->
 	  
-                    <?php echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36239" title="Запись на прием(Услуга)" html_class="nobottommargin"]')); ?>
+                    <?php echo str_replace('{{clinics_list}}', $clinic_select_form, do_shortcode('[contact-form-7 id="36239" title="Запись на прием(Услуга)" html_class="nobottommargin"]')); ?>
                   </div>
                </div>
 			  	   

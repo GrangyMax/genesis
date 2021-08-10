@@ -49,9 +49,6 @@ get_template_part('parts/breadcrumbs'); ?>
                                           class="icon-line-stack-2"></i></a>
                                     <?php } } ?>
 
-
-
-                                    
                                  </div>
                               </div>
                               <div class="portfolio-desc">

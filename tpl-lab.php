@@ -1,9 +1,11 @@
 <?php 
 /* Template name: Лаборатории */
 get_header();
-set_query_var('title', 'Услуги лаборатории' );
-$subtitle="Цены, размещённые на сайте, не являются публичной офертой. <br>Уточняйте стоимость у администратора или в контакт-центре.";
-set_query_var('subtitle',  $subtitle );
+$title=get_the_title();
+set_query_var('title', $title );
+//$subtitle="Цены, размещённые на сайте, не являются публичной офертой. <br>Уточняйте стоимость у администратора или в контакт-центре.";
+$subtitle=get_the_content();
+set_query_var('subtitle', $subtitle );
 
 ?>
  		
@@ -37,34 +39,43 @@ set_query_var('subtitle',  $subtitle );
                                     <div class="service-tab__title">
 																<!-- Button trigger modal -->
 								<button type="button" class="btn btn-link" data-toggle="modal" data-target=".bd-example-modal-lg">Информация для пациентов</button>
-
                                        
                                     </div>
                                 </div>
-															
+																
 									<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 									  <div class="modal-dialog modal-lg">
+									 
 										<div class="modal-content">
-											<div style="padding: 15px 15px 15px 30px;">																				
-												<h3 style="text-align:center;">Информация для пациентов</h3>
-												<hr>
-													<?php
-														$postID = 52143;
-														$args = array(
-															'p' => $postID, // ID поста - это id страницы, на которой размещена информация для пациентов
-															'post_type' => 'page'
-														);
-														$recent = new WP_Query($args);
-														while ( $recent->have_posts() ) : $recent->the_post();											
-															the_content();
-														endwhile; 
-													?>	
-											</div>
 										
+										
+										  <div class="modal-header">
+											<h4 class="modal-title" id="myLargeModalLabel" style="text-align: center;">Информация для пациентов</h4>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											  <span aria-hidden="true">×</span>
+											</button>
+										  </div>										  
+										  
+										<div class="modal-body">										
+											<div style="padding: 15px 15px 15px 30px;">												
+												
+												<?php
+													$postID = 52143;
+													$args = array(
+													'p' => $postID, // ID поста
+													'post_type' => 'page'
+													);
+													$recent = new WP_Query($args);
+													while ( $recent->have_posts() ) : $recent->the_post();											
+													the_content(); 									
+											
+													endwhile; ?>
+											</div>	
+										</div>											
 										</div>
 									  </div>
 									</div>
-									
+
 															
 						
                                 <div class="service-tab service-tab_root">
@@ -148,14 +159,16 @@ set_query_var('subtitle',  $subtitle );
                                                 </div>
                                                 <p class="mb-2 block-short-lab"><?php echo get_the_excerpt($analiz->ID); ?>
                                                 </p>
+											
+																					
+											
                                             </div>
                                             <?php if(get_field('выезд_на_дом', $analiz->ID)) { ?><small class="iconlab-page"><i class="icon-car"></i> Возможен выезд на дом</small><?php } ?>
                                             <?php if(get_field('акция', $analiz->ID)) { ?><small class="iconlab-page-red"><i class="icon-gift"></i> Акция</small><?php } ?>
                                             <div class="lab-tabs__foot row p-2 pt-0 pb-0">
                                                 <span class="col pt-1 pb-2">
-                                                    Цена: от  
+                                                    Цена: 
                                                     <span class="lab-tabs__price"><?= format_price(get_field('price', $analiz->ID)); ?></span>
-													
                                                 </span>
                                                 <span class="col-auto pt-1 pb-2">
                                                     <small class="lab-more">Подробнее</small>

@@ -47,12 +47,9 @@ function load_style_script()
 {
 	// wp_enqueue_script('scripts.js', get_stylesheet_directory_uri() . '/js/scripts.js', array(), '', true);
 	wp_enqueue_script('plugins.js', get_stylesheet_directory_uri() . '/js/plugins.js', array(), '', true);
-	wp_enqueue_script('datepicker.js', get_stylesheet_directory_uri() . '/js/components/datepicker.js', array(), '', true);	
-	
-	wp_enqueue_script('functions.js', get_stylesheet_directory_uri() . '/js/functions.js', array(), '', true);
-	//модуль с контактами подгружается на всех страницах
-	wp_enqueue_script('contact-map.js', get_stylesheet_directory_uri() . '/js/contact-map.js', array(), '', true);
-	
+	wp_enqueue_script('datepicker.js', get_stylesheet_directory_uri() . '/js/components/datepicker.js', array(), '', true);		
+	wp_enqueue_script('functions.js', get_stylesheet_directory_uri() . '/js/functions.js', array(), '', true);	
+	wp_enqueue_script('contact-map.js', get_stylesheet_directory_uri() . '/js/contact-map.js', array(), '', true);	
 	if (is_page('license')) {
 		wp_enqueue_script('license-page.js', get_stylesheet_directory_uri() . '/js/license-page.js', array(), '', true);
 	}
@@ -65,13 +62,13 @@ function load_style_script()
 
 	wp_enqueue_style('gfonts.css', 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700');
 	wp_enqueue_style('bootstrap.min.css', get_stylesheet_directory_uri() . '/css/bootstrap.css');
-	wp_enqueue_style('slick.css', get_stylesheet_directory_uri() . '/style.css');
+	wp_enqueue_style('slick.css', get_stylesheet_directory_uri() . '/style.css?v=2');
 	wp_enqueue_style('dark.css', get_stylesheet_directory_uri() . '/css/dark.css');
 	wp_enqueue_style('font-icons.css', get_stylesheet_directory_uri() . '/css/font-icons.css');
 	wp_enqueue_style('animate.css', get_stylesheet_directory_uri() . '/css/animate.css');
 	wp_enqueue_style('magnific-popup.css', get_stylesheet_directory_uri() . '/css/magnific-popup.css');
-	wp_enqueue_style('custom.css', get_stylesheet_directory_uri() . '/css/custom.css');
-	wp_enqueue_style('responsive.css', get_stylesheet_directory_uri() . '/css/responsive.css');
+	wp_enqueue_style('custom.css', get_stylesheet_directory_uri() . '/css/custom.css?v=2');
+	wp_enqueue_style('responsive.css', get_stylesheet_directory_uri() . '/css/responsive.css?v=23');
 	wp_enqueue_style('fonts.css', get_stylesheet_directory_uri() . '/css/fonts.css');
 	wp_enqueue_style('datepicker.css', get_stylesheet_directory_uri() . '/css/components/datepicker.css');
 	wp_enqueue_style('devtip-block.css', get_stylesheet_directory_uri() . '/css/devtip-block.css');
@@ -190,6 +187,7 @@ add_filter('pre_get_posts', function ($query) {
 	return $query;
 });
 
+//function __search_by_title_only($search, &$wp_query)
 function __search_by_title_only($search, $wp_query)
 {
 	global $wpdb;

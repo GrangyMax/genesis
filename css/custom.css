@@ -66,6 +66,10 @@ position: relative;
 	 z-index: 99 !important;
 }
 
+.b24-widget-button-shadow {
+     z-index: 10 !important;
+}
+					   
 
 /*поиск версии 2 (не активен)*/
 
@@ -1106,6 +1110,18 @@ a.button.button-border.text-review__read-more:hover {
 	padding: 4px;
 }
 
+.icon-info-lab{
+	display: inline-block;
+	vertical-align: middle;
+	width: 16px; 
+	height: 16px;
+	background-image: url(/wp-content/uploads/2021/08/icons8-информация-16.png);	
+	
+}
+
+.va-middle{
+	vertical-align: middle;
+}		  
 .color-white-text {
 	color: white;
 }
@@ -2474,10 +2490,10 @@ div.feature-box.fbox-center:not(.fbox-bg) h3:after {
 }
 
 .analis_price_klinic{	
-	padding: 10px 5px 0px 0px;
-	font-size: 15px;
+	padding: 5px 0px;	
 	font-weight: 400;
 	color: var(--themecontrast);
+	font-size: 1rem;
 }
 
 /*услуги правки*/
@@ -2495,7 +2511,6 @@ div.feature-box.fbox-center:not(.fbox-bg) h3:after {
 	padding: 0 25px;
 }
 	
-
 .service_button_contacts{
 		display:inline-block;
 }
@@ -2556,14 +2571,14 @@ a.nav-link {
 }	
 
 .content-slider{
-	font-size: 15px;
+	font-size: 18px;
 	font-weight: 200;
 	color: #FFF;
 }
 
 .modal-frontpage{
-	width: 600px;
-	height: 500px; 
+	width: 550px;
+	
 	background-color: #FFF;
 }
 

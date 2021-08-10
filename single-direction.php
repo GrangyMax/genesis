@@ -16,14 +16,14 @@
                      <h2><?php the_title(); ?></h2>
                   </div> -->
 				 <span class="scroll-up"></span>
-					  <div class="text_review" style="height: 15em;">
-						  <div class="text_review__background">
-						  </div>
-						 <?php the_content(); ?>                  
-					  </div>				  
-					  <div>                    
-						 <?php include 'parts/read-more-button.php'; ?>
-					  </div>				  
+                  <div class="text_review" style="height: 15em;">
+				  <div class="text_review__background">
+					</div>
+					 <?php the_content(); ?>                  
+                  </div>				  
+				  <div>                    
+                     <?php include 'parts/read-more-button.php'; ?>
+                  </div>				  
                   <?php
                   $args = array(
                      'numberposts'   => -1,
@@ -70,7 +70,8 @@
                                           </div>
                                           <h3>Номера телефонов:</h3>
                                           <p class="modal__phones-block"><a href="tel:+73652604900">+7 (3652) 604 900</a>
-                                             <br> <a href="tel:+79787325000">+7 (978) 732 50 00</a></p>
+                                             <br> <a href="tel:+79787325000">+7 (978) 732 50
+                                                00</a></p>
                                        </div>
                                     </p>
                                     <hr>
@@ -124,7 +125,7 @@
                               <td><a href="<?= $link ?>"><?= $title ?></a></td>
                               <td><?php the_field('адрес', $clinic->ID) ?></td>
                               <td>
-                                 <a onclick="showModalBy(this)" class="contacts-usluga noborder color-theme" data-placemark-coord="[<?php the_field('метка_широта', $clinic->ID) ?>, <?php the_field('метка_долгота', $clinic->ID) ?>]" data-placemark-hint="<?php the_field('адрес', $clinic->ID) ?>" data-placemark-text="<?php the_field('адрес', $clinic->ID) ?>" data-schedule="<?php the_field('график_работы', $clinic->ID) ?>" data-address="<?php the_field('адрес', $clinic->ID) ?>" data-phones="<?php
+                                 <a onclick="showModalBy(this)" class="contacts-usluga noborder" data-placemark-coord="[<?php the_field('метка_широта', $clinic->ID) ?>, <?php the_field('метка_долгота', $clinic->ID) ?>]" data-placemark-hint="<?php the_field('адрес', $clinic->ID) ?>" data-placemark-text="<?php the_field('адрес', $clinic->ID) ?>" data-schedule="<?php the_field('график_работы', $clinic->ID) ?>" data-address="<?php the_field('адрес', $clinic->ID) ?>" data-phones="<?php
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        $phones = [];
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        foreach (get_field('номера_телефонов', $clinic->ID) as $key => $value) $phones[] = $value['номер_телефона'];
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        echo implode(', ', $phones);
@@ -136,31 +137,8 @@
                         <?php } ?>
                      </table>
                   </section>
-		
                   <div class="blocks">
                      <input class="js-search-block form-control form-control-lg p-4 mb-4" type="text" placeholder="Поиск услуги" />
-					 <div class="row" style="justify-content:  flex-start; margin: 0; ">
-									<div>
-										<div style="
-											display: inline-block;
-											width: 25px;
-											height: 20px;
-											background-color: #0969A2;"> 
-										</div>
-										<p style="padding: 10px 20px 3px 10px; display: inline-block; "> - Первичный прием</p>
-									</div>	
-									<div>
-										<div style="
-											display: inline-block;
-											width: 25px;
-											height: 20px;
-											background-color: #8a8a8a;"> 
-										
-										</div>
-										<p style="padding: 10px 20px 3px 10px; display: inline-block;"> - Повторный прием</p>
-									</div>	
-									
-							</div>
                      <div class="togglec block-head__shortname">
                         <?php
                         $services = get_posts(array(
@@ -187,19 +165,17 @@
                            }
                         }
                         echo service_list_start();
-                         foreach ($services as $service) {
-                                                $title = get_the_title($service->ID);
-                                                $price = get_post_meta($service->ID, 'price', 1);
-												$price_repeat = 145; 
-                                                $link = get_permalink($service->ID);
-                                                echo service_row($title, $price, $price_repeat, $link);
-                                            }
+                        foreach ($services as $service) {
+                           $title = get_the_title($service->ID);
+                           $price = get_post_meta($service->ID, 'price', 1);
+                           $link = get_permalink($service->ID);
+                           echo service_row($title, $price, $link);
+                        }
                         echo service_list_end();
                         ?>
                      </div>
                   </div>
-				</div>  
-          
+            </div>
          </div>
       </section>
       <section class="pb-5">

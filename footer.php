@@ -58,8 +58,7 @@
 								<h4 class="ls0 mb-4 nott">Контакты:</h4>
 
 								<div>
-								<div>
-									
+								<div>									
 									<!--class="mb-3"-->
 									<span style="color: #999;">телефоны контактного центра:</span>
 									<h4 style="margin:5px;"><a href="tel:+79787325000"><i class="icon-call mr-1" style="font-size: 18px;"></i> +7 (978) 732 50 00</a><br>
@@ -70,8 +69,6 @@
 										<strong style="margin:5px;"><a href="mailto:genesis.priemnaya@gmail.com">genesis.priemnaya@gmail.com</a></strong>
 										<h4 style="margin:5px;"><a href="tel:+73652248310"><i class="icon-call mr-1" style="font-size: 18px;"></i> +7 (3652) 248-310</a><br>
 									</address>
-									
-									
 									
 								</div>
 									
@@ -121,18 +118,14 @@
 			<!-- Copyrights
 			============================================= -->
 			<div id="copyrights" class="nobg">
-		<?php get_the_ID(); ?>
-
-				<div class="container clearfix">
-
-					<div class="row justify-content-between align-items-center">
-						<div class="col-md-6 text-black-50">
-							Copyrights &copy; <?php echo date('Y'); ?>, Группа компаний «Генезис»
+				<?php get_the_ID(); ?>
+					<div class="container clearfix">
+						<div class="row justify-content-between align-items-center">
+							<div class="col-md-6 text-black-50">
+								Copyrights &copy; <?php echo date('Y'); ?>, Группа компаний «Генезис»
+							</div>						
 						</div>
-
 					</div>
-
-				</div>
 
 			</div><!-- #copyrights end -->
 

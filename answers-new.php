@@ -1,7 +1,4 @@
 <?php
-
-
-
 $q = $_POST['question'];
 $answer_id = false;
 if ($q['name'] && $q['email'] && $q['question']) {

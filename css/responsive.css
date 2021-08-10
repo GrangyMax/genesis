@@ -2072,6 +2072,16 @@
 
 @media (max-width: 575.98px) {
 	
+	 p, li{
+		 font-size: 1.1rem;
+	 }
+	
+	 #content p, .analis_price_klinic{
+		font-size: 1.1rem;
+	}	
+	.analis_price_klinic{
+		padding: 0px 10px;	
+	}				 
 
 	.container,
 	#header.full-header .container,
@@ -2387,9 +2397,9 @@
 		float: none;
 		padding-top: 8px;
 	}
-	.service_button_contacts, .more-link{
+	.service_button_contacts, .service_link_clinic{
 		display: block;
-		border: 1px solid #e1e1e1;
+		/*border: 1px solid #e1e1e1;*/
 		border-radius: 4px;		
 		position: relative;
 		cursor: pointer;

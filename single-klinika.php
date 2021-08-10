@@ -69,8 +69,8 @@ if (have_posts()) : while (have_posts()) : the_post();
 							$town =  explode(",", $adress);							
 							$street= strstr($adress, 'пр.');
 							if (!$street){$street= strstr($adress, 'ул');}	
-							if(stripos($town[1], 'Мирное')) {$town[1] = ", ".$town[1].",";} else{ unset($town[1]); $town[0]= $town[0].",";}					
-							echo $town[0].$town[1]."<br>".$street;
+							if(isset($town[1]) && stripos($town[1], 'Мирное')) {$town[1] = ", ".$town[1].","; } else{ unset($town[1]); $town[0]= $town[0].","; }		
+							if(isset($town[1])){ echo $town[0].$town[1]."<br>".$street;	} else { echo $town[0]."<br>".$street;	}
 						?></p>
                         <a onclick="showModalBy(this)" class="single-klinik-link" data-placemark-coord="[<?php the_field('метка_широта') ?>, <?php the_field('метка_долгота') ?>]" data-placemark-hint="<?php the_title() ?>" data-placemark-text="<?php the_field('адрес') ?>">
                            Показать на карте
@@ -157,10 +157,9 @@ if (have_posts()) : while (have_posts()) : the_post();
 										{
 										   $title = $value['услуга']->post_title;
 										   $price = $value['цена_новая'];
-										   $price_repeat=145;
 										   $link = get_permalink($value['услуга']->ID);
 										   $link .= '?from=' . get_the_ID();
-										   echo service_row($title, $price, $price_repeat, $link);
+										   echo service_row($title, $price, $link);
 										}
                                     }
                                     echo service_list_end();
@@ -226,6 +225,13 @@ if (have_posts()) : while (have_posts()) : the_post();
       <div class="container">
          <div class="fancy-title title-border title-center ">
             <h2>Оставить заявку</h2>
+			<div style="display: none;">			
+				<?php 
+				$clinic_id = get_the_ID();
+				?> 				
+				<span class="clinicId" data-attr="<?=$clinic_id;?>"></span>		
+				
+			</div>
          </div>
       </div>
       <div id="contact-form-overlay" class="contact-form-overlay-clinic clearfix mt-5 mb-5">
@@ -233,13 +239,25 @@ if (have_posts()) : while (have_posts()) : the_post();
          <div class="form-widget">
 
             <div class="form-result"></div>
+			
 
             <!-- Contact Form
 						============================================= -->
             <?php
             $email = get_field('email') ? get_field('email') : get_option('admin_email');
-            echo str_replace('{{clinic_email}}', $email, str_replace('{{direct_list}}', $direct_select, do_shortcode('[contact-form-7 id="36234" title="Запись на прием(Клиника)" html_class="nobottommargin"]'))); ?>
-         </div>
+			
+            echo str_replace('{{clinic_email}}', $email, str_replace('{{direct_list}}', $direct_select, str_replace('{{clinic_id}}', $clinic_id ,do_shortcode('[contact-form-7 id="36234" title="Запись на прием(Клиника)" html_class="nobottommargin"]')))); 
+			
+			?>
+			<script>			
+					var form_clink = document.getElementById('template-contactform-submit');
+					form_clink.onclick = function() {				
+					$clinicID = $('.clinicId').attr('data-attr');					
+					ym(39014465, 'reachGoal', $clinicID); return true;	
+				}			
+				
+			</script>
+		</div>
       </div>
       </section>
 <?php endwhile;

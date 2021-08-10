@@ -114,7 +114,8 @@ $(document).ready(() => {
         result += `
             <div class="lab-tabs__foot row p-2 pt-0 pb-0">
             <span class="col pt-1 pb-2">
-                Цена: от<span class="lab-tabs__price">${formatPrice(service.price)}</span>
+                Цена: 
+                <span class="lab-tabs__price">${formatPrice(service.price)}</span>
             </span>
             <span class="col-auto pt-1 pb-2">
                 <small class="lab-more">Подробнее</small>

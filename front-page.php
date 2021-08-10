@@ -24,7 +24,9 @@ if (have_posts()) : while (have_posts()) : the_post();
 foreach ($sliders as $slider) {
 	$slider_img_url = get_the_post_thumbnail_url($slider);	
 	$slider_content = $slider->post_content;
-	$slider_title = $slider->post_title;
+	$slider_title = $slider->post_title;	
+	$slider_link = get_field('link', $slider);   
+	
 ?>
         <div class="back-image">
             <div class="container" style="padding:3em 10px;">
@@ -37,7 +39,9 @@ foreach ($sliders as $slider) {
                             <?php echo $slider_content; ?>
                         </div>
                         <br>
-                        <button type="button" class="slider-button btn btn-warning">Перейти</button>
+						<a href="<?php echo $slider_link; ?>">
+							<button type="button" class="slider-button btn btn-warning">Перейти</button>
+						</a>
                     </div>
                     <!--столбец 2-->
                     <div class="col-md-4">
@@ -115,7 +119,7 @@ foreach ($sliders as $slider) {
             <div class="blocks">
                 <input class="js-search-block form-control form-control-lg p-4 mb-4" type="text"
                     placeholder="Поиск услуги" />
-
+		<!-- Первичный и повторный прием
                 <div class="row container legend-row">
                     <div class="legend-row__block">
                         <div class="legend-row__first-visit-icon">
@@ -133,7 +137,7 @@ foreach ($sliders as $slider) {
 						</div>
                     </div>
                 </div>
-
+		-->
                 <?php 
                         $directions = get_posts(array(
                             'post_type' => 'direction', 
@@ -178,9 +182,9 @@ foreach ($sliders as $slider) {
                                             foreach ($services as $service) {
                                                 $title = get_the_title($service->ID);
                                                 $price = get_post_meta($service->ID, 'price', 1);
-												$price_repeat = 145; 
+												//$price_repeat = 145; 
                                                 $link = get_permalink($service->ID);
-                                                echo service_row($title, $price, $price_repeat, $link);
+                                                echo service_row($title, $price, $link);
                                             }
                                             echo service_list_end();
                                         ?>

@@ -59,10 +59,26 @@ foreach ($query->posts as $key => $clinic) {
 				
 				<!-- Modal -->
 				<div class="container row clearfix">
+				
 					<div class="modal1 mfp-hide" id="myModal1">
+						<!--<span class="close_link">X</span>
+							<style>
+								.close_link{
+									width:25px;
+									height: 25px;
+									border: 1px solid #FFF;
+									border-radius: 10%;
+									position: absolute;
+									transform: translate(550px, 0px);
+									z-index: 100;
+									text-align: center;
+									color: #fff;
+									
+								}
+							</style>-->
 						<div class="block divcenter rounded shadow modal-frontpage">
 							<div class="row nomargin clearfix">
-							
+							<!--<div style="background-color: var(--themecontrast); height: 20px; width: 100%; border-radius: 4px;"></div>-->
 								<div>
 								<ul class="nav nav-tabs nav-justified flex-column border-bottom-0 flex-md-row bgcolor rounded" role="tablist">
 									<li class="nav-item">

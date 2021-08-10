@@ -7,14 +7,13 @@ if ($price)
 				$price='от ' . $price .' &#8381;'; /*добавляем приставку "от" и значек рубля, если цена больше нуля и значек рубля не в вставляли в админку*/				
 		}
 	}
-
 /*set_query_var('subtitle',  $price?$price.'&#8381;':''  );*/
 
 set_query_var('subtitle',  $price); 
 get_template_part('parts/breadcrumbs'); ?>
 
       <section id="content" style="margin-bottom: 0px;">
-         <div class="content-wrap mobile-usluga" style="padding-top: 15px;">
+         <div class="mobile-usluga">
             <div class="container clearfix">
                <!-- Post Content
                      ============================================= -->
@@ -22,11 +21,8 @@ get_template_part('parts/breadcrumbs'); ?>
                   <div class="text_review">					  
 					<?php the_content(); ?>					 
                    </div>
-               </section>
-						   
-               <?php 
-			  
-             
+               </section>						   
+             <?php 
             $args = array(
                 'numberposts'	=> -1,
                 'post_type'		=> 'klinika',
@@ -38,14 +34,10 @@ get_template_part('parts/breadcrumbs'); ?>
                         'value'		=> get_the_ID(),
                     ),
                 )
-            );
-			
-			
-            $the_query = new WP_Query( $args );	
-	
+            );	
+            $the_query = new WP_Query( $args );		
  
-	?>
-               <section>
+	?>               <section>
                   <div class="modal fade" id="clinic_modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                      style="display: none;" aria-hidden="true">
                      <div class="modal-dialog">
@@ -67,18 +59,16 @@ get_template_part('parts/breadcrumbs'); ?>
                                     </div>
                                  </p>
                                  <hr>
-
-                                 <p>
-                                    <div class="feature-box fbox-plain">
-                                       <div class="fbox-icon">
-                                          <a href="#"><i class="icon-phone3"></i></a>
-                                       </div>
-                                       <h3>Номера телефонов:</h3>
-                                       <p class="modal__phones-block"><a href="tel:+73652604900">+7 (3652) 604 900</a>
-                                          <br> <a href="tel:+79787325000">+7 (978) 732 50
-                                             00</a></p>
-                                    </div>
-                                 </p>
+									 <p>
+										<div class="feature-box fbox-plain">
+										   <div class="fbox-icon">
+											  <a href="#"><i class="icon-phone3"></i></a>
+										   </div>
+										   <h3>Номера телефонов:</h3>
+										   <p class="modal__phones-block"><a href="tel:+73652604900">+7 (3652) 604 900</a>
+											  <br> <a href="tel:+79787325000">+7 (978) 732 50 00</a></p>
+										</div>
+									 </p>
                                  <hr>
 
                                  <p>
@@ -145,44 +135,46 @@ get_template_part('parts/breadcrumbs'); ?>
 																																																  
 												$cost_analis=format_price($analis_item["цена_анализа"]); 
 												$blood_sampling_cost = format_price($analis_item["цена_забора_крови"]); 
-												$sum_analis = $cost_analis + $blood_sampling_cost;
+												//$sum_analis = $cost_analis + $blood_sampling_cost;
 											}																		
 										} 
 									 ?>
 									 <div class="service_price_klinic">	<!--адрес клиники-->	
-										<?php  echo format_price($sum_analis); ?>				
+										<?php  echo $cost_analis; ?>				
 									 </div>
 								</div>	
 								    <div class="togglec block-head__shortname">	
 								  <!--блок с контактами -->								  
 								 
 										<div class="analis_price_klinic">	
-											Стоимость анализа <?php  echo $cost_analis. " + забор крови " . $blood_sampling_cost; ?>			
-											<hr style="margin-top: 0px;">												
+										
+											<div class="icon-info-lab"></div> 
+											<span class="va-middle"> Стоимость забора крови составляет <?php  echo $blood_sampling_cost; ?></span> 		
+											<hr style="margin-top: 0px;">	
+																			
 										</div>
 										
 										<div class="service_contact_block">
 											<div class="service_button_contacts">
 												<a onclick="showModalBy(this)" class="contacts-usluga"
-												   data-placemark-coord="[<?php the_field('метка_широта', $clinic->ID) ?>, 
-												   <?php the_field('метка_долгота', $clinic->ID) ?>]"
-												   data-placemark-hint="<?php the_field('адрес', $clinic->ID ) ?>"
-												   data-placemark-text="<?php the_field('адрес', $clinic->ID ) ?>"
-												   data-schedule="<?php the_field('график_работы', $clinic->ID ) ?>"
-												   data-address="<?php the_field('адрес', $clinic->ID ) ?>"
-												   data-phones="<?php 
+													   data-placemark-coord="[<?php the_field('метка_широта', $clinic->ID) ?>, 
+													   <?php the_field('метка_долгота', $clinic->ID) ?>]"
+													   data-placemark-hint="<?php the_field('адрес', $clinic->ID ) ?>"
+													   data-placemark-text="<?php the_field('адрес', $clinic->ID ) ?>"
+													   data-schedule="<?php the_field('график_работы', $clinic->ID ) ?>"
+													   data-address="<?php the_field('адрес', $clinic->ID ) ?>"
+													   data-phones="<?php 
 														$phones = []; 
-													   foreach (get_field('номера_телефонов', $clinic->ID) as $key => $value) $phones[] = $value['номер_телефона']; 
-													   echo implode(', ', $phones);
-																?>">
+														   foreach (get_field('номера_телефонов', $clinic->ID) as $key => $value) $phones[] = $value['номер_телефона']; 
+														   echo implode(', ', $phones);
+														?>">
 												   <i class="icon-map-marker1 mr-1"></i>Контакты клиники
 												</a>
 											</div>
 											<div class="service_link_clinic">
 												<a href="<?= get_permalink($clinic->ID) ?>" class="more-link">Страница клиники →</a>
 											</div>
-										</div>	
-																		
+										</div>																			
 									</div>
 						</div>
 					</div>
@@ -213,12 +205,8 @@ get_template_part('parts/breadcrumbs'); ?>
                   </div>
                </div>
 			   -->
-			
-			  
             </div>
-
          </div>
-
       </section>
       <?php endwhile; endif; ?>
 	  	  <script defer type="text/javascript" charset="utf-8" id="ymaps-api-loader" src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU&amp;amp;apikey=df578316-6785-45a9-beaa-8c9ad78839de"></script>

@@ -364,7 +364,7 @@ img.mfp-img {
 }
 /* overlay animate in */
 .mfp-fade.mfp-bg.mfp-ready {
-	opacity: 0.8;
+	opacity: 0.55;
 }
 /* overlay animate out */
 .mfp-fade.mfp-bg.mfp-removing {

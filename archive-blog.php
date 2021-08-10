@@ -41,7 +41,7 @@ get_template_part('parts/breadcrumbs'); ?>
                 $category = $category[0] ? $category[0]->name : 'Без категории' ;
                 /*$thumb = the_post_thumbnail_url();*/
 				$thumb =  get_the_post_thumbnail_url($post,'large');
-                if(!$thumb)$thumb = 'https://клиника-генезис.рф/wp-content/uploads/2012/10/ART_5622.jpg';
+                if(!$thumb)$thumb = '/wp-content/uploads/2012/10/ART_5622.jpg';
 				
             ?>
                <div class="entry clearfix">
@@ -55,21 +55,20 @@ get_template_part('parts/breadcrumbs'); ?>
                      <div class="entry-title">
                         <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                      </div>
-                     <ul class="entry-meta clearfix">
+                     <ul class="entry-meta clearfix p-0">
                         <li><i class="icon-calendar3"></i> <?php echo get_the_date('j M Y'); ?></li>
                         <li><a href="<?=get_permalink($doc)?>"><i class="icon-user"></i> <?=$doctor?></a></li>
                         <li><i class="icon-folder-open"></i> <a><?=$category?></a></li>
                         <!-- <li><a href="single-blog.html#comments"><i class="icon-comments"></i> <?php // comments_number('Комментариев нет', '1 комментарий', '% коммент.'); ?></a></li> -->
                      </ul>
-                     <div class="entry-content">
-                        <p><?php the_excerpt(); 
-						
-						?>
-						<br>
-						<?php get_the_excerpt();?>
+                     <div class="entry-content mbottom4 mt-0">
+                        <p><?php the_excerpt(); ?>
+							<br>
+							<?php get_the_excerpt();?>
 						</p>
                         <a href="<?=get_permalink()?>" class="more-link">Читать далее</a>
                      </div>
+					 <hr>
                   </div>
                </div>
                <?php endwhile; ?>

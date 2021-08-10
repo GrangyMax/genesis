@@ -17,41 +17,9 @@ include_once 'parts/service-search-block.php';?>
 
                 <section>
 
-                <div class="blocks" style="margin-top: 20px;">
-						
-						 <input class="js-search-block form-control form-control-lg p-4 mb-4" type="text"
+                <div class="blocks">
+                    <input class="js-search-block form-control form-control-lg p-4 mb-4" type="text"
                         placeholder="Поиск услуги" />
-						
-							<div class="row container">					
-								
-							</div>
-							<div class="row container" style=" justify-content:  flex-start; ">
-									<div>
-										<div style="
-											display: inline-block;
-											width: 25px;
-											height: 20px;
-											background-color: #0969A2;"> 
-										</div>
-										<p style="padding: 10px 20px 3px 10px; display: inline-block; "> - Первичный прием</p>
-									</div>	
-									<div>
-										<div style="
-											display: inline-block;
-											width: 25px;
-											height: 20px;
-											background-color: #8a8a8a;"> 
-										
-										</div>
-										<p style="padding: 10px 20px 3px 10px; display: inline-block;"> - Повторный прием</p>
-									</div>	
-									
-							</div>
-					
-					
-					
-					
-                   
                     <?php 
                         $directions = get_posts(array(
                             'post_type' => 'direction', 
@@ -94,9 +62,8 @@ include_once 'parts/service-search-block.php';?>
                                             foreach ($services as $service) {
                                                 $title = get_the_title($service->ID);
                                                 $price = get_post_meta($service->ID, 'price', 1);
-												$price_repeat = 145; 
                                                 $link = get_permalink($service->ID);
-                                                echo service_row($title, $price, $price_repeat, $link);
+                                                echo service_row($title, $price, $link);
                                             }
                                             echo service_list_end();
                                         ?>

@@ -1,12 +1,14 @@
 <?php
 
 if(isset($_POST['question'])){
-	$q = $_POST['question'];	
+	$q = $_POST['question'];
+	
 }
 
 $answer_id = false;
 if ($q['name'] && $q['email'] && $q['question']) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recaptcha_response'])) {
+
         // Build POST request:
         $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
         $recaptcha_secret = GOG_API;
@@ -17,12 +19,12 @@ if ($q['name'] && $q['email'] && $q['question']) {
         $recaptcha = json_decode($recaptcha);
   
         // Take action based on the score returned:
-    if ($recaptcha->score >= 0.5 || !GOG_API) {
-		$new_answer = array(
-			'post_title' => "* Новый вопрос ({$q['name']}, {$q['email']})",
-			'post_content' => $q['question'],
-			'post_type' => 'answers'
-		);
+        if ($recaptcha->score >= 0.5 || !GOG_API) {
+    $new_answer = array(
+        'post_title' => "* Новый вопрос ({$q['name']}, {$q['email']})",
+        'post_content' => $q['question'],
+        'post_type' => 'answers'
+    );
     $answer_id = wp_insert_post($new_answer);
 	$multiple_to_recipients = array('klinikagenesis@yandex.ru'		
 										);
