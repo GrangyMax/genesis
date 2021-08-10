@@ -3,6 +3,7 @@
 <!-- тайтл страницы -->
 <?php get_template_part('parts/breadcrumbs'); ?>
 <!-- тайтл страницы -->
+
 <div class="container clearfix">
 
    <!-- Post Content
@@ -13,10 +14,10 @@
             <?php
             $first = true;
             if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <div class="acctitle1 <?php if ($first) {
-                    echo 'none-border';
-                    $first = false;
-                   } ?>"> <a href="<?php the_permalink(); ?>"><i class="acc-closed icon-line-circle-plus"></i><i class="acc-open icon-line-circle-check color"></i><?php the_title(); ?></a>
+                  <div class="acctitle1 <?php if ($first) {
+                                             echo 'none-border';
+                                             $first = false;
+                                          } ?>"> <a href="<?php the_permalink(); ?>"><i class="acc-closed icon-line-circle-plus"></i><i class="acc-open icon-line-circle-check color"></i><?php the_title(); ?></a>
                   </div>
                <?php endwhile;
             else : ?>
@@ -50,13 +51,21 @@
                            ============================================= -->
    <div class="sidebar nobottommargin col_last clearfix">
       <div class="sidebar-widgets-wrap">
+
          <div class="widget widget-twitter-feed clearfix iconlist-blog-vrach">
+
             <h4>Темы вопросов:</h4>
+
             <?php get_template_part('parts/answers', 'terms'); ?>
          </div>
+
+
       </div>
+
    </div>
+
 </div><!-- .sidebar end -->
+
 </div>
 
 <?php get_footer(); ?>

@@ -55,7 +55,8 @@
 }
 
 .custom-content{
-  position: relative; 
+position: relative;
+ 
   color: #fff !important;  
   padding: 10px;
   font-weight: 500;	
@@ -68,6 +69,7 @@
 .b24-widget-button-shadow {
      z-index: 10 !important;
 }
+					   
 
 /*поиск версии 2 (не активен)*/
 
@@ -1119,7 +1121,7 @@ a.button.button-border.text-review__read-more:hover {
 
 .va-middle{
 	vertical-align: middle;
-}
+}		  
 .color-white-text {
 	color: white;
 }
@@ -2486,6 +2488,15 @@ div.feature-box.fbox-center:not(.fbox-bg) h3:after {
   _overflow: auto;
   margin: 0 0 1em;
 }
+
+.analis_price_klinic{	
+	padding: 5px 0px;	
+	font-weight: 400;
+	color: var(--themecontrast);
+	font-size: 1rem;
+}
+
+/*услуги правки*/
 .service_contact_block{
 	padding: 8px 15px 0px;
 	color: #ef7f1a;
@@ -2500,13 +2511,6 @@ div.feature-box.fbox-center:not(.fbox-bg) h3:after {
 	padding: 0 25px;
 }
 	
-.analis_price_klinic{	
-	padding: 5px 0px;	
-	font-weight: 400;
-	color: var(--themecontrast);
-	font-size: 1rem;
-}
-
 .service_button_contacts{
 		display:inline-block;
 }
@@ -2514,6 +2518,10 @@ div.feature-box.fbox-center:not(.fbox-bg) h3:after {
 	display:inline-block;
 	float: right;
 }
+
+
+
+/*===============редизайн главной страницы=========================*/
 
 .block-head__shortname{	
 	 
@@ -2538,13 +2546,125 @@ color: #000;
 	border: 1px solid var(--themecolor);
 	font-weight: 500;
 	font-size: 1rem;
-	margin-top: -18px !important;
+	color: #555;
 }
-
 
 .block-feature{	
 	background-color: #efefef;
 	padding: 20px;
 	border-left: 4px solid var(--themecolor); 
+}
+
+.btn-zapis{
+	background-color: var(--themecolor);
+	color: #FFF; 
+	border: 0; 
+	border-radius: 0px; 
+	line-height:2;
+}
+
+.col_half .btn-zapis:hover{
+	background-color: #EF6C00 !important;			
+		}
+a.nav-link {
+			color: #fff;
+}	
+
+.content-slider{
+	font-size: 18px;
+	font-weight: 200;
+	color: #FFF;
+}
+
+.modal-frontpage{
+	width: 550px;
+	
+	background-color: #FFF;
+}
+
+
+.owl-carousel .owl-stage {
+    padding: 0 !important;
+}
+
+.b-gray {
+    background-color: #eaeaea;
+    width: 95%;
+}
+
+.back-image {
+    background-image: url(http://migrate.genesis82.ru/wp-content/uploads/2021/07/bg-2-1.png) !important;
+    height: 560px;
+    margin: 0 auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #0969A2;    
+}
+
+.h1-title-slider {
+    color: #FFF;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.img-slider {
+    margin: 30px 0px 0px 0px;
+    max-width: 500px;
+}
+
+.content-slider>h3,
+.content-slider>p,
+.content-slider>span,
+.content-slider>li {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.slider-button {
+    width: 200px;
+    background: #FFF;
+    border: 1px solid #e1e1e1;
+}
+
+.slider-button:hover {
+    width: 200px;
+    background-color: #e2e2e2;
+    border: 1px solid #e1e1e1;
+}
+
+/*блок с уловными обозначениями, первичный и повторный прием*/
+.legend-row{
+	justify-content: flex-start; 
+	padding-bottom: 15px;
+}
+
+.legend-row__block{
+	display:flex;
+	align-items: center;
+	padding:5px 10px;
+}
+
+
+.legend-row__first-visit-icon{
+	display: block;
+	width: 25px;
+	height: 20px;
+	background-color: #0969A2;
+}
+
+.legend-row__last-visit-icon{
+	display: block;
+	width: 25px;
+	height: 20px;
+	background-color: #8a8a8a;
+}
+
+.legend-row__text{
+	height: 20px;
+}
+.legend-row__text p{
+	padding: 0 10px;
 }
 

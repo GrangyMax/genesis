@@ -228,7 +228,7 @@ span.wpcf7-not-valid-tip {
 										</a>
 										</div>
 										<div class="service_link_clinic">
-											<a href="<?= get_permalink($clinic->ID) ?>" class="more-link">Страница клиники →</a>
+											<a href="<?= get_permalink($clinic->ID) ?>" class="service_button_contacts">Страница клиники →</a>
 										</div>
 									</div> 
 									

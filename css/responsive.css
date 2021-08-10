@@ -8,9 +8,11 @@
 }
 
 @media (min-width: 1200px){
-	.mfp-content: max-width: 50%;
-	
+	.mfp-content{
+		max-width: 600px;	
+	} 
 }
+
 
 @media (max-height:768px) {
 	.one-page-arrow{
@@ -25,10 +27,24 @@
 @media (max-width:420px) {
 	.title-desctop{display: none;}
 	.title-mobile{display: block;}
+	.phone_header_mobile{
+		display:block;
+	}
+	.phone_header_desctop{
+		display:none;
+	}
 }
 
 @media (min-width:420px) {	
-	.title-mobile{display: none;}
+	.title-mobile{
+		display: none;
+	}
+	.phone_header_mobile{
+		display:none;
+	}
+	.phone_header_desctop{
+		display:block;
+	}
 }
 
 @media (max-width: 1199.98px) {
@@ -1307,8 +1323,6 @@
 	#top-search form .search_button{
 			width: 40%;
 		}
-
-
 }
 
 
@@ -2067,7 +2081,7 @@
 	}	
 	.analis_price_klinic{
 		padding: 0px 10px;	
-	}
+	}				 
 
 	.container,
 	#header.full-header .container,
@@ -2328,12 +2342,19 @@
 	}
 	
 	.uslugi-row td{
-	font-size:1.3em;
+		font-size:1.3em;
 	}
 	
 	#top-search form .search_button{
 		width: 70%
 		/*margin-left: -20%;*/
+	}
+	
+	#top-bar.dark a{
+		font-size:1.1rem;
+	}
+	.btn-zapis{
+		font-size:1.1rem;
 	}
 		
 }
@@ -2376,9 +2397,9 @@
 		float: none;
 		padding-top: 8px;
 	}
-	.service_button_contacts, .more-link{
+	.service_button_contacts, .service_link_clinic{
 		display: block;
-		border: 1px solid #e1e1e1;
+		/*border: 1px solid #e1e1e1;*/
 		border-radius: 4px;		
 		position: relative;
 		cursor: pointer;
@@ -2497,3 +2518,4 @@ only screen and (min-resolution: 2dppx) and (max-width: 991.98px) {
 		display: inline-block;
 	}
 }
+
