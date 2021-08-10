@@ -1913,6 +1913,18 @@
 	.service-tab__content{
 		display: block !important; 
 	}
+	
+	.ocpc-content blockquote{
+		margin: 0px !important;
+	}
+	.ocpc_post_layout .ocpc-content {
+		padding-top: 5px !important;   
+	}
+
+	.ocpc_post_layout.tem1 .ocpc_discripton_class { 
+		padding: 10px 0px 0px 0px;		
+		
+	}
 
 }
 
@@ -2400,9 +2412,9 @@
 		float: none;
 		padding-top: 8px;
 	}
-	.service_button_contacts, .service_link_clinic{
+	.service_button_contacts, .service_link_clinic a{
 		display: block;
-		/*border: 1px solid #e1e1e1;*/
+		border: 1px solid #e1e1e1;
 		border-radius: 4px;		
 		position: relative;
 		cursor: pointer;

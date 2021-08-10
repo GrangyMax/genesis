@@ -49,12 +49,12 @@ span.wpcf7-not-valid-tip {
           
 			<section>					
 					  <div class="blocks">
-						<!--<input class="js-search-block form-control form-control-lg p-4 mb-4" type="text" placeholder="Поиск услуги" />	-->				  
+						<input class="js-search-block form-control form-control-lg p-4 mb-4" type="text" placeholder="Поиск услуги" />			  
 						 <div class="togglec block-head__shortname">                      			
 								<div class="uslugi-row">
 									<table class="table">
 										<tbody>		
-										<tr><th>Состав комплекса "<?php echo get_the_title(); ?>"</th><th>Цена</th></tr>										
+										<tr><th>Состав комплекса</th><th>Цена</th></tr>										
 											<?php foreach (get_field('услуги_и_анализы') as $key => $service) {																	
 													
 														$price = get_post_meta($service->ID, 'price', 1); 

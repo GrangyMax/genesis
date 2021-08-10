@@ -259,7 +259,7 @@ foreach ($sliders as $slider) {
 
                 </div>
                 <div class="container clearfix">
-                    <a href="<?=get_post_type_archive_link('news')?>" class="more-link fright">Все новости &rarr;</a>
+                    <a href="<?=get_post_type_archive_link('news')?>" class="more-link mt-3 fright">Все новости &rarr;</a>
                 </div>
             </div>
 			 <div class="clear"></div>
@@ -347,7 +347,7 @@ foreach ($sliders as $slider) {
                 </div>
             </div>
             <div class="container clearfix">
-                <a href="<?=get_post_type_archive_link('reviews')?>" class="more-link fright">Все отзывы &rarr;</a>
+                <a href="<?=get_post_type_archive_link('reviews')?>" class="more-link mt-3 fright">Все отзывы &rarr;</a>
             </div>
         </div>
 
