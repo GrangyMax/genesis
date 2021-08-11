@@ -145,15 +145,7 @@ get_template_part('parts/breadcrumbs'); ?>
 								</div>	
 								    <div class="togglec block-head__shortname">	
 								  <!--блок с контактами -->								  
-								 
-										<div class="analis_price_klinic">	
-										
-											<div class="icon-info-lab"></div> 
-											<span class="va-middle"> Стоимость забора крови составляет <?php  echo $blood_sampling_cost; ?></span> 		
-											<hr style="margin-top: 0px;">	
-																			
-										</div>
-										
+								 																				
 										<div class="service_contact_block">
 											<div class="service_button_contacts">
 												<a onclick="showModalBy(this)" class="contacts-usluga"
@@ -183,29 +175,12 @@ get_template_part('parts/breadcrumbs'); ?>
                   </div>
                </section>
 			   		<div class="divider"><i class="icon-circle" style="font-size: 12px; "></i></div>
-					<p style="font-weight: 400; ">* Предварительная запись не требуется. 
-					Анализы можно сдать в порядке живой очереди. </p>
-				   
-			<!-- === убираем форму заявки === 
-			    <div class="container">
-					 <div class="fancy-title title-border title-center ">
-								<h2>Оставить заявку</h2>
-						</div>
-				</div>
-			   
-               <div id="contact-form-overlay" class="contact-form-overlay-clinic clearfix mt-5 mb-5">
-
-                  <div class="form-widget">
-
-                     <div class="form-result"></div>
-
-                     <!-- Contact Form
-      ============================================= --><!--
-                    <?php echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36239" title="Запись на прием(Услуга)" html_class="nobottommargin"]')); ?>
-                  </div>
-               </div>
-			   -->
-            </div>
+					<div class="analis_price_klinic">	
+						* Стоимость забора крови составляет - <strong><?php  echo $blood_sampling_cost; ?></strong>	
+						<p>* Предварительная запись не требуется. 
+					Анализы можно сдать в порядке живой очереди.</p> 
+					</div>				   
+	            </div>
          </div>
       </section>
       <?php endwhile; endif; ?>
