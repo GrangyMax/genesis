@@ -10,7 +10,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 ?>
 
 
-<section id="slider" class="slider-element slider-parallax" style="background-color: #F5F5F5;">
+<section id="slider" class="slider-element slider-parallax slider-background">
     <div id="oc-slider" class="owl-carousel carousel-widget" data-margin="0" data-items="1" data-pagi="true"
         data-loop="true" data-animate-in="fadeInRight" data-speed="700" data-animate-out="fadeOutLeft"
         data-autoplay="5000">
