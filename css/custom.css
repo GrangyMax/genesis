@@ -2542,9 +2542,7 @@ div.feature-box.fbox-center:not(.fbox-bg) h3:after {
 color: #000;
 	
 }
-.btn-close{
-	border: 1px solid var(--themecolor);
-	font-weight: 500;
+.btn-close{	
 	font-size: 1rem;
 	color: #555;
 }
