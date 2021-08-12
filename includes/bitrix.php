@@ -220,7 +220,7 @@ elseif('Запись на прием(Клиника)' == $title ): { //Вмес�
    $phoneNumbers = $posted_data['your-tel']; //перехватываем поле [your-name]    
    $direction = $posted_data['direction']; //перехватываем поле [direction]
    $clinic = $posted_data['clinic']; //перехватываем поле [clinic]   
-   $message = $posted_data['message']; //перехватываем поле [message]  
+   $message = $posted_data['textarea-672']; //перехватываем поле [message]  
    $chapter = $posted_data['chapter']; //перехватываем поле [chapter]    
    $datel = $posted_data['your-date']; //перехватываем поле [your-name] 
    //сопостановление полей Bitrix24 с полученными данными из Contact Form 7
@@ -231,8 +231,8 @@ elseif('Запись на прием(Клиника)' == $title ): { //Вмес�
 	   'EMAIL_WORK' => $emailmessage,
 	   'PHONE_MOBILE' => $phoneNumbers, 
 	   'UF_CRM_1591101977' => $datel, 
-	   'UF_CRM_1628756578' => $clinic,
-	   'UF_CRM_1628757067' =>$direction  
+	   'UF_CRM_1628756578' => $clinic,	   
+	   'UF_CRM_1628757067' => $direction  
    );
    
    //передача данных из Contact Form 7 в Bitrix24
@@ -273,11 +273,79 @@ elseif('Запись на прием(Клиника)' == $title ): { //Вмес�
    echo 'Connection Failed! '.$errstr.' ('.$errno.')';
    }
    }; 
-
-     
- //===================Запись на прием(Клиника)==================================
+    
+ //===================Конец формы Запись на прием(Клиника)==================================
    
    
+   
+//===================Запись на прием(Услуга)==================================
+      
+//Начало Новой формы формы
+elseif('Запись на прием(Услуга)' == $title ): { //Вместо "НОВАЯ КОНТАКТНАЯ ФОРМА" необходимо указать название Вашей контактной формы
+   $submission = WPCF7_Submission::get_instance();
+   $posted_data = $submission->get_posted_data();
+   
+   //далее мы перехватывает введенные данные в Contact Form 7
+   $firstName = $posted_data['your-name']; //перехватываем поле [your-name]
+   $emailmessage = $posted_data['your-email']; //перехватываем поле [your-message]
+   $phoneNumbers = $posted_data['your-tel']; //перехватываем поле [your-name]  
+   $clinic = $posted_data['clinic']; //перехватываем поле [clinic]   
+   $message = $posted_data['textarea-672']; //перехватываем поле [message] 
+   $datel = $posted_data['your-date']; //перехватываем поле [your-name] 
+   //сопостановление полей Bitrix24 с полученными данными из Contact Form 7
+   $postData = array(
+	   'TITLE' => "Клиника Генезис 'Запись на прием(Услуга)'", // Установить значение свое значение
+	   'NAME' => $firstName,
+	   'COMMENTS' => $message,
+	   'EMAIL_WORK' => $emailmessage,
+	   'PHONE_MOBILE' => $phoneNumbers, 
+	   'UF_CRM_1591101977' => $datel, 
+	   'UF_CRM_1628756578' => $clinic  
+	
+   );
+   
+   //передача данных из Contact Form 7 в Bitrix24
+   if (defined('CRM_AUTH')) {
+   $postData['AUTH'] = CRM_AUTH;
+   } else {
+   $postData['LOGIN'] = CRM_LOGIN;
+   $postData['PASSWORD'] = CRM_PASSWORD;
+   }
+   
+   $fp = fsockopen("ssl://".CRM_HOST, CRM_PORT, $errno, $errstr, 30);
+   if ($fp) {
+   $strPostData = '';
+   foreach ($postData as $key => $value)
+   $strPostData .= ($strPostData == '' ? '' : '&').$key.'='.urlencode($value);
+   
+   $str = "POST ".CRM_PATH." HTTP/1.0\r\n";
+   $str .= "Host: ".CRM_HOST."\r\n";
+   $str .= "Content-Type: application/x-www-form-urlencoded\r\n";
+   $str .= "Content-Length: ".strlen($strPostData)."\r\n";
+   $str .= "Connection: close\r\n\r\n";
+   
+   $str .= $strPostData;
+   
+   fwrite($fp, $str);
+   
+   $result = '';
+   while (!feof($fp))
+   {
+   $result .= fgets($fp, 128);
+   }
+   fclose($fp);
+   
+   $response = explode("\r\n\r\n", $result);
+   
+   $output = print_r($response[1], 1);
+   } else {
+   echo 'Connection Failed! '.$errstr.' ('.$errno.')';
+   }
+   }; 
+    
+ //===================Конец Запись на прием(Услуга)==================================
+ 
+  
    
    
  endif; 
