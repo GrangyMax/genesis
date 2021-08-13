@@ -53,7 +53,7 @@ foreach ($query->posts as $key => $clinic) {
 							<button class="btn btn-zapis">
 								<span><img src="http://migrate.genesis82.ru/wp-content/uploads/2021/07/outline_calendar_today_white_24dp.png"
 									style="width: 20px;  padding: 0px 3px 3px 0px;"></span>
-								<span>Записаться на приём </span>
+								<span class="animated-text-button"></span>
 							</button>
 					</a>
 				

@@ -118,8 +118,13 @@
                           $email = $temp ? $temp : get_option('admin_email');
                           $clinic_select .= '<option value="' . $email . '">' . get_the_title($clinic) . '</option>';
                           $title = get_the_title($clinic);
+						  
+							if($title == "Клиника Генезис (поликлиника в Севастополе)"){
+								$title= "Клиника Генезис (отделение онкологии и гинекологии в Севастополе)"; 
+							}
+							
                           $link = get_permalink($clinic);
-					
+						  
                         ?>
                             <tr>
                               <td><a href="<?= $link ?>"><?= $title ?></a></td>
