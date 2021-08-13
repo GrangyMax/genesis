@@ -43,6 +43,13 @@ function my_scripts_method()
 	wp_enqueue_script('jquery');
 }
 add_action('wp_enqueue_scripts', 'my_scripts_method');
+/*
+подключение рекапчи
+function add_google_recapcha() {
+	wp_enqueue_script( 'recapcha', 'https://www.google.com/recaptcha/api.js');
+}
+add_action( 'wp_enqueue_scripts', 'add_google_recapcha' );
+*/
 function load_style_script()
 {
 	// wp_enqueue_script('scripts.js', get_stylesheet_directory_uri() . '/js/scripts.js', array(), '', true);
@@ -73,6 +80,7 @@ function load_style_script()
 	wp_enqueue_style('datepicker.css', get_stylesheet_directory_uri() . '/css/components/datepicker.css');
 	wp_enqueue_style('devtip-block.css', get_stylesheet_directory_uri() . '/css/devtip-block.css');
 	wp_enqueue_style('license-page.css', get_stylesheet_directory_uri() . '/css/license-page.css');
+	
 }
 
 // Загружаем стили и скрипты
