@@ -29,10 +29,9 @@ set_query_var('subtitle', $subtitle );
                             <input class="js-search-block-lab form-control form-control-lg p-4 mb-4" type="text"
                                 placeholder="Поиск анализа" />
 
-                       <!-- <i class="icon-lab"></i> Анализы
+                            <!-- <i class="icon-lab"></i> Анализы
                             <i class="icon-lab2"></i> Комплексы
-                            <i class="icon-gift1"></i> Акции 
-							-->
+                            <i class="icon-gift1"></i> Акции -->
 
                             <div class="service-tabs-block">
 						
@@ -160,9 +159,6 @@ set_query_var('subtitle', $subtitle );
                                                 </div>
                                                 <p class="mb-2 block-short-lab"><?php echo get_the_excerpt($analiz->ID); ?>
                                                 </p>
-											
-																					
-											
                                             </div>
                                             <?php if(get_field('выезд_на_дом', $analiz->ID)) { ?><small class="iconlab-page"><i class="icon-car"></i> Возможен выезд на дом</small><?php } ?>
                                             <?php if(get_field('акция', $analiz->ID)) { ?><small class="iconlab-page-red"><i class="icon-gift"></i> Акция</small><?php } ?>
@@ -175,7 +171,6 @@ set_query_var('subtitle', $subtitle );
                                                     <small class="lab-more">Подробнее</small>
                                                 </span>
                                             </div>
-
                                         </a>
                                         <?php }     
                                     } ?>
@@ -208,9 +203,6 @@ set_query_var('subtitle', $subtitle );
 
     </div>
     </section>
-    <!-- <section class="pb-5">
-        <script type="text/javascript" charset="utf-8" async
-            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A684db4fb5ff6ffa001f4f4099536e519bbdf7642a1223a7b2ad97526dabc9312&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
-    </section> -->
+
     </section>
 <?php get_footer(); ?>

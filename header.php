@@ -7,9 +7,8 @@
 	<meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
 	<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
 	<?php wp_head(); ?>
-	<script type="text/javascript" charset="utf-8" id="ymaps-api-loader" src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU&amp;amp;apikey=df578316-6785-45a9-beaa-8c9ad78839de"></script>
 	<meta name="ahrefs-site-verification" content="a9cde989244ba3e22a3f21b5f612dae48c2a2c152c337451ee92f33b60bbe983">
-	
+	<script id="ymaps-api-loader" async></script>
 </head>
 <?php
 $query = new WP_Query(array(
@@ -53,7 +52,7 @@ foreach ($query->posts as $key => $clinic) {
 							<button class="btn btn-zapis">
 								<span><img src="http://migrate.genesis82.ru/wp-content/uploads/2021/07/outline_calendar_today_white_24dp.png"
 									style="width: 20px;  padding: 0px 3px 3px 0px;"></span>
-								<span>Записаться на приём </span>
+								<span class="animated-text-button"></span>
 							</button>
 					</a>
 				

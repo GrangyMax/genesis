@@ -13,7 +13,6 @@
 	} 
 }
 
-
 @media (max-height:768px) {
 	.one-page-arrow{
 		transform: translateY(-300px) translateX(130px);		
@@ -46,7 +45,7 @@
 		display:block;
 	}
 }
-
+	
 @media (max-width: 1199.98px) {
 
 	canvas {
@@ -77,18 +76,21 @@
 			
 		}
 		
-	.btn-zapis{
-		position: relative !important; 
-		margin-left: 0px !important;
-		background: none !important;
-		width:100%;
-		text-align:left;		
-	}
+	
 	.modal-frontpage{
 		width: auto !important;
 		height: auto !important;
 		background: none !important;
 	}
+	
+	.btn-zapis{
+			position: relative !important; 
+			margin-left: 0px !important;
+			/*background: none !important;*/
+			display: inline;
+			text-align:left;	
+			/*width: 100%;*/
+		}
 	
 }
 
@@ -1901,7 +1903,7 @@
 		background-image: url(https://xn----7sbkiambaglcj1ag7d.xn--p1ai/wp-content/uploads/2020/07/bg-2-1.png) !important;
 		background-repeat: no-repeat;
 		background-position: center center / 100% 100%; 
-		height: auto;
+		/*height: auto;*/
 		background-color: #0969A2 !important;	
 	}
 	.img-slider{
@@ -1909,6 +1911,28 @@
 	}
 	.text-slider{
 		color: #FFF;
+	}
+	
+	.service-tab__content{
+		display: block !important; 
+	}
+	
+	.ocpc-content blockquote{
+		margin: 0px !important;
+	}
+	.ocpc_post_layout .ocpc-content {
+		padding-top: 5px !important;   
+	}
+
+	.ocpc_post_layout.tem1 .ocpc_discripton_class { 
+		padding: 10px 0px 0px 0px;		
+		
+	}
+	
+	.slider-background{
+		background-image: url(/wp-content/uploads/2021/08/bg-2-2.png);
+		background-color: var(--themecontrast);
+		background-repeat: repeat;
 	}
 
 }
@@ -2304,6 +2328,8 @@
 		font-size: 11px;
 	}
 	
+	
+	
 }
 
 @media all and (min-width: 241px) and (max-width: 480px) {
@@ -2352,9 +2378,16 @@
 	
 	#top-bar.dark a{
 		font-size:1.1rem;
+		margin: 0 auto;
 	}
 	.btn-zapis{
-		font-size:1.1rem;
+		position: relative !important; 
+		margin-left: 0px !important;
+		font-size: 1.1rem;
+		text-align: center;
+		background-color: var(--themecolor);
+		width: 100%;
+			
 	}
 		
 }
@@ -2397,9 +2430,9 @@
 		float: none;
 		padding-top: 8px;
 	}
-	.service_button_contacts, .service_link_clinic{
+	.service_button_contacts, .service_link_clinic a{
 		display: block;
-		/*border: 1px solid #e1e1e1;*/
+		border: 1px solid #e1e1e1;
 		border-radius: 4px;		
 		position: relative;
 		cursor: pointer;

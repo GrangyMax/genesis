@@ -72,7 +72,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 							if(isset($town[1]) && stripos($town[1], 'Мирное')) {$town[1] = ", ".$town[1].","; } else{ unset($town[1]); $town[0]= $town[0].","; }		
 							if(isset($town[1])){ echo $town[0].$town[1]."<br>".$street;	} else { echo $town[0]."<br>".$street;	}
 						?></p>
-                        <a onclick="showModalBy(this)" class="single-klinik-link" data-placemark-coord="[<?php the_field('метка_широта') ?>, <?php the_field('метка_долгота') ?>]" data-placemark-hint="<?php the_title() ?>" data-placemark-text="<?php the_field('адрес') ?>">
+                        <a onclick="showModalBy(this)" id="klinik-link-maps" class="single-klinik-link" data-placemark-coord="[<?php the_field('метка_широта') ?>, <?php the_field('метка_долгота') ?>]" data-placemark-hint="<?php the_title() ?>" data-placemark-text="<?php the_field('адрес') ?>">
                            Показать на карте
                         </a>
                      </div>
@@ -253,7 +253,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 					var form_clink = document.getElementById('template-contactform-submit');
 					form_clink.onclick = function() {				
 					$clinicID = $('.clinicId').attr('data-attr');					
-					ym(39014465, 'reachGoal', $clinicID); return true;	
+					ym(39014465, 'reachGoal', $clinicID); return true;
 				}			
 				
 			</script>
@@ -262,5 +262,4 @@ if (have_posts()) : while (have_posts()) : the_post();
       </section>
 <?php endwhile;
 endif; ?>
-<script defer type="text/javascript" charset="utf-8" id="ymaps-api-loader" src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU&amp;amp;apikey=df578316-6785-45a9-beaa-8c9ad78839de"></script>
 <?php get_footer(); ?>

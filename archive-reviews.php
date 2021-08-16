@@ -13,7 +13,9 @@ $clinic_list = get_posts( array(
 ) );
    ?>
 
+
 <div class="container clearfix">
+
 
    <!-- Post Content
                            ============================================= -->
@@ -145,6 +147,7 @@ $clinic_list = get_posts( array(
                      <div class="col_full hidden">
                         <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control">
                      </div>
+					 <div class="g-recaptcha" data-sitekey="6LdC7PkbAAAAAFzQ5XaCQrF-5nUlHxFXjdvvTZN7"></div>
                      <div class="col_full">
                         <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit" class="button button-3d nomargin bgorange">Оставить отзыв</button>
                      </div>
@@ -173,5 +176,5 @@ $clinic_list = get_posts( array(
 </div><!-- .sidebar end -->
 
 </div>
-
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <?php get_footer(); ?>

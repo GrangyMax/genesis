@@ -10,7 +10,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 ?>
 
 
-<section id="slider" class="slider-element slider-parallax" style="background-color: #F5F5F5;">
+<section id="slider" class="slider-element slider-parallax slider-background">
     <div id="oc-slider" class="owl-carousel carousel-widget" data-margin="0" data-items="1" data-pagi="true"
         data-loop="true" data-animate-in="fadeInRight" data-speed="700" data-animate-out="fadeOutLeft"
         data-autoplay="5000">
@@ -200,14 +200,11 @@ foreach ($sliders as $slider) {
 
 <!-- блок c данными для формирования карты -->  
 
-<script type="text/javascript" charset="utf-8" id="ymaps-api-loader"
-            src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU&amp;amp;apikey=df578316-6785-45a9-beaa-8c9ad78839de">
-        </script>
 <div class="container clearfix">
             <div class="fancy-title title-border title-center ">
                 <h2 class="title-adress-frontend">Адреса наших клиник</h2>
             </div>
-            <section id="contacts-map" class="d-none d-md-block" style="height: 450px; margin-bottom: 3em;">
+              <section id="contacts-map" class="d-none d-md-block" style="height: 450px; margin-bottom: 3em; background-image: url(https://xn----7sbkiambaglcj1ag7d.xn--p1ai/wp-content/uploads/2021/08/Screenshot_17-2.jpg); ">
 
                 <?php
             $query = new WP_Query(array(
@@ -259,7 +256,7 @@ foreach ($sliders as $slider) {
 
                 </div>
                 <div class="container clearfix">
-                    <a href="<?=get_post_type_archive_link('news')?>" class="more-link fright">Все новости &rarr;</a>
+                    <a href="<?=get_post_type_archive_link('news')?>" class="more-link mt-3 fright">Все новости &rarr;</a>
                 </div>
             </div>
 			 <div class="clear"></div>
@@ -347,7 +344,7 @@ foreach ($sliders as $slider) {
                 </div>
             </div>
             <div class="container clearfix">
-                <a href="<?=get_post_type_archive_link('reviews')?>" class="more-link fright">Все отзывы &rarr;</a>
+                <a href="<?=get_post_type_archive_link('reviews')?>" class="more-link mt-3 fright">Все отзывы &rarr;</a>
             </div>
         </div>
 

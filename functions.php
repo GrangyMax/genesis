@@ -43,13 +43,20 @@ function my_scripts_method()
 	wp_enqueue_script('jquery');
 }
 add_action('wp_enqueue_scripts', 'my_scripts_method');
+/*
+подключение рекапчи
+function add_google_recapcha() {
+	wp_enqueue_script( 'recapcha', 'https://www.google.com/recaptcha/api.js');
+}
+add_action( 'wp_enqueue_scripts', 'add_google_recapcha' );
+*/
 function load_style_script()
 {
 	// wp_enqueue_script('scripts.js', get_stylesheet_directory_uri() . '/js/scripts.js', array(), '', true);
 	wp_enqueue_script('plugins.js', get_stylesheet_directory_uri() . '/js/plugins.js', array(), '', true);
 	wp_enqueue_script('datepicker.js', get_stylesheet_directory_uri() . '/js/components/datepicker.js', array(), '', true);		
-	wp_enqueue_script('functions.js', get_stylesheet_directory_uri() . '/js/functions.js', array(), '', true);	
-	wp_enqueue_script('contact-map.js', get_stylesheet_directory_uri() . '/js/contact-map.js', array(), '', true);	
+	wp_enqueue_script('functions.js', get_stylesheet_directory_uri() . '/js/functions.js?v=2', array(), '', true);	
+	wp_enqueue_script('contact-map.js', get_stylesheet_directory_uri() . '/js/contact-map.js?v=2', array(), '', true);	
 	if (is_page('license')) {
 		wp_enqueue_script('license-page.js', get_stylesheet_directory_uri() . '/js/license-page.js', array(), '', true);
 	}
@@ -67,12 +74,13 @@ function load_style_script()
 	wp_enqueue_style('font-icons.css', get_stylesheet_directory_uri() . '/css/font-icons.css');
 	wp_enqueue_style('animate.css', get_stylesheet_directory_uri() . '/css/animate.css');
 	wp_enqueue_style('magnific-popup.css', get_stylesheet_directory_uri() . '/css/magnific-popup.css');
-	wp_enqueue_style('custom.css', get_stylesheet_directory_uri() . '/css/custom.css?v=2');
+	wp_enqueue_style('custom.css', get_stylesheet_directory_uri() . '/css/custom.css?v=23');
 	wp_enqueue_style('responsive.css', get_stylesheet_directory_uri() . '/css/responsive.css?v=23');
 	wp_enqueue_style('fonts.css', get_stylesheet_directory_uri() . '/css/fonts.css');
 	wp_enqueue_style('datepicker.css', get_stylesheet_directory_uri() . '/css/components/datepicker.css');
 	wp_enqueue_style('devtip-block.css', get_stylesheet_directory_uri() . '/css/devtip-block.css');
 	wp_enqueue_style('license-page.css', get_stylesheet_directory_uri() . '/css/license-page.css');
+	
 }
 
 // Загружаем стили и скрипты
