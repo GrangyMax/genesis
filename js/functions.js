@@ -5550,6 +5550,7 @@ let map_loaded = false;
             map_loaded = true;
             map_block.setAttribute('src', 'https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU&amp;amp;apikey=df578316-6785-45a9-beaa-8c9ad78839de');
         }
+		
     }
 
   let options_map = {
@@ -5562,7 +5563,7 @@ let map_klinik_link = document.getElementById('klinik-link-maps');
 //старт функции загрузки карты при наведении на кнопку
 
  if( window.innerWidth < 768 ){     
-	start_lazy_map(); 
+	setTimeout(start_lazy_map, 3500);		
  } 
 
 map_klinik_link.addEventListener('mouseover', start_lazy_map, options_map);
@@ -5572,10 +5573,12 @@ map_klinik_link.addEventListener('mouseover', start_lazy_map, options_map);
   $(document).ready(() => {
     if (!window.ymaps) {
       $("#ymaps-api-loader").on("load", (e) => {
-        createMapOnLoad();
+			
+		        createMapOnLoad();
       });
     } else {
       createMapOnLoad();
+	 
     }
   });
 
