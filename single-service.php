@@ -213,7 +213,7 @@ span.wpcf7-not-valid-tip {
 							   
 									<div class="service_contact_block">
 										<div class="service_button_contacts">
-										<a onclick="showModalBy(this)" class="contacts-usluga" data-placemark-coord="[<?php the_field('метка_широта', $clinic->ID) ?>, 
+										<a onclick="showModalBy(this)" id="klinik-link-maps" class="contacts-usluga" data-placemark-coord="[<?php the_field('метка_широта', $clinic->ID) ?>, 
 										   <?php the_field('метка_долгота', $clinic->ID) ?>]"
 										   data-placemark-hint="<?php the_field('адрес', $clinic->ID ) ?>"
 										   data-placemark-text="<?php the_field('адрес', $clinic->ID ) ?>"
@@ -311,5 +311,4 @@ span.wpcf7-not-valid-tip {
 
       </section>
       <?php endwhile; endif; ?>
-	  <script defer type="text/javascript" charset="utf-8" id="ymaps-api-loader" src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU&amp;amp;apikey=df578316-6785-45a9-beaa-8c9ad78839de"></script>
 <?php get_footer(); ?>

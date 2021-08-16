@@ -130,7 +130,7 @@
                               <td><a href="<?= $link ?>"><?= $title ?></a></td>
                               <td><?php the_field('адрес', $clinic->ID) ?></td>
                               <td>
-                                 <a onclick="showModalBy(this)" class="contacts-usluga noborder" data-placemark-coord="[<?php the_field('метка_широта', $clinic->ID) ?>, <?php the_field('метка_долгота', $clinic->ID) ?>]" data-placemark-hint="<?php the_field('адрес', $clinic->ID) ?>" data-placemark-text="<?php the_field('адрес', $clinic->ID) ?>" data-schedule="<?php the_field('график_работы', $clinic->ID) ?>" data-address="<?php the_field('адрес', $clinic->ID) ?>" data-phones="<?php
+                                 <a onclick="showModalBy(this)" class="contacts-usluga noborder" id="klinik-link-maps" data-placemark-coord="[<?php the_field('метка_широта', $clinic->ID) ?>, <?php the_field('метка_долгота', $clinic->ID) ?>]" data-placemark-hint="<?php the_field('адрес', $clinic->ID) ?>" data-placemark-text="<?php the_field('адрес', $clinic->ID) ?>" data-schedule="<?php the_field('график_работы', $clinic->ID) ?>" data-address="<?php the_field('адрес', $clinic->ID) ?>" data-phones="<?php
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        $phones = [];
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        foreach (get_field('номера_телефонов', $clinic->ID) as $key => $value) $phones[] = $value['номер_телефона'];
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        echo implode(', ', $phones);
@@ -188,6 +188,5 @@
       </section>
 <?php endwhile;
 endif; ?>
-	  <script defer type="text/javascript" charset="utf-8" id="ymaps-api-loader" src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU&amp;amp;apikey=df578316-6785-45a9-beaa-8c9ad78839de"></script>
 
 <?php get_footer(); ?>

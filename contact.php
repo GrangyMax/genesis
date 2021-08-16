@@ -18,11 +18,10 @@ get_template_part('parts/breadcrumbs'); ?>
       position: relative;
    }
 </style>
-<script defer type="text/javascript" charset="utf-8" id="ymaps-api-loader" src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU&amp;amp;apikey=df578316-6785-45a9-beaa-8c9ad78839de"></script>
 <section id="content" style="margin-bottom: 0px;">
    <div class="content-wrap mobile-usluga contact__1" style="padding-top: 15px;">
       <div class="container clearfix">
-         <section id="contacts-map" class="d-none d-md-block" style="height: 450px; margin-bottom: 3em;">
+          <section id="contacts-map" class="d-none d-md-block" style="height: 450px; margin-bottom: 3em; background-image: url(/wp-content/uploads/2021/08/Screenshot_17-2.jpg); ">
             <!-- карта -->
          </section>
          <!-- Post Content

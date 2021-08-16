@@ -200,14 +200,11 @@ foreach ($sliders as $slider) {
 
 <!-- блок c данными для формирования карты -->  
 
-<script type="text/javascript" charset="utf-8" id="ymaps-api-loader"
-            src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU&amp;amp;apikey=df578316-6785-45a9-beaa-8c9ad78839de">
-        </script>
 <div class="container clearfix">
             <div class="fancy-title title-border title-center ">
                 <h2 class="title-adress-frontend">Адреса наших клиник</h2>
             </div>
-            <section id="contacts-map" class="d-none d-md-block" style="height: 450px; margin-bottom: 3em;">
+              <section id="contacts-map" class="d-none d-md-block" style="height: 450px; margin-bottom: 3em; background-image: url(https://xn----7sbkiambaglcj1ag7d.xn--p1ai/wp-content/uploads/2021/08/Screenshot_17-2.jpg); ">
 
                 <?php
             $query = new WP_Query(array(

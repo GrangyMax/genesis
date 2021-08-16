@@ -3,15 +3,45 @@
  */
 
 $(document).ready(() => {
-    if (!window.ymaps) {
-        $('#ymaps-api-loader').on('load', e => {
-            createMapOnLoad();
-        });
-    } else {
-        createMapOnLoad();
-    }
+	
+	let map_container = document.getElementById('contacts-map'); // объявляем переменную
+	
+	//не знаю зачем, так было в примере
+    let options_map = {
+        once: true,//запуск один раз, и удаление наблюдателя сразу
+        passive: true,
+        capture: true
+    };	
+	
+	//при наведении запускаем функцию загрузки карты, добавляется атрибут src к скрипту
+	map_container.addEventListener('mouseover', start_lazy_map, options_map);  
+
+	//функция загрузки карты
+	let map_loaded = false;
+    function start_lazy_map() {
+		
+        if (!map_loaded) {
+            let map_block = document.getElementById('ymaps-api-loader');			
+            map_loaded = true;
+            map_block.setAttribute('src', 'https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU&amp;amp;apikey=df578316-6785-45a9-beaa-8c9ad78839de');
+        }
+		console.log('API карты загружен');
+    }	
+		
+	//если карта загрузилась, тогда запускаем функцию формирования карты	
+	  if (!window.ymaps) {
+		  $("#ymaps-api-loader").on("load", (e) => {
+			createMapOnLoad();
+		  });
+		} else {
+		  createMapOnLoad();
+		}
 
     function createMapOnLoad() {
+	
+	//убираем бутафорский беграунд, вместо него формируем настояшую карту
+	map_container.style.background="0";		
+	console.log('карта сформирована');
 
         //Настройки карты
         const settings = {

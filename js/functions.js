@@ -5541,6 +5541,34 @@ if (true || window.location.pathname.match(/^\/(service|klinika)\//)) {
     throw new Error("YMaps loading error");
   };
 
+//функция загрузки API карты
+let map_loaded = false;
+    function start_lazy_map() {
+		console.log('API карты загружен');
+        if (!map_loaded) {
+            let map_block = document.getElementById('ymaps-api-loader');			
+            map_loaded = true;
+            map_block.setAttribute('src', 'https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru-RU&amp;amp;apikey=df578316-6785-45a9-beaa-8c9ad78839de');
+        }
+    }
+
+  let options_map = {
+        once: true,//запуск один раз, и удаление наблюдателя сразу
+        passive: true,
+        capture: true
+    };	
+		
+let map_klinik_link = document.getElementById('klinik-link-maps');
+//старт функции загрузки карты при наведении на кнопку
+
+ if( window.innerWidth < 768 ){     
+	start_lazy_map(); 
+ } 
+
+map_klinik_link.addEventListener('mouseover', start_lazy_map, options_map);
+
+
+//функция формирования карты, после того, как она будет загружена
   $(document).ready(() => {
     if (!window.ymaps) {
       $("#ymaps-api-loader").on("load", (e) => {
@@ -5552,10 +5580,11 @@ if (true || window.location.pathname.match(/^\/(service|klinika)\//)) {
   });
 
   function createMapOnLoad() {
+	  console.log('Карта сформирована');
     let placemarkWrapper, placemarkConfig;
 
     const placemark = {
-      imageSrc: "http://migrate.genesis82.ru/wp-content/uploads/2020/11/clinic-logo.png",
+      imageSrc: "/wp-content/uploads/2020/11/clinic-logo.png",
       imageSize: 40,
     };
 
