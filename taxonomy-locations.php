@@ -14,25 +14,18 @@ if(!$thumb)$thumb = false;
                 
                                     <!-- Post Content
                                     ============================================= -->
-                                    <div class="postcontent nobottommargin clearfix mt-0" style="width: 100%;">
+                                    <div class="postcontent nobottommargin clearfix mt-0 p-3" style="width: 100%; background-color: #f1f1f1; border: 1px solid #e5e5e5">
                 
                                         <div class="single-post nobottommargin">
                 
                                             <!-- Single Post
                                             ============================================= -->
-                                            <div class="entry">
-                
-                                                <!-- Entry Title
-                                                ============================================= -->
+                                            <div class="entry">               
                                              
-                                                  <h2><?php the_title(); ?></h2>
-                                             
-                                                       
-                
+                                                <h2><?php the_title(); ?></h2>                
                                                 <!-- Entry Content
                                                 ============================================= -->
-                                                <div class="entry-content">
-                
+                                                <div class="entry-content">                
                                                     <!-- Entry Image
                                                     ============================================= -->
                                                     <?php if($thumb){ ?>
@@ -41,75 +34,56 @@ if(!$thumb)$thumb = false;
                                                         </div>
                                                     <?php } ?>
                                                    <!-- .entry-image end -->
-                                                     <p><?php the_excerpt(); ?>
-														<br>
-															<?php get_the_excerpt();?>
-														</p>
-														<a href="<?=get_permalink()?>" class="more-link">Перейти</a>
-														
-														
-							
-                                                    <!-- Post Single - Content End -->
-                                             
-                                                    <!-- Tag Cloud
-                                                    ============================================= -->
+														<p class="p-3 m-2"><?php the_excerpt(); ?>	</p>	
+														<a href="<?=get_permalink()?>" class="more-link p-2">Перейти</a>	
                                                 </div>
 												
                                             </div><!-- .entry end -->
-												
-		 <div class="pricing-box pricing-extended bottommargin clearfix">
-                  <!-- clinic.description -->
-                  <div class="pricing-desc">
-                  
-                     <div class="pricing-features">
-                        <div class="container clearfix pb-0 pt-4 p-0">
-                           <div class="col_half">
-                              <div class="feature-box fbox-plain">
-                                 <div class="fbox-icon">
-                                    <a><i class="icon-calendar21"></i></a>
-                                 </div>
-                                 <h3>График работы:</h3>
-                                 <p><?php the_field('график_работы', $clinic->ID); ?></p>
-                              </div>
-                           </div>
-                           <div class="col_half col_last">
-                              <div class="feature-box fbox-plain">
-                                 <div class="fbox-icon">
-                                    <a><i class="icon-location"></i></a>
-                                 </div>
-                                 <h3>Адрес:</h3>
-                                 <p><?php the_field('адрес'); ?></p>
-                              </div>
-                           </div>
+											
+											 <div class="pricing-box pricing-extended clearfix pb-2">
+													  <!-- clinic.description -->
+													  <div class="pricing-desc">
+													  
+														 <div class="pricing-features">
+															<div class="container clearfix pb-0 pt-4 p-0">
+															   <div class="col_half">
+																  <div class="feature-box fbox-plain">
+																	 <div class="fbox-icon">
+																		<a><i class="icon-calendar21"></i></a>
+																	 </div>
+																	 <h3>График работы:</h3>
+																	 <p><?php the_field('график_работы', $clinic->ID); ?></p>
+																  </div>
+															   </div>
+															   <div class="col_half col_last">
+																  <div class="feature-box fbox-plain">
+																	 <div class="fbox-icon">
+																		<a><i class="icon-location"></i></a>
+																	 </div>
+																	 <h3>Адрес:</h3>
+																	 <p><?php the_field('адрес'); ?></p>
+																  </div>
+															   </div>
 
-                        </div>
-                     </div>
-                  </div>
-                  <!-- clinic.phones -->
-                  <div class="pricing-action-area">
-                     <div class="col-12">
-                        
-                           <h4>Номера телефонов:</h4>
-                        
-                        <div class="phones__contact_tahonomy">
-                           <?php foreach (get_field('номера_телефонов', $clinic->ID) as $key => $value) { ?>
-                              <a href="tel:<?php echo $value['номер_телефона'] ?>"><?php echo $value['номер_телефона'] ?></a> <br>
-                           <?php } ?>
-                        </div>
-
-                     </div>
-                     <div class="pricing-action phones__contact2">
-                        <a href="<?php the_permalink($clinic->ID); ?>" class="button-xlarge btn-block nomargin bgorange page-clinic-button">Страница клиники</a>
-                     </div>
-                  </div>
-               </div>
-						                                            <!-- Post Navigation
-                                            ============================================= -->
-               
-                                            <!-- Post Author Info
-                                  ============================================= -->
-                      <HR>    
-                                        </div>
+															</div>
+														 </div>
+													  </div>
+													  <!-- clinic.phones -->
+													  <div class="pricing-action-area">
+														 <div class="col-12">                        
+															   <h4>Номера телефонов:</h4>                        
+															<div class="phones__contact_tahonomy">
+															   <?php foreach (get_field('номера_телефонов', $clinic->ID) as $key => $value) { ?>
+																  <a href="tel:<?php echo $value['номер_телефона'] ?>"><?php echo $value['номер_телефона'] ?></a> <br>
+															   <?php } ?>
+															</div>
+														 </div>
+														 <div class="pricing-action phones__contact2 pt-2 mb-2">
+															<a href="<?php the_permalink($clinic->ID); ?>" class="button-xlarge btn-block nomargin bgorange page-clinic-button">Страница клиники</a>
+														 </div>
+													  </div>
+												</div>					
+						</div>
                 
                                     </div><!-- .postcontent end -->
                 
