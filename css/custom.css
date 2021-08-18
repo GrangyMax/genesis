@@ -2681,3 +2681,42 @@ a.nav-link {
 		content: "Задать вопрос";	
 	}
 }
+
+
+/* ================= карусель отзывов и новостей на главной============*/
+
+.frontpage-img-news{
+	border-radius: 4px;	
+	height: 250px;
+}
+.front-page-news-title h3, .reviews-title h3{
+	color: #000;
+	font-size: 15px;
+	text-align: Left;
+	font-weight: Bold;
+	padding: 0px;
+	margin: 0px;
+}
+
+.frontpage-date-news span, .frontpage-reviews-date span{
+	color: #a5a4ae;
+	font-size: 12px;
+	text-align: left;
+	font-weight: normal;
+}
+
+.review_contaoner{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.review-image{
+	margin-right: 10px; 
+}
+
+.review-image img{
+	border-radius: 50%;
+	width: 80px; 
+	height: 80px;	
+}
