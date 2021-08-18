@@ -9,7 +9,6 @@ get_header();
 if (have_posts()) : while (have_posts()) : the_post();
 ?>
 
-
 <section id="slider" class="slider-element slider-parallax slider-background">
     <div id="oc-slider" class="owl-carousel carousel-widget" data-margin="0" data-items="1" data-pagi="true"
         data-loop="true" data-animate-in="fadeInRight" data-speed="700" data-animate-out="fadeOutLeft"
@@ -251,8 +250,73 @@ foreach ($sliders as $slider) {
                 <div class="container ">
                     <div class="fancy-title title-border title-center">
                         <h2>Последние новости</h2>
-                    </div>
-                    <?php echo do_shortcode('[ocpc-post-carousel id=39963]'); ?>
+                    </div>	
+					
+                    <?php/* echo do_shortcode('[ocpc-post-carousel id=39963]'); */?>
+					
+					    <?php
+							$news_list = get_posts( array(
+								'post_type'   => 'news',
+								'showposts' => 10,
+								'orderby'     => 'date',
+								'order'       => 'DESC',								
+								));
+						?>
+				<!--================================== карусель с новостями =============================================== -->
+					<div id="oc-portfolio" class="owl-carousel portfolio-carousel carousel-widget owl-loaded owl-drag"
+							data-margin="0" data-nav="true" data-pagi="true" data-margin="20" data-items-xs="1" data-items-sm="1"
+							data-items-lg="2" data-items-xl="3">
+							<div class="owl-stage-outer">
+									<div class="owl-stage" style="transform: translate3d(-475px, 0px, 0px); transition: all 0.25s ease 0s; width: 3800px;">
+						
+									<?php foreach ($news_list as $news_item) {
+											$news_img = get_the_post_thumbnail_url($news_item);	
+											$news_title = get_the_title($news_item); 
+											$news_link = get_permalink($news_item);  
+											$news_date = get_the_date('j F, Y', $news_item); 
+											$news_excerpt = wp_trim_words(get_the_excerpt($news_item), 20, '...' );
+									?>
+											
+										<div class="owl-item">
+												<div class="oc-item">
+													<div class="iportfolio p-1 m-1">
+														
+															<div class="portfolio-image">
+																<a href="<?php echo $news_link;  ?>" class="d-inline-block">
+																<img width="1200" class= "wp-post-image frontpage-img-news" loading="lazy"
+																	src="<?php echo $news_img; ?>">
+																</a>	
+															</div>	
+
+														<div class="pb-1 pt-1">
+															<div class="portfolio-title front-page-news-title">
+																<a href="<?php echo $news_link;  ?>">
+																	<h3>
+																		<?php echo $news_title; ?>
+																	</h3>
+																</a>
+															</div>	
+															
+															<div class="portfolio-date frontpage-date-news">
+																<span>
+																	<?php echo $news_date; ?>
+																</span>
+															</div>
+															
+															<div class="portfolio-desc">
+																<blockquote>
+																	<?php echo $news_excerpt; ?>
+																</blockquote>
+															</div>															
+														</div>														
+													</div>
+												</div>
+										</div>      
+										<?php  } ?>
+									
+								 </div>
+						</div>
+				<!--================================== карусель с новостями  конец =============================================== -->
 
                 </div>
                 <div class="container clearfix">
@@ -340,7 +404,80 @@ foreach ($sliders as $slider) {
                     <div class="fancy-title title-border title-center">
                         <h2>Отзывы пациентов</h2>
                     </div>
-                    <?php echo do_shortcode('[ocpc-post-carousel id=39964]'); ?>
+                   
+				   <!--================================== карусель с отзывами =============================================== -->
+					<div id="oc-portfolio" class="owl-carousel portfolio-carousel carousel-widget owl-loaded owl-drag"
+							data-margin="0" data-nav="true" data-pagi="true" data-margin="20" data-items-xs="1" data-items-sm="1"
+							data-items-lg="2" data-items-xl="3">
+							<div class="owl-stage-outer">
+									<div class="owl-stage" style="transform: translate3d(-475px, 0px, 0px); transition: all 0.25s ease 0s; width: 3800px;">
+								<?php
+									$reviews_list = get_posts( array(
+										'post_type'   => 'reviews',
+										'showposts' => 10,
+										'orderby'     => 'date',
+										'order'       => 'DESC',								
+										));
+									foreach ($reviews_list as $rewiew_item) {
+											$reviews_link = get_permalink($rewiew_item);
+											$reviews_img = get_the_post_thumbnail_url($rewiew_item);
+											if (!$reviews_img){$reviews_img = null;}
+											$reviews_title = get_the_title($rewiew_item); 
+											$reviews_date = get_the_date('j F, Y', $rewiew_item);
+											$reviews_excerpt = wp_trim_words(get_the_excerpt($rewiew_item), 18, '...' );
+											
+										?>	
+									
+										<div class="owl-item">
+												<div class="oc-item">
+													<div class="iportfolio p-1 m-1">																												
+
+														<div class="review_contaoner pb-1 pt-1">
+															<div class="review-image">															
+																<?php if($reviews_img){ ?>
+																	<a href="<?php echo $reviews_link; ?>" class="d-inline-block">																
+																		<img class= "wp-post-image" loading="lazy" src="<?php echo  $reviews_img; ?>">																																				
+																	</a>	
+																<?php } ?>															
+															</div>														
+														
+															<div class="meta_data">														
+																<div class="reviews-title">
+																	<a href="<?php echo $reviews_link; ?>">
+																		<h3>
+																			<?php echo $reviews_title;  ?>
+																		</h3>
+																	</a>
+																</div>	
+																
+																<div class="frontpage-reviews-date">
+																	<span>
+																		<?php echo $reviews_date; ?>
+																	</span>
+																</div>															
+															</div>
+															
+														</div>	
+
+															<div class="reviews-desc">
+																<blockquote>
+																	<em><p>
+																	<?php echo $reviews_excerpt;  ?>
+																		</p>
+																	</em>
+																</blockquote>
+															</div>
+
+														
+													</div>
+												</div>
+										</div>      
+										<?php  } ?>
+									
+								 </div>
+						</div>
+				<!--================================== карусель с отзывами  конец =============================================== -->
+				   				  				   
                 </div>
             </div>
             <div class="container clearfix">
