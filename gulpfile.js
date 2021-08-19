@@ -22,3 +22,12 @@ gulp.task('minify-js', function() {
     .pipe(gulp.dest('1/plugins'))
 });
 
+
+//объединение файлов
+var concat = require('gulp-concat');
+ 
+gulp.task('summary', function() {
+  return gulp.src('dist/js/*.js')
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('summary/'));
+});
