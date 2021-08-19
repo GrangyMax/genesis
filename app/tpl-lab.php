@@ -3,10 +3,8 @@
 get_header();
 $title=get_the_title();
 set_query_var('title', $title );
-//$subtitle="Цены, размещённые на сайте, не являются публичной офертой. <br>Уточняйте стоимость у администратора или в контакт-центре.";
 $subtitle=get_the_content();
 set_query_var('subtitle', $subtitle );
-
 ?>
  		
 <?php  get_template_part('parts/breadcrumbs'); ?> 
@@ -17,14 +15,9 @@ set_query_var('subtitle', $subtitle );
 
                 <div class="container mt-0 p-0">
 
-                    <section>
-                        <!-- <div class="fancy-title title-border title-center mt-3">
-                            <h2>Услуги лаборатории</h2>
-                        </div> -->
-
+                    <section>   
                         <div class="lab-tabs tabs side-tabs tabs-bordered clearfix ui-tabs ui-corner-all ui-widget ui-widget-content"
-                            id="tab-5">
-							
+                            id="tab-5">						
 							
                             <input class="js-search-block-lab form-control form-control-lg p-4 mb-4" type="text"
                                 placeholder="Поиск анализа" />
@@ -62,13 +55,12 @@ set_query_var('subtitle', $subtitle );
 												<?php
 													$postID = 52143;
 													$args = array(
-													'p' => $postID, // ID поста
-													'post_type' => 'page'
-													);
+														'p' => $postID, // ID поста
+														'post_type' => 'page'
+														);
 													$recent = new WP_Query($args);
 													while ( $recent->have_posts() ) : $recent->the_post();											
-													the_content(); 									
-											
+														the_content(); 	
 													endwhile; ?>
 											</div>	
 										</div>											
@@ -153,8 +145,6 @@ set_query_var('subtitle', $subtitle );
                                                         <i class="block-title-lab"></i>
                                                         <?php echo get_the_title($analiz->ID); ?>
                                                     </h3>
-													
-													
 											
                                                 </div>
                                                 <p class="mb-2 block-short-lab"><?php echo get_the_excerpt($analiz->ID); ?>
