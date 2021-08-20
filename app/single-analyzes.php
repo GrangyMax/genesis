@@ -174,9 +174,16 @@ get_template_part('parts/breadcrumbs'); ?>
                </section>
 			   		<div class="divider"><i class="icon-circle" style="font-size: 12px; "></i></div>					
 					<div class="analis_price_klinic">	
-						<?php $biomaterial = get_field("Биоматериал_bio_check", get_the_ID());
-						$SamplingCost = get_field("Биоматериал_BloodSamplingCost", get_the_ID());?> 												
-						* Стоимость забора биоматерила (<?php  echo $biomaterial; ?>) составляет - <strong><?php  echo format_price($SamplingCost); ?></strong>	
+						<?php $biomaterial = get_field("Биоматериал_bio_check", get_the_ID());						
+						$SamplingCost = get_field("Биоматериал_BloodSamplingCost", get_the_ID());
+						 if ($biomaterial <> 1) // если равно 1 - значит берет самостоятельно и выводить инфу не надо. 
+						 {?>
+							* Стоимость забора биоматерила <?php if($biomaterial){  echo "(".$biomaterial.")"; } ?> составляет - <strong><?php  echo format_price($SamplingCost); ?></strong> 
+						
+						<?php  } ?>	
+						
+							
+						
 						<p>* Предварительная запись не требуется. 
 					Анализы можно сдать в порядке живой очереди.</p> 
 					</div>				   
