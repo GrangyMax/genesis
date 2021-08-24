@@ -1,15 +1,12 @@
 <?php get_header(); 
 if (have_posts()) : while (have_posts()) : the_post();
 $price = get_post_meta(get_the_ID(), 'price', 1);
+
 set_query_var('title', get_the_title() );
-if ($price)
-		{if(!stristr($price, '₽')){
-				$price='от ' . $price .' &#8381;'; /*добавляем приставку "от" и значек рубля, если цена больше нуля и значек рубля не в вставляли в админку*/				
-		}
-	}
+
 /*set_query_var('subtitle',  $price?$price.'&#8381;':''  );*/
 
-set_query_var('subtitle',  $price); 
+set_query_var('subtitle',  format_price($price)); 
 get_template_part('parts/breadcrumbs'); ?>
 
       <section id="content" style="margin-bottom: 0px;">
@@ -129,12 +126,13 @@ get_template_part('parts/breadcrumbs'); ?>
 									
 									//ЦЕНЫ НА АНАЛИЗЫ
 									 $analis_list =  get_field('анализы', $clinic->ID); // получаем поле с анализами и ценами для клиники из списка (клиника в которой есть анализы в принципе)
+									
 										foreach($analis_list as $key => $analis_item) // имеем дело с  двумя сущностями. 1 - объект анализа (тип post), 2 - цену анализа
 													{								
 											if($analis_item["анализы"]->ID == get_the_ID()){		//если id объекта совпадает с текущим, выводим название и цену																							
 																																																  
 												$cost_analis=format_price($analis_item["цена_анализа"]); 
-												$blood_sampling_cost = format_price($analis_item["цена_забора_крови"]); 
+												
 												//$sum_analis = $cost_analis + $blood_sampling_cost;
 											}																		
 										} 
@@ -174,12 +172,55 @@ get_template_part('parts/breadcrumbs'); ?>
                      <? } ?>
                   </div>
                </section>
-			   		<div class="divider"><i class="icon-circle" style="font-size: 12px; "></i></div>
+			   		<div class="divider"><i class="icon-circle" style="font-size: 12px; "></i></div>	
+						
 					<div class="analis_price_klinic">	
-						* Стоимость забора крови составляет - <strong><?php  echo $blood_sampling_cost; ?></strong>	
-						<p>* Предварительная запись не требуется. 
-					Анализы можно сдать в порядке живой очереди.</p> 
-					</div>				   
+					<!--
+						<?php $biomaterial = get_field("Биоматериал_bio_check", get_the_ID());						
+						$SamplingCost = get_field("Биоматериал_BloodSamplingCost", get_the_ID());
+						 if ($biomaterial <> 1) // если равно 1 - значит берет самостоятельно и выводить инфу не надо. 
+						 {?>
+							* Стоимость забора биоматерила <?php if($biomaterial){  echo "(".$biomaterial.")"; } ?> -  <strong><?php  echo format_price($SamplingCost); ?></strong> 
+						
+						<?php  } ?>	
+						
+						-->							
+						<a data-toggle="modal" data-target=".biomaterial-modal" style="cursor: pointer;">* Стоимость забора биоматерила</a>
+						
+								<div class="modal fade biomaterial-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+									  <div class="modal-dialog modal-lg">
+									 
+										<div class="modal-content">	
+										  <div class="modal-header">
+											<h4 class="modal-title" id="myLargeModalLabel" style="text-align: center;">Стоимость забора биоматерила</h4>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											  <span aria-hidden="true">×</span>
+											</button>
+										  </div>										  
+										  
+										<div class="modal-body">										
+											<div style="padding: 15px 15px 15px 30px;">												
+												
+												<?php
+													$postID = 54012;
+													$args = array(
+														'p' => $postID, // ID поста
+														'post_type' => 'page'
+														);
+													$recent = new WP_Query($args);
+													while ( $recent->have_posts() ) : $recent->the_post();											
+														the_content(); 	
+													endwhile; ?>
+											</div>	
+										</div>											
+										</div>
+									  </div>
+									</div>
+									
+						
+					</div>	
+					<p>* Предварительная запись не требуется. 
+					Анализы можно сдать в порядке живой очереди.</p> 					
 	            </div>
          </div>
       </section>

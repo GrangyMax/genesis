@@ -2715,7 +2715,7 @@ a.nav-link {
 	margin-right: 10px; 
 }
 
-.review-image img{
+.review_contaoner .review-image img.wp-post-image{
 	border-radius: 50%;
 	width: 80px; 
 	height: 80px;	

@@ -156,10 +156,11 @@ if (have_posts()) : while (have_posts()) : the_post();
 										if($value['услуга']->post_status == 'publish')// отображать только те услуги, которые опубликованы
 										{
 										   $title = $value['услуга']->post_title;
-										   $price = $value['цена_новая'];
+										   $price = $value['цена_новая'];										  
+										   $price_repeat = $value['повторный_прием'];
 										   $link = get_permalink($value['услуга']->ID);
 										   $link .= '?from=' . get_the_ID();
-										   echo service_row($title, $price, $link);
+										   echo service_row($title, $price, $price_repeat, $link);
 										}
                                     }
                                     echo service_list_end();

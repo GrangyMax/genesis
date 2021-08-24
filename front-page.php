@@ -71,42 +71,44 @@ foreach ($sliders as $slider) {
                 <h2>Направления</h2>
             </div>
 
-            <div id="oc-portfolio" class="owl-carousel portfolio-carousel carousel-widget owl-loaded owl-drag"
-                data-margin="0" data-nav="true" data-pagi="true" data-margin="20" data-items-xs="2" data-items-sm="3"
-                data-items-lg="5" data-items-xl="6">
-                <div class="owl-stage-outer">
-                        <div class="owl-stage" style="transform: translate3d(-475px, 0px, 0px); transition: all 0.25s ease 0s; width: 3800px;">
-            
-                        <?php foreach ($p_directions as $p_direction) {
-                            $p_direction_img = get_the_post_thumbnail_url($p_direction);	
-                            $p_direction_title = $p_direction->post_title; 
-                            $link_direction = get_field('link_direction', $p_direction);     
-                        ?>
-                                
-                            <div class="owl-item" style="width: 92px !important; margin-right: 20px;">
-                                    <div class="oc-item">
-                                        <div class="iportfolio">
-                                            <a href="<?php echo $link_direction ?>"
-                                                target="blank">
-                                                <div class="portfolio-image">
-                                                    <img loading="lazy"
-                                                        src="<?php echo $p_direction_img; ?> "
-                                                        style="width: auto; height: 120px; margin: 0 auto;">
-                                                </div>
-                                                <div class="portfolio-desc">
-                                                    <h3 style="text-align: center;">
-                                                    <?php echo $p_direction_title; ?>
-                                                    </h3>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                            </div>      
-                            <?php  } ?>
-                        </div>
-                     </div>
+		
+				<div id="oc-portfolio" class="owl-carousel portfolio-carousel carousel-widget owl-loaded owl-drag"
+					data-margin="0" data-nav="true" data-pagi="true" data-margin="20" data-items-xs="2" data-items-sm="3"
+					data-items-lg="5" data-items-xl="6">
+					<div class="owl-stage-outer">
+							<div class="owl-stage" style="transform: translate3d(-475px, 0px, 0px); transition: all 0.25s ease 0s; width: 3800px;">
+				
+							<?php foreach ($p_directions as $p_direction) {
+								$p_direction_img = get_the_post_thumbnail_url($p_direction);	
+								$p_direction_title = $p_direction->post_title; 
+								$link_direction = get_field('link_direction', $p_direction);     
+							?>
+									
+								<div class="owl-item" style="width: 92px !important; margin-right: 20px;">
+										<div class="oc-item">
+											<div class="iportfolio">
+												<a href="<?php echo $link_direction ?>"
+													target="blank">
+													<div class="portfolio-image">
+														<img loading="lazy"
+															src="<?php echo $p_direction_img; ?> "
+															style="width: auto; height: 120px; margin: 0 auto;">
+													</div>
+													<div class="portfolio-desc">
+														<h3 style="text-align: center;">
+														<?php echo $p_direction_title; ?>
+														</h3>
+													</div>
+												</a>
+											</div>
+										</div>
+								</div>      
+								<?php  } ?>
+							</div>
+						 </div>
 
-            </div>
+				</div>
+		
           
             <div class="owl-dots disabled"></div>
             </div>
@@ -118,7 +120,7 @@ foreach ($sliders as $slider) {
             <div class="blocks">
                 <input class="js-search-block form-control form-control-lg p-4 mb-4" type="text"
                     placeholder="Поиск услуги" />
-		<!-- Первичный и повторный прием
+	
                 <div class="row container legend-row">
                     <div class="legend-row__block">
                         <div class="legend-row__first-visit-icon">
@@ -136,7 +138,7 @@ foreach ($sliders as $slider) {
 						</div>
                     </div>
                 </div>
-		-->
+		
                 <?php 
                         $directions = get_posts(array(
                             'post_type' => 'direction', 
@@ -181,9 +183,9 @@ foreach ($sliders as $slider) {
                                             foreach ($services as $service) {
                                                 $title = get_the_title($service->ID);
                                                 $price = get_post_meta($service->ID, 'price', 1);
-												//$price_repeat = 145; 
+												$price_repeat = get_post_meta($service->ID, 'price_repeat', 1);
                                                 $link = get_permalink($service->ID);
-                                                echo service_row($title, $price, $link);
+                                                echo service_row($title, $price, $price_repeat, $link );
                                             }
                                             echo service_list_end();
                                         ?>

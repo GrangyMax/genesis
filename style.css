@@ -12649,6 +12649,10 @@ blockquote.float-right {
 	-webkit-transform-style: preserve-3d;
 }
 
+.front-page .owl-carousel .owl-item img {
+
+}
+
 .owl-carousel{
 	display: block;
 	width: 100%;
@@ -12861,6 +12865,10 @@ blockquote.float-right {
 	-webkit-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
+}
+
+.front-page .owl-carousel .owl-nav [class*='owl-'] {
+	top: 25% !important;
 }
 
 .owl-carousel.with-carousel-dots .owl-nav [class*='owl-'] {

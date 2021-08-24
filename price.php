@@ -62,8 +62,9 @@ include_once 'parts/service-search-block.php';?>
                                             foreach ($services as $service) {
                                                 $title = get_the_title($service->ID);
                                                 $price = get_post_meta($service->ID, 'price', 1);
+												$price_repeat =  get_post_meta($service->ID, 'price_repeat', 1);
                                                 $link = get_permalink($service->ID);
-                                                echo service_row($title, $price, $link);
+                                                echo service_row($title, $price,  $price_repeat, $link);
                                             }
                                             echo service_list_end();
                                         ?>

@@ -5,7 +5,7 @@ function service_list_start() {
     <tr><th>Название услуги</th><th>Цена</th></tr>
 HTML;
 }
-function service_row($title, $price, $link) {
+function service_row($title, $price, $price_repeat, $link) {
   $formated_price = format_price($price);
   return <<<HTML
 
@@ -14,8 +14,12 @@ function service_row($title, $price, $link) {
         <li>{$title}</li>
       </div>
       <div class="col-lg-3">
-        Цена:
+        Первичный прием:
         <i class="price-usluga-single">{$formated_price}</i>
+      </div>
+	  <div class="col-lg-3">
+        Повторный прием:
+        <i class="price-usluga-single">{$price_repeat}</i>
       </div>
     </a>
 
