@@ -172,7 +172,8 @@ get_template_part('parts/breadcrumbs'); ?>
                      <? } ?>
                   </div>
                </section>
-			   		<div class="divider"><i class="icon-circle" style="font-size: 12px; "></i></div>					
+			   		<div class="divider"><i class="icon-circle" style="font-size: 12px; "></i></div>	
+						
 					<div class="analis_price_klinic">	
 					<!--
 						<?php $biomaterial = get_field("Биоматериал_bio_check", get_the_ID());						
@@ -216,9 +217,10 @@ get_template_part('parts/breadcrumbs'); ?>
 									  </div>
 									</div>
 									
-						<p>* Предварительная запись не требуется. 
-					Анализы можно сдать в порядке живой очереди.</p> 
-					</div>				   
+						
+					</div>	
+					<p>* Предварительная запись не требуется. 
+					Анализы можно сдать в порядке живой очереди.</p> 					
 	            </div>
          </div>
       </section>

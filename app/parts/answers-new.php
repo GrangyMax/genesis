@@ -46,7 +46,7 @@ if ($q['name'] && $q['email'] && $q['question']) {
 }    
 ?>
 <?php if (!$answer_id) { ?>
-<form class="nobottommargin" id="template-contactform" name="template-contactform" action="<?=site_url().'/answers/'?>" method="POST" novalidate="novalidate">
+<form class="nobottommargin" id="template-contactform" name="template-contactform" action="<?=site_url().'/answers/'?>" method="POST"" method="post" novalidate="novalidate">
     <div class="form-process"></div>
     <?php /*<div class="form-group ">
         <select name="question[type]" id="inputState " class="form-control valid">
