@@ -174,16 +174,48 @@ get_template_part('parts/breadcrumbs'); ?>
                </section>
 			   		<div class="divider"><i class="icon-circle" style="font-size: 12px; "></i></div>					
 					<div class="analis_price_klinic">	
+					<!--
 						<?php $biomaterial = get_field("Биоматериал_bio_check", get_the_ID());						
 						$SamplingCost = get_field("Биоматериал_BloodSamplingCost", get_the_ID());
 						 if ($biomaterial <> 1) // если равно 1 - значит берет самостоятельно и выводить инфу не надо. 
 						 {?>
-							* Стоимость забора биоматерила <?php if($biomaterial){  echo "(".$biomaterial.")"; } ?> составляет - <strong><?php  echo format_price($SamplingCost); ?></strong> 
+							* Стоимость забора биоматерила <?php if($biomaterial){  echo "(".$biomaterial.")"; } ?> -  <strong><?php  echo format_price($SamplingCost); ?></strong> 
 						
 						<?php  } ?>	
 						
-							
+						-->							
+						<a data-toggle="modal" data-target=".biomaterial-modal" style="cursor: pointer;">* Стоимость забора биоматерила</a>
 						
+								<div class="modal fade biomaterial-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+									  <div class="modal-dialog modal-lg">
+									 
+										<div class="modal-content">	
+										  <div class="modal-header">
+											<h4 class="modal-title" id="myLargeModalLabel" style="text-align: center;">Стоимость забора биоматерила</h4>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											  <span aria-hidden="true">×</span>
+											</button>
+										  </div>										  
+										  
+										<div class="modal-body">										
+											<div style="padding: 15px 15px 15px 30px;">												
+												
+												<?php
+													$postID = 54012;
+													$args = array(
+														'p' => $postID, // ID поста
+														'post_type' => 'page'
+														);
+													$recent = new WP_Query($args);
+													while ( $recent->have_posts() ) : $recent->the_post();											
+														the_content(); 	
+													endwhile; ?>
+											</div>	
+										</div>											
+										</div>
+									  </div>
+									</div>
+									
 						<p>* Предварительная запись не требуется. 
 					Анализы можно сдать в порядке живой очереди.</p> 
 					</div>				   

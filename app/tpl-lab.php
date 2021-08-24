@@ -31,7 +31,7 @@ set_query_var('subtitle', $subtitle );
 						 <div class="service-tab service-tab_root">
                                     <div class="service-tab__title">
 																<!-- Button trigger modal -->
-								<button type="button" class="btn btn-link" data-toggle="modal" data-target=".bd-example-modal-lg">Информация для пациентов</button>
+										<button type="button" class="btn btn-link" data-toggle="modal" data-target=".bd-example-modal-lg">Информация для пациентов</button>
                                        
                                     </div>
                                 </div>
