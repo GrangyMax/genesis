@@ -246,7 +246,7 @@ foreach ($sliders as $slider) {
         <!--Последние новости
 ============================================= -->
 
-        <div class="content-wrap pt-0 pb-0 front-page">
+        <div class="content-wrap pt-0 pb-0 front-page front-page_news">
 
             <div class="clearfix">
                 <div class="container ">
