@@ -41,6 +41,8 @@ function my_scripts_method()
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', get_stylesheet_directory_uri() . '/js/jquery.js', array(), '', true);
 	wp_enqueue_script('jquery');
+
+	
 }
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 /*
@@ -52,11 +54,12 @@ add_action( 'wp_enqueue_scripts', 'add_google_recapcha' );
 */
 function load_style_script()
 {
-	
-	wp_enqueue_script('plugins.js', get_stylesheet_directory_uri() . '/js/plugins.js', array(), '', true);
+	//wp_enqueue_script('slick', get_stylesheet_directory_uri(). '/js/slick/slick.min.js');
+	wp_enqueue_script('plugins.js', get_stylesheet_directory_uri() . '/js/plugins.js', array(), '', true);	
 	wp_enqueue_script('datepicker.js', get_stylesheet_directory_uri() . '/js/components/datepicker.js', array(), '', true);		
 	wp_enqueue_script('functions.js', get_stylesheet_directory_uri() . '/js/functions.js?v=2', array(), '', true);	
-	wp_enqueue_script('contact-map.js', get_stylesheet_directory_uri() . '/js/contact-map.js?v=2', array(), '', true);		
+	wp_enqueue_script('contact-map.js', get_stylesheet_directory_uri() . '/js/contact-map.js?v=2', array(), '', true);	
+	
 	if (is_page('39277')) { //лицензии
 		wp_enqueue_script('license-page.js', get_stylesheet_directory_uri() . '/js/license-page.js', array(), '', true);
 	}
@@ -77,6 +80,9 @@ function load_style_script()
 	wp_enqueue_style('datepicker.css', get_stylesheet_directory_uri() . '/css/components/datepicker.css');
 	wp_enqueue_style('devtip-block.css', get_stylesheet_directory_uri() . '/css/devtip-block.css');
 	wp_enqueue_style('license-page.css', get_stylesheet_directory_uri() . '/css/license-page.css');
+	wp_enqueue_style('devtip-block.css', get_stylesheet_directory_uri() . '/css/devtip-block.css');
+	wp_enqueue_style('license-page.css', get_stylesheet_directory_uri() . 'js/slick/slick.css');
+	wp_enqueue_style('license-page.css', get_stylesheet_directory_uri() . 'js/slick/slick-theme.css');
 	
 }
 
@@ -351,6 +357,8 @@ add_action( 'pre_get_posts', 'my_post_count_queries' );
 	add_image_size( 'doctor-photo-1x', 317, 477, 1 );
 	add_image_size( 'doctor-photo-1.5x', 475, 715, 1 );
 	add_image_size( 'doctor-photo-2x', 634, 954, 1 );
+	add_image_size( 'news-photo-1x', 300, 180, 1 );
+	add_image_size( 'news-photo-2x', 600, 360, 1 );
 
 add_filter( 'image_size_names_choose', 'my_custom_sizes' );
 function my_custom_sizes( $sizes ) {

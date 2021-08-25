@@ -66,47 +66,63 @@ foreach ($sliders as $slider) {
             'showposts' => -1	
         ) );
 
+
 ?>
             <div class="fancy-title title-border title-center ">
                 <h2>Направления</h2>
             </div>
 
 		
-				<div id="oc-portfolio" class="owl-carousel portfolio-carousel carousel-widget owl-loaded owl-drag"
-					data-margin="0" data-nav="true" data-pagi="true" data-margin="20" data-items-xs="2" data-items-sm="3"
-					data-items-lg="5" data-items-xl="6">
-					<div class="owl-stage-outer">
-							<div class="owl-stage" style="transform: translate3d(-475px, 0px, 0px); transition: all 0.25s ease 0s; width: 3800px;">
+				<div id="oc-events" class="owl-carousel events-carousel carousel-widget" data-margin="20" 
+				data-nav="true" data-pagi="true" data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="5" 
+				data-loop="false" data-animate-in="fadeInRight" data-speed="700" data-animate-out="fadeOutLeft" data-autoplay="5000"  >
 				
-							<?php foreach ($p_directions as $p_direction) {
-								$p_direction_img = get_the_post_thumbnail_url($p_direction);	
-								$p_direction_title = $p_direction->post_title; 
-								$link_direction = get_field('link_direction', $p_direction);     
+							<?php foreach (array_chunk($p_directions , 2)  as $p_direction) {
+								
+								$p_direction_img_0 = get_the_post_thumbnail_url($p_direction[0]);
+								$p_direction_title_0 = $p_direction[0]->post_title; 
+								$link_direction_0 = get_field('link_direction', $p_direction[0]);  
+								$p_direction_img_1 = get_the_post_thumbnail_url($p_direction[1]);	
+								$p_direction_title_1 = $p_direction[1]->post_title; 
+								$link_direction_1 = get_field('link_direction', $p_direction[1]);  								
 							?>
+								<div class="oc-item">
 									
-								<div class="owl-item" style="width: 92px !important; margin-right: 20px;">
-										<div class="oc-item">
-											<div class="iportfolio">
-												<a href="<?php echo $link_direction ?>"
-													target="blank">
-													<div class="portfolio-image">
-														<img loading="lazy"
-															src="<?php echo $p_direction_img; ?> "
-															style="width: auto; height: 120px; margin: 0 auto;">
-													</div>
-													<div class="portfolio-desc">
-														<h3 style="text-align: center;">
-														<?php echo $p_direction_title; ?>
-														</h3>
-													</div>
-												</a>
-											</div>
-										</div>
-								</div>      
+											<div class="clearfix">										
+															<a href="<?php echo $link_direction_0 ?>"
+																target="blank">
+																
+																<div class="portfolio-image">
+																	<img loading="lazy"
+																		src="<?php echo $p_direction_img_0; ?> "
+																		style="width: auto; height: 120px; margin: 0 auto;">
+																</div>																
+																<div class="portfolio-desc">
+																	<h3 style="text-align: center;">
+																	<?php echo $p_direction_title_0; ?>
+																	</h3>
+																</div>
+															</a>
+											</div>  											
+								
+											<div class="clearfix">												
+															<a href="<?php echo $link_direction_1 ?>"
+																	target="blank">
+																	<div class="portfolio-image">
+																		<img loading="lazy"
+																			src="<?php echo $p_direction_img_1; ?> "
+																			style="width: auto; height: 120px; margin: 0 auto;">
+																	</div>																	
+																	<div class="portfolio-desc">
+																		<h3 style="text-align: center;">
+																		<?php echo $p_direction_title_1; ?>
+																		</h3>
+																	</div>
+															</a>
+											</div> 	
+									</div>
+												
 								<?php  } ?>
-							</div>
-						 </div>
-
 				</div>
 		
           
@@ -246,7 +262,7 @@ foreach ($sliders as $slider) {
         <!--Последние новости
 ============================================= -->
 
-        <div class="content-wrap pt-0 pb-0 front-page">
+        <div class="content-wrap pt-0 pb-0 front-page front-page_news">
 
             <div class="clearfix">
                 <div class="container ">
@@ -272,7 +288,8 @@ foreach ($sliders as $slider) {
 									<div class="owl-stage" style="transform: translate3d(-475px, 0px, 0px); transition: all 0.25s ease 0s; width: 3800px;">
 						
 									<?php foreach ($news_list as $news_item) {
-											$news_img = get_the_post_thumbnail_url($news_item);	
+											$news_img_md = get_the_post_thumbnail_url($news_item, 'medium');
+											$news_img_lg = get_the_post_thumbnail_url($news_item, 'full');												
 											$news_title = get_the_title($news_item); 
 											$news_link = get_permalink($news_item);  
 											$news_date = get_the_date('j F, Y', $news_item); 
@@ -286,7 +303,10 @@ foreach ($sliders as $slider) {
 															<div class="portfolio-image">
 																<a href="<?php echo $news_link;  ?>" class="d-inline-block">
 																<img width="1200" class= "wp-post-image frontpage-img-news" loading="lazy"
-																	src="<?php echo $news_img; ?>">
+																	src="<?php echo $news_img_md; ?>" 
+																	srcset="<? echo $news_img_md; ?> 1x, 
+																	<? echo $news_img_lg; ?> 2x	">
+
 																</a>	
 															</div>	
 
