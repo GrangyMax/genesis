@@ -144,6 +144,23 @@
                   </section>
                   <div class="blocks">
                      <input class="js-search-block form-control form-control-lg p-4 mb-4" type="text" placeholder="Поиск услуги" />
+					    <div class="row container legend-row">
+                    <div class="legend-row__block">
+                        <div class="legend-row__first-visit-icon">
+                        </div>
+                        <div class="legend-row__text">
+							<p> - Первичный прием </p>
+						</div>						
+                    </div>
+					
+                    <div class="legend-row__block">
+                        <div class="legend-row__last-visit-icon">
+                        </div>
+						<div class="legend-row__text">
+							<p> - Повторный прием</p>
+						</div>
+                    </div>
+                </div>
                      <div class="togglec block-head__shortname">
                         <?php
                         $services = get_posts(array(
@@ -173,8 +190,9 @@
                         foreach ($services as $service) {
                            $title = get_the_title($service->ID);
                            $price = get_post_meta($service->ID, 'price', 1);
+						   $price_repeat = get_post_meta($service->ID, 'price_repeat', 1);
                            $link = get_permalink($service->ID);
-                           echo service_row($title, $price, $link);
+                           echo service_row($title, $price, $price_repeat, $link);
                         }
                         echo service_list_end();
                         ?>

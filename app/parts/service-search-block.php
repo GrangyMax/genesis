@@ -6,17 +6,19 @@ function service_list_start() {
       <tr><th>Название услуги</th><th>Цена</th></tr>
 HTML;
 }
-function service_row($title, $price, $link) {
+function service_row($title, $price, $price_repeat, $link) {
   $formated_price = format_price($price);
+  if($price_repeat){$price_repeat = '('.$price_repeat . '&#8381' . ')';} 
   return <<<HTML
 
     <tr>
-      <td>
+      <td width="85%">
         <a href="{$link}">{$title}</a>
       </td>
-      <td>
-        <a href="{$link}">{$formated_price}</a>
+      <td width="15%">
+        <a href="{$link}">{$formated_price} <span style="color: #8a8a8a;">{$price_repeat}</span></a>
       </td>
+	  
     </tr>
 
 HTML;

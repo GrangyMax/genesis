@@ -3,8 +3,6 @@
 /*
     Template Name: .general
 */
-
-
 get_header();
 if (have_posts()) : while (have_posts()) : the_post();
 ?>
@@ -288,7 +286,8 @@ foreach ($sliders as $slider) {
 									<div class="owl-stage" style="transform: translate3d(-475px, 0px, 0px); transition: all 0.25s ease 0s; width: 3800px;">
 						
 									<?php foreach ($news_list as $news_item) {
-											$news_img = get_the_post_thumbnail_url($news_item);	
+											$news_img_md = get_the_post_thumbnail_url($news_item, 'medium');
+											$news_img_lg = get_the_post_thumbnail_url($news_item, 'full');			
 											$news_title = get_the_title($news_item); 
 											$news_link = get_permalink($news_item);  
 											$news_date = get_the_date('j F, Y', $news_item); 
@@ -299,12 +298,14 @@ foreach ($sliders as $slider) {
 												<div class="oc-item">
 													<div class="iportfolio p-1 m-1">
 														
-															<div class="portfolio-image">
-																<a href="<?php echo $news_link;  ?>" class="d-inline-block">
+														<div class="portfolio-image">
+															<a href="<?php echo $news_link;  ?>" class="d-inline-block">
 																<img width="1200" class= "wp-post-image frontpage-img-news" loading="lazy"
-																	src="<?php echo $news_img; ?>">
-																</a>	
-															</div>	
+																src="<?php echo $news_img_md; ?>" 
+																srcset="<? echo $news_img_md; ?> 1x, 
+																<? echo $news_img_lg; ?> 2x	">
+															</a>	
+														</div>	
 
 														<div class="pb-1 pt-1">
 															<div class="portfolio-title front-page-news-title">
@@ -343,8 +344,6 @@ foreach ($sliders as $slider) {
             </div>
 			 <div class="clear"></div>
         </div>
-
-
 
         <!-- Популярное в блоге
 ============================================= -->
@@ -387,7 +386,6 @@ foreach ($sliders as $slider) {
                                 src="<?php echo get_the_post_thumbnail_url($wEntry->ID, 'medium') ?>"
                                 alt="<?php the_title(); ?>" srcset="<?php echo get_the_post_thumbnail_url($wEntry->ID, 'medium') ?> 1x, 
 												 <?php echo get_the_post_thumbnail_url($wEntry->ID, 'full') ?> 2x">
-
 
                     </div>
                     <div class="entry-c frontpage-content-blog">

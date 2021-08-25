@@ -136,8 +136,9 @@ $clinic_list = get_posts( array(
                         <input type="text" id="template-contactform-name" name="review[name]" value="" class="sm-form-control required valid">
                      </div>
                      <div class="col_half col_last">
-                        <label for="template-contactform-email">Почта <small>*</small></label>
+                        <label for="template-contactform-email">Email <small>*</small></label>
                         <input type="email" id="template-contactform-email" name="review[email]" value="" class="required email sm-form-control valid">
+						<p id="result"></p>
                      </div>
                      <div class="clear"></div>
                      <div class="col_full">
@@ -152,7 +153,33 @@ $clinic_list = get_posts( array(
                         <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit" class="button button-3d nomargin bgorange">Оставить отзыв</button>
                      </div>
                      <input type="hidden" name="prefix" value="template-contactform-">
-                     <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+                     <input type="hidden" name="recaptcha_response" id="recaptchaResponse">				 
+					 
+					 	 <script>
+									function validateEmail(email) {
+									  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+									  return re.test(email);
+									}
+									
+									function validate() {
+									  const $result = $("#result");
+									  const email = $("#template-contactform-email").val();
+									  $result.text("");
+
+									  if (!validateEmail(email)) {		
+										$result.text("Неверный формат email");
+										$result.css("color", "red");
+										$('#submit-button').attr('disabled','disabled');
+										$('#submit-button').removeClass('bgorange');
+									  }
+									  else{
+										 $('#submit-button').removeAttr('disabled');
+										   $result.text("");
+									  }
+									  return false;
+									}
+									$("#template-contactform-email").on("blur", validate);
+							</script>								
                   </form>
                <?php } else { ?>
                   <p>Ваш отзыв был принят и передан на рассмотрение.</p>
