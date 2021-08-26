@@ -26,7 +26,7 @@ foreach ($sliders as $slider) {
 	
 ?>
         <div class="back-image">
-            <div class="container" style="padding:3em 10px;">
+            <div class="container" style="padding:1em 10px;">
                 <div class="row">
                     <!--строка сетки-->
                     <!--столбец 1-->
