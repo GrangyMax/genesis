@@ -24,8 +24,11 @@ span.wpcf7-not-valid-tip {
 
   // $user_subscribe = $wpdb->get_results( "SELECT id, email, name, surname FROM gnss_mb" );
 $fh = fopen(__DIR__ . '/export.csv', "r");
+
+
 fgetcsv($fh, 0, ';');
 $i=0;
+
 
 // массив, в который данные будут сохраняться
 $data = [];
@@ -41,7 +44,8 @@ while (($row = fgetcsv($fh, 0, ';')) !== false) {
     ];
 }
 $n=0;
-foreach ($data as $row) {	
+foreach ($data as $row) {
+	
 		if (filter_var($row['email'], FILTER_VALIDATE_EMAIL)) {
 		
 			$userdata = array(	
@@ -53,12 +57,14 @@ foreach ($data as $row) {
 		
 			);
 			
-			if($row['id'] > 7000 && $row['id']  <= 8000){			
-				//wp_insert_user( $userdata );	 //опасная функция, создаем пользователей			
+			if($row['id'] > 8000){			
+				wp_insert_user( $userdata );				
 				echo $row['id'] . '| Пользователь ' . $row['email'] . " создан <br>";		
 				$n++;
-			}		
-	}	
+			}
+		
+	}
+	
 }
 
 echo "Создано " . $n . " пользователей <br>";		
@@ -87,6 +93,20 @@ echo "Создано " . $n . " пользователей <br>";
 </thead>
 <tbody>
 	<?php 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/*
 	$i=0;
 	$yes=0; 
@@ -102,14 +122,17 @@ echo "Создано " . $n . " пользователей <br>";
 			$soglasie = get_field('soglasie', $doctor->ID);
 			if($soglasie){
 				echo  "<td style='background-color: lime;'> Согласен на обработку</td>";
-				$yes++;	
+				$yes++;				
+				
 			}
 			else
 			{echo  "<td style='background-color: gold;'> Согласие не давал</td>";}
 		  
-	   echo "</tr>";	
+	   echo "</tr>";
+	
     }	
-	echo "<strong>Дали согласие ". $yes . " врача </strong><br>"; 	
+	echo "<strong>Дали согласие ". $yes . " врача </strong><br>"; 
+	
 	*/
 	
 	?> 

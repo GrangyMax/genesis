@@ -1,5 +1,1 @@
-$(document).ready(() => {
-  $('.togglet').click(e => {
-    SEMICOLON.widget.masonryThumbs();
-  });
-});
+$(document).ready(()=>{$(".togglet").click(e=>{SEMICOLON.widget.masonryThumbs()})});

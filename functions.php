@@ -41,8 +41,6 @@ function my_scripts_method()
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', get_stylesheet_directory_uri() . '/js/jquery.js', array(), '', true);
 	wp_enqueue_script('jquery');
-
-	
 }
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 /*
@@ -54,12 +52,14 @@ add_action( 'wp_enqueue_scripts', 'add_google_recapcha' );
 */
 function load_style_script()
 {
-	//wp_enqueue_script('slick', get_stylesheet_directory_uri(). '/js/slick/slick.min.js');
-	wp_enqueue_script('plugins.js', get_stylesheet_directory_uri() . '/js/plugins.js', array(), '', true);	
+	// wp_enqueue_script('scripts.js', get_stylesheet_directory_uri() . '/js/scripts.js', array(), '', true);
+	wp_enqueue_script('plugins.js', get_stylesheet_directory_uri() . '/js/plugins.js', array(), '', true);
 	wp_enqueue_script('datepicker.js', get_stylesheet_directory_uri() . '/js/components/datepicker.js', array(), '', true);		
 	wp_enqueue_script('functions.js', get_stylesheet_directory_uri() . '/js/functions.js?v=2', array(), '', true);	
 	wp_enqueue_script('contact-map.js', get_stylesheet_directory_uri() . '/js/contact-map.js?v=2', array(), '', true);	
-	
+	if (is_page('license')) {
+		wp_enqueue_script('license-page.js', get_stylesheet_directory_uri() . '/js/license-page.js', array(), '', true);
+	}
 	if (is_page('39277')) { //лицензии
 		wp_enqueue_script('license-page.js', get_stylesheet_directory_uri() . '/js/license-page.js', array(), '', true);
 	}
@@ -69,20 +69,17 @@ function load_style_script()
 
 	wp_enqueue_style('gfonts.css', 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700');
 	wp_enqueue_style('bootstrap.min.css', get_stylesheet_directory_uri() . '/css/bootstrap.css');
-	wp_enqueue_style('slick.css', get_stylesheet_directory_uri() . '/style.css?v=2');
+	wp_enqueue_style('style.css', get_stylesheet_directory_uri() . '/style.css?v=3');
 	wp_enqueue_style('dark.css', get_stylesheet_directory_uri() . '/css/dark.css');
 	wp_enqueue_style('font-icons.css', get_stylesheet_directory_uri() . '/css/font-icons.css');
 	wp_enqueue_style('animate.css', get_stylesheet_directory_uri() . '/css/animate.css');
 	wp_enqueue_style('magnific-popup.css', get_stylesheet_directory_uri() . '/css/magnific-popup.css');
-	wp_enqueue_style('custom.css', get_stylesheet_directory_uri() . '/css/custom.css?v=23');
-	wp_enqueue_style('responsive.css', get_stylesheet_directory_uri() . '/css/responsive.css?v=23');
+	wp_enqueue_style('custom.css', get_stylesheet_directory_uri() . '/css/custom.css?v=24');
+	wp_enqueue_style('responsive.css', get_stylesheet_directory_uri() . '/css/responsive.css?v=25');
 	wp_enqueue_style('fonts.css', get_stylesheet_directory_uri() . '/css/fonts.css');
 	wp_enqueue_style('datepicker.css', get_stylesheet_directory_uri() . '/css/components/datepicker.css');
 	wp_enqueue_style('devtip-block.css', get_stylesheet_directory_uri() . '/css/devtip-block.css');
 	wp_enqueue_style('license-page.css', get_stylesheet_directory_uri() . '/css/license-page.css');
-	wp_enqueue_style('devtip-block.css', get_stylesheet_directory_uri() . '/css/devtip-block.css');
-	wp_enqueue_style('license-page.css', get_stylesheet_directory_uri() . 'js/slick/slick.css');
-	wp_enqueue_style('license-page.css', get_stylesheet_directory_uri() . 'js/slick/slick-theme.css');
 	
 }
 
@@ -335,7 +332,7 @@ function insert_fb_in_head() {
     echo '<meta property="og:url" content="' . get_permalink() . '" />';
     echo '<meta property="og:site_name" content="' . get_bloginfo('name') . '" />';
     if(!has_post_thumbnail( $post->ID )) {
-        $default_image = "/wp-content/uploads/2020/11/clinic-logo.png";
+        $default_image = "http://migrate.genesis82.ru/wp-content/uploads/2020/11/clinic-logo.png";
         echo '<meta property="og:image" content="' . $default_image . '" />';
     } else {
         $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
@@ -357,8 +354,6 @@ add_action( 'pre_get_posts', 'my_post_count_queries' );
 	add_image_size( 'doctor-photo-1x', 317, 477, 1 );
 	add_image_size( 'doctor-photo-1.5x', 475, 715, 1 );
 	add_image_size( 'doctor-photo-2x', 634, 954, 1 );
-	add_image_size( 'news-photo-1x', 300, 180, 1 );
-	add_image_size( 'news-photo-2x', 600, 360, 1 );
 
 add_filter( 'image_size_names_choose', 'my_custom_sizes' );
 function my_custom_sizes( $sizes ) {

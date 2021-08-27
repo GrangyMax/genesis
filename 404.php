@@ -1,4 +1,4 @@
- <?php get_header(); ?>
+<?php get_header(); ?>
 
 <section id="page-title">
             <div class="container clearfix">

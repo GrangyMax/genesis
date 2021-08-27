@@ -9,8 +9,6 @@
 	<?php wp_head(); ?>
 	<meta name="ahrefs-site-verification" content="a9cde989244ba3e22a3f21b5f612dae48c2a2c152c337451ee92f33b60bbe983">
 	<script id="ymaps-api-loader" async></script>
-	<script src="https://migrate.genesis82.ru/wp-content/themes/genesis-child/js/slick/slick.min.js"></script>
-
 </head>
 <?php
 $query = new WP_Query(array(
