@@ -1,8 +1,8 @@
 
 <section id="content">
 	<div class="content-wrap mobile-usluga pt-0 pb-0">
-		<div class="container mt-5 p-0">
-			<div class="entry clearfix search-page">
+		<div class="content-wrap pt-0 pb-0 front-page">
+			<div class="container clearfix search-page">
 				<?php
 				
 				$search_result=array(

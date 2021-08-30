@@ -2,7 +2,6 @@
 <html dir="ltr" lang="ru-RU">
 
 <head>
-
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />	
 	<meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
 	<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
@@ -10,7 +9,7 @@
 	<meta name="ahrefs-site-verification" content="a9cde989244ba3e22a3f21b5f612dae48c2a2c152c337451ee92f33b60bbe983">
 	<script id="ymaps-api-loader" async></script>
 	<?php $page_id = get_the_ID(); ?> 				
-	<span class="pageId" data-attr="<?=$page_id?>"></span>							
+	<span class="pageId" data-attr="<?=$page_id?>"></span>						
 	
 </head>
 <?php
@@ -35,7 +34,7 @@ foreach ($query->posts as $key => $clinic) {
 		<!-- Top Bar
 		============================================= -->
 		<div id="top-bar" class="transparent-topbar dark">
-			<div class="container clearfix">
+			<div class="container clearfix ">
 			<div class="col_half nobottommargin clearfix">
 					<div class="header-phones nobottommargin">						
 						<div class="header-phones__main">
@@ -50,7 +49,7 @@ foreach ($query->posts as $key => $clinic) {
 					</div>
 				</div>
 
-				<div class="col_half nobottommargin text-md-right btn-zapis" style="position: absolute; margin-left: 590px">	
+				<div class="col_half nobottommargin text-md-right btn-zapis" style="position: absolute; margin-left: 612px">	
 					<a href="#myModal1" data-lightbox="inline">
 							<button class="btn btn-zapis">
 								<span><img src="http://migrate.genesis82.ru/wp-content/uploads/2021/07/outline_calendar_today_white_24dp.png"
@@ -140,13 +139,10 @@ foreach ($query->posts as $key => $clinic) {
 							<li><a href="<?= $header['instagram'] ?>" class="si-instagram" target="_blank"><span class="ts-icon"><i class="icon-instagram2"></i></span><span class="ts-text">Instagram</span></a></li>
 							<li><a href="https://vk.com/clinic.genesis" class="si-vk" target="_blank"><span class="ts-icon"><i class="icon-vk"></i></span><span class="ts-text">В контакте</span></a></li>
 							<li><a href="<?= $header['odnoklassniki'] ?>" class="si-rss" target="_blank"><span class="ts-icon"><i class="icon-odnoklassniki"></i></span><span class="ts-text">Одноклассники</span></a></li>
-							<li class="bvi" title="Версия для слабовидящих">
-							
-																
+							<li class="bvi" title="Версия для слабовидящих" style="margin-right: 16px;">	
 								<a href="#" class="bvi-link-shortcode bvi-open">	
 									<img src="/wp-content/uploads/2020/11/icon_41.png">
-								</a>			
-									
+								</a>
 							</li>
 						</ul>
 						

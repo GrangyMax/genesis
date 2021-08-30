@@ -572,7 +572,7 @@ body.stretched .container-fullwidth {
     margin-right: 0;
 }
 .col_last {
-    margin-right: 0!important;
+    margin-right: 0px!important;
     clear: right;
 }
 .fslider, .fslider .flexslider, .fslider .slide, .fslider .slide>a, .fslider .slide>a>img, .fslider .slide>img, .fslider .slider-wrap {
@@ -958,7 +958,7 @@ body.stretched #header.full-header .container {
 }
 #primary-menu {
     float: right;
-    margin-right: 2%}
+    /*margin-right: 2%*/}
 #primary-menu ul.mobile-primary-menu {
     display: none;
 }
