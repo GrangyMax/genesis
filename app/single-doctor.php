@@ -187,16 +187,19 @@ get_template_part('parts/breadcrumbs');
                                           'post_type' => 'answers'
                                     );
                                     $answer_id = wp_insert_post($new_answer);
+									$multiple_to_recipients = array('klinikagenesis@yandex.ru'	
+										);
                                     if ($answer_id) {
                                           update_post_meta($answer_id, 'name', $q['name']);
                                           update_post_meta($answer_id, 'email', $q['email']);
                                           add_filter('wp_mail_from',create_function('', 'return "'.get_option('admin_email').'";'));
                                           add_filter('wp_mail_from_name',create_function('', 'return "Клиника Genesis";'));                              
-                                          $mTitle = "* Новый вопрос ({$q[name]}, {$q[email]})";
-                                          $mLink = get_damn_edit_post_link($answer_id);
-                                          $mBody = "Чтобы ответить на этот вопрос - перейдите по следующей ссылке: {$mLink}";
+                                          $mTitle = "* Новый вопрос врачу ({$q[name]}, {$q[email]})";
+										  $siteurl = get_site_url();
+                                          $mLink = get_damn_edit_post_link($answer_id);                                         
+										  $mBody = $q['question']. "\n\n\n".  "Чтобы ответить на этот вопрос - перейдите по следующей ссылке: {$siteurl}{$mLink}";		
                                           $userdata = get_userdata($acco);
-                                       // wp_mail($userdata->user_email, $mTitle, $mBody);
+											wp_mail($multiple_to_recipients, $mTitle, $mBody);
                                           global $wpdb;
                                           $rslt = $wpdb->insert(
                                              'gnss_mb',
