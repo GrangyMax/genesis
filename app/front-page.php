@@ -300,7 +300,7 @@ foreach ($sliders as $slider) {
 														
 														<div class="portfolio-image">
 															<a href="<?php echo $news_link;  ?>" class="d-inline-block">
-																<img width="1200" class= "wp-post-image frontpage-img-news" loading="lazy"
+																<img width="1200" class="wp-post-image frontpage-img-news" loading="lazy"
 																src="<?php echo $news_img_md; ?>" 
 																srcset="<? echo $news_img_md; ?> 1x, 
 																<? echo $news_img_lg; ?> 2x	">
