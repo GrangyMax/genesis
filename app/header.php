@@ -9,6 +9,9 @@
 	<?php wp_head(); ?>
 	<meta name="ahrefs-site-verification" content="a9cde989244ba3e22a3f21b5f612dae48c2a2c152c337451ee92f33b60bbe983">
 	<script id="ymaps-api-loader" async></script>
+	<?php $page_id = get_the_ID(); ?> 				
+	<span class="pageId" data-attr="<?=$page_id?>"></span>							
+	
 </head>
 <?php
 $query = new WP_Query(array(

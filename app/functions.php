@@ -362,5 +362,3 @@ function my_custom_sizes( $sizes ) {
 	) );
 }
 
-
-					
