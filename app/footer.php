@@ -1,40 +1,29 @@
 		<!-- Footer
 		============================================= -->
 		<footer id="footer" class="nobg noborder">
-
 			<div class="container">
-
 				<!-- Нижнее меню
 				============================================= -->
 				<div class="footer-widgets-wrap pt-0 pb-4 clearfix">
-
 					<div class="row">
-
 						<div class="col-lg-2 col-md-2 col-6">
 							<div class="widget clearfix">
-
 								<h4 class="ls0 mb-4 nott">Клиники</h4>
-
 								<ul class="list-unstyled iconlist ml-0">
 									<?php wp_nav_menu(array("theme_location" => "footerdocs", 'container' => false, 'items_wrap' => '%3$s' ))?>
 								</ul>
-
 							</div>
 						</div>
 						<div class="col-lg-2 col-md-2 col-6">
 							<div class="widget clearfix">
-
 								<h4 class="ls0 mb-4 nott">Услуги</h4>
-
 								<ul class="list-unstyled iconlist ml-0">
                                     <?php wp_nav_menu(array("theme_location" => "footerservices", 'container' => false, 'items_wrap' => '%3$s' ))?>
 								</ul>
-
 							</div>
 						</div>
 						<div class="col-lg-2 col-md-2 col-6">
 							<div class="widget clearfix">
-
 								<h4 class="ls0 mb-4 nott">Информация</h4>
                                 <ul class="list-unstyled iconlist ml-0">
 								    <?php wp_nav_menu(array("theme_location" => "footerabout", 'container' => false, 'items_wrap' => '%3$s' ))?>
@@ -43,20 +32,15 @@
 						</div>
 						<div class="col-lg-2 col-md-2 col-6">
 							<div class="widget clearfix">
-
 								<h4 class="ls0 mb-4 nott">Документы</h4>
-
 								<ul class="list-unstyled iconlist ml-0">
 									<?php wp_nav_menu(array("theme_location" => "footerdocuments", 'container' => false, 'items_wrap' => '%3$s' ))?>
 								</ul>
-
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-4 text-md-right">
 							<div class="widget clearfix">
-
 								<h4 class="ls0 mb-4 nott">Контакты:</h4>
-
 								<div>
 								<div>									
 									<!--class="mb-3"-->
@@ -68,53 +52,40 @@
 										приёмная ООО "КЛИНИКА ГЕНЕЗИС":<br>
 										<strong style="margin:5px;"><a href="mailto:genesis.priemnaya@gmail.com">genesis.priemnaya@gmail.com</a></strong>
 										<h4 style="margin:5px;"><a href="tel:+73652248310"><i class="icon-call mr-1" style="font-size: 18px;"></i> +7 (3652) 248-310</a><br>
-									</address>
-									
-								</div>
-									
+									</address>									
+								</div>									
 									<div class="d-flex justify-content-md-end">
-										<a href="https://www.facebook.com/clinic.genesis" class="social-icon si-small si-facebook" title="Facebook">
+										<a href="https://www.facebook.com/clinic.genesis" class="social-icon si-small si-facebook" title="Facebook" target="_blank">
 											<i class="icon-facebook"></i>
 											<i class="icon-facebook"></i>
 										</a>
-
-										<a href="https://twitter.com/klinikagenesis" class="social-icon si-small si-twitter" title="twitter">
+										<a href="https://twitter.com/klinikagenesis" class="social-icon si-small si-twitter" title="twitter" target="_blank">
 											<i class="icon-twitter"></i>
 											<i class="icon-twitter"></i>
 										</a>
-
-										<a href="https://www.youtube.com/channel/UCNLYuqHgoth7kA9wWliDEuQ" class="social-icon si-small si-youtube" title="youtube">
+										<a href="https://www.youtube.com/channel/UCNLYuqHgoth7kA9wWliDEuQ" class="social-icon si-small si-youtube" title="youtube" target="_blank">
 											<i class="icon-youtube"></i>
 											<i class="icon-youtube"></i>
 										</a>
-
-										<a href="https://www.instagram.com/genesis_crimea/" class="social-icon si-small si-instagram" title="instagram">
+										<a href="https://www.instagram.com/genesis_crimea/" class="social-icon si-small si-instagram" title="instagram" target="_blank">
 											<i class="icon-instagram"></i>
 											<i class="icon-instagram"></i>
 										</a>
-
-										<a href="https://vk.com/clinic.genesis" class="social-icon si-small si-vk" title="vk">
+										<a href="https://vk.com/clinic.genesis" class="social-icon si-small si-vk" title="vk" target="_blank">
 											<i class="icon-vk"></i>
 											<i class="icon-vk"></i>
 										</a>
-
-										<a href="https://ok.ru/clinic.genesis" class="social-icon si-small si-rss" title="ok">
+										<a href="https://ok.ru/clinic.genesis" class="social-icon si-small si-rss" title="ok" target="_blank">
 											<i class="icon-odnoklassniki"></i>
 											<i class="icon-odnoklassniki"></i>
 										</a>
-
 									</div>
 								</div>
-
 							</div>
 						</div>
-
 					</div>
-
 				</div>
-
 			</div>
-
 			<!-- Copyrights
 			============================================= -->
 			<div id="copyrights" class="nobg">
@@ -126,17 +97,12 @@
 							</div>						
 						</div>
 					</div>
-
 			</div><!-- #copyrights end -->
-
 		</footer><!-- #footer end -->
-
 	</div><!-- #wrapper end -->
-
 	<!-- Go To Top
 	============================================= -->
 	<div id="gotoTop" class="icon-angle-up"></div>
-
     <?php wp_footer() ?>
 	<script>
 		jQuery('.home-date').datepicker({
@@ -144,19 +110,15 @@
 			startDate: "today",
 			
 		});
-
-
 	</script>
 <script defer src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
 	<style>
 		.wpcf7-form .input-group {
 			flex-wrap: nowrap;
 		}
-
 		.wpcf7-form-control-wrap {
 			width: 100%
 		}
-
 		span.wpcf7-not-valid-tip {
 			color: #f00;
 			font-size: 0.8em;
@@ -164,15 +126,13 @@
 			display: block;
 			position: absolute;
 		}
-	</style>
-	
+	</style>	
 <script>
         (function(w,d,u){
                 var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
                 var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
         })(window,document,'https://cdn-ru.bitrix24.ru/b16898172/crm/site_button/loader_1_khtx5u.js');
 </script>
-
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -188,6 +148,5 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/39014465" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-
 </body>
 </html>

@@ -7,13 +7,30 @@ get_template_part('parts/breadcrumbs'); ?>
 
 <div class="container license-page">
 
+<style>
+	.accordion-btn {
+	   position: relative;
+	}
+	.accordion-btn:before {
+	   position: absolute;
+	   content: "+";
+	   right: 10px;
+	   top: 5px;
+	}
+	.accordion-btn[aria-expanded="true"]:before {
+	   content: "-";
+	}
+
+</style>
+
+
   <div id="accordion">
 
     <!--LEVEL 1-------  ООО "Клиника Генезис"--------------------------------------------------------------------------------------------------------------->
     <div class="card">
       <div class="card-header" id="headingOne">
         <h5 class="mb-0">
-          <button class="btn btn-link collapsed left" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <button class="btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
             <img loading="lazy" src="/wp-content/uploads/2021/03/генезис.png" style="width: 400px;"> 
 			
           </button>
