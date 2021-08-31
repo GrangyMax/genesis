@@ -28,9 +28,11 @@ if ($q['name'] && $q['email'] && $q['question']) {
     $answer_id = wp_insert_post($new_answer);
 	$multiple_to_recipients = array('klinikagenesis@yandex.ru'		
 										);
+	$date_create = current_time( 'mysql');									
     if ($answer_id) {
         update_post_meta($answer_id, 'name', $q['name']);
-        update_post_meta($answer_id, 'email', $q['email']);
+        update_post_meta($answer_id, 'email', $q['email']);		
+		update_post_meta($answer_id, 'date_create', $date_create);	
         add_filter('wp_mail_from',create_function('', 'return "'.get_option('admin_email').'";'));
         add_filter('wp_mail_from_name',create_function('', 'return "Клиника Genesis";'));                              
         $mTitle = "* Новый вопрос ({$q[name]}, {$q[email]})";
@@ -38,8 +40,7 @@ if ($q['name'] && $q['email'] && $q['question']) {
         $siteurl = get_site_url();
         $mBody = $q['question']. "\n\n\n".  "Чтобы ответить на этот вопрос - перейдите по следующей ссылке: {$siteurl}{$mLink}";				
 		wp_mail($multiple_to_recipients, $mTitle, $mBody); 
-      // wp_mail('klinikagenesis@yandex.ru', $mTitle, $mBody);  
-        //wp_mail((get_option('admin_email')?get_option('admin_email'):'wgnss@mailinator.com'), $mTitle, $mBody, $headers);
+      
 		}      
 	}     
 }            

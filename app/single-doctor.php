@@ -187,11 +187,12 @@ get_template_part('parts/breadcrumbs');
                                           'post_type' => 'answers'
                                     );
                                     $answer_id = wp_insert_post($new_answer);
-									$multiple_to_recipients = array('klinikagenesis@yandex.ru'	
-										);
+									$multiple_to_recipients = array('klinikagenesis@yandex.ru');
+									$date_create = current_time( 'mysql');	
                                     if ($answer_id) {
                                           update_post_meta($answer_id, 'name', $q['name']);
                                           update_post_meta($answer_id, 'email', $q['email']);
+										  update_post_meta($answer_id, 'date_create', $date_create);	
                                           add_filter('wp_mail_from',create_function('', 'return "'.get_option('admin_email').'";'));
                                           add_filter('wp_mail_from_name',create_function('', 'return "Клиника Genesis";'));                              
                                           $mTitle = "* Новый вопрос врачу ({$q[name]}, {$q[email]})";
