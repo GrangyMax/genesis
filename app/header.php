@@ -113,22 +113,15 @@ foreach ($query->posts as $key => $clinic) {
 											<div class="form-result"></div>
 											<?php echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36218" title="Задать вопрос(Главная)" html_class="row others-moving-form position-relative mb-0"]')); ?>
 										</div>
-									</div>
-										
-								</div>	
-																
+									</div>										
+								</div>																	
 								</div>								
 							</div>							
 						</div>
 					</div>
 				</div>
 			</div>
-
-		
-				
-
 				<div class="col_half fright dark col_last clearfix nobottommargin">
-
 					<!-- Соцсети
 					============================================= -->
 					<div id="top-social">
@@ -144,12 +137,9 @@ foreach ($query->posts as $key => $clinic) {
 									<img src="/wp-content/uploads/2020/11/icon_41.png">
 								</a>
 							</li>
-						</ul>
-						
+						</ul>						
 					</div>
-
 				</div>
-
 			</div>
 
 		</div><!-- #top-bar end -->
@@ -157,13 +147,9 @@ foreach ($query->posts as $key => $clinic) {
 		<!-- Header
 		============================================= -->
 		<header id="header" class="dark">
-
 			<div id="header-wrap">
-
 				<div class="container clearfix">
-
 					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
-
 					<!-- Логотип
 					============================================= -->
 					<div id="logo">
@@ -175,9 +161,7 @@ foreach ($query->posts as $key => $clinic) {
 					============================================= -->
 					<nav id="primary-menu" class="not-dark">
 
-						<?php wp_nav_menu(array("theme_location" => "main", "container" => false)); ?>
-							
-					
+						<?php wp_nav_menu(array("theme_location" => "main", "container" => false)); ?>	
 						<!-- старый поиск
 						============================================= -->
 						<div id="top-search">
@@ -191,14 +175,10 @@ foreach ($query->posts as $key => $clinic) {
 								</tr>
 							</table>
 							</form>
-						</div> 
-						
-					</nav>
-							
+						</div> 						
+					</nav>							
 				</div>
-
 			</div>
 
 		</header><!-- #header end -->
-
 		<?php /*include 'devtip-block.php';*/ ?>
