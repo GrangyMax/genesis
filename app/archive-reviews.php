@@ -67,7 +67,7 @@ $clinic_list = get_posts( array(
             </ul>
          </section>
       </section>
-      <div class="entry clearfix lasts">
+      <div class="entry clearfix lasts text-center">
          <?php wp_pagenavi(); ?>
       </div>
 

@@ -24,7 +24,7 @@
                <p>Записей нет.</p>
             <?php endif; ?>
          </div>
-         <div class="entry clearfix lasts">
+         <div class="entry clearfix lasts text-center">
             <?php wp_pagenavi(); ?>
          </div>
       </section>
