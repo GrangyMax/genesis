@@ -5708,7 +5708,6 @@ $(document).ready(() => {
     $more.slideToggle(250);
     $phones.toggleClass("header-phones_expanded");
   }
-
   //$main.hover(togglePhones, togglePhones);
 
   $toggle.click((e) => {
@@ -5718,7 +5717,6 @@ $(document).ready(() => {
 
 /*
 функции для поиска (решили его убрать)
-
 $(".btn_search").click(function(){
 
 	if ( $(".input").val()){
@@ -5728,18 +5726,12 @@ $(".btn_search").click(function(){
 	$(".input").toggleClass("active").focus;	
 	$('.menu').toggleClass('menu_hidden');
 	$(this).toggleClass("animate");
-	$(".input").val('');
-  
- 
+	$(".input").val('');  
 });
 */
 
 $("#icon-search-run").click(function(){
-
 	if ( $(".input-search").val()){
 		$(".search_form").submit();	
-	}
-	
- 
+	} 
 });
-

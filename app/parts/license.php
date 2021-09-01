@@ -6,31 +6,13 @@ set_query_var('subtitle',  'Документы подтверждающие за
 get_template_part('parts/breadcrumbs'); ?>
 
 <div class="container license-page">
-
-<style>
-	.accordion-btn {
-	   position: relative;
-	}
-	.accordion-btn:before {
-	   position: absolute;
-	   content: "+";
-	   right: 10px;
-	   top: 5px;
-	}
-	.accordion-btn[aria-expanded="true"]:before {
-	   content: "-";
-	}
-
-</style>
-
-
   <div id="accordion">
 
     <!--LEVEL 1-------  ООО "Клиника Генезис"--------------------------------------------------------------------------------------------------------------->
     <div class="card">
       <div class="card-header" id="headingOne">
         <h5 class="mb-0">
-          <button class="btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
             <img loading="lazy" src="/wp-content/uploads/2021/03/генезис.png" style="width: 400px;"> 
 			
           </button>
@@ -44,7 +26,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingmed">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#med" aria-expanded="false" aria-controls="med">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#med" aria-expanded="false" aria-controls="med">
 					Лицензия на осуществление медицинской деятельности
                 </button>
               </h5>
@@ -68,7 +50,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingsevas">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#sevas" aria-expanded="false" aria-controls="sevas">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#sevas" aria-expanded="false" aria-controls="sevas">
                   Лицензия на осуществление медицинской деятельности (Севастополь)
                 </button>
               </h5>
@@ -99,7 +81,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingnalog">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#nalog" aria-expanded="false" aria-controls="nalog">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#nalog" aria-expanded="false" aria-controls="nalog">
                   Документы налоговой службы
                 </button>
               </h5>
@@ -130,7 +112,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingminzdrav">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#minzdrav" aria-expanded="false" aria-controls="minzdrav">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#minzdrav" aria-expanded="false" aria-controls="minzdrav">
                   Лицензия на осуществление деятельности по обороту наркотических средств (ЛО-82-0000584)
                 </button>
               </h5>
@@ -157,7 +139,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingfsz">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#fsz" aria-expanded="false" aria-controls="fsz">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#fsz" aria-expanded="false" aria-controls="fsz">
                   Лицензия на осуществление медицинской деятельности (ФС-82-01-000041)
                 </button>
               </h5>
@@ -179,7 +161,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingpersdata">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#persdata" aria-expanded="false" aria-controls="persdata">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#persdata" aria-expanded="false" aria-controls="persdata">
                   Политика обработки персональных данных
                 </button>
               </h5>
@@ -232,7 +214,7 @@ get_template_part('parts/breadcrumbs'); ?>
     <div class="card">
       <div class="card-header" id="headingTwo">
         <h5 class="mb-0">
-          <button class="btn btn-link collapsed left" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
             <img loading="lazy" src="/wp-content/uploads/2021/03/центр-зрения.png" style="width: 400px;">
 			
           </button>
@@ -245,7 +227,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <!--<div class="card">
             <div class="card-header" id="headingCompanyCard">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#CompanyCard" aria-expanded="false" aria-controls="CompanyCard">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#CompanyCard" aria-expanded="false" aria-controls="CompanyCard">
                   Карточка предприятия
                 </button>
               </h5>
@@ -266,7 +248,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingegr">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#egr" aria-expanded="false" aria-controls="egr">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#egr" aria-expanded="false" aria-controls="egr">
                   Листы записей в Едином Государственном реестре
                 </button>
               </h5>
@@ -297,7 +279,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingnalogdoc">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#nalogdoc" aria-expanded="false" aria-controls="nalogdoc">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#nalogdoc" aria-expanded="false" aria-controls="nalogdoc">
                   Документы налоговой службы
                 </button>
               </h5>
@@ -322,7 +304,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingtrud">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#trud" aria-expanded="false" aria-controls="trud">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#trud" aria-expanded="false" aria-controls="trud">
                   Результаты проведения оценки условий труда
                 </button>
               </h5>
@@ -355,7 +337,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingmedd">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#medd" aria-expanded="false" aria-controls="medd">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#medd" aria-expanded="false" aria-controls="medd">
                   Уведомление об осуществлении медицинской деятельности
                 </button>
               </h5>
@@ -380,7 +362,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headinguchet">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#uchet" aria-expanded="false" aria-controls="uchet">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#uchet" aria-expanded="false" aria-controls="uchet">
                   Уведомление об осуществлении медицинской деятельности
                 </button>
               </h5>
@@ -402,7 +384,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingname">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#name" aria-expanded="false" aria-controls="name">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#name" aria-expanded="false" aria-controls="name">
                   Уведомление о смене наименования
                 </button>
               </h5>
@@ -433,7 +415,7 @@ get_template_part('parts/breadcrumbs'); ?>
     <div class="card">
       <div class="card-header" id="headingThree">
         <h5 class="mb-0">
-          <button class="btn btn-link collapsed left" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
               <img loading="lazy" src="/wp-content/uploads/2021/03/онкология.png" style="width: 400px;  " >			  
 			
           </button>
@@ -446,7 +428,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingLicenseMed">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#LicenseMed" aria-expanded="false" aria-controls="LicenseMed">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#LicenseMed" aria-expanded="false" aria-controls="LicenseMed">
                   Лицензия на осуществление медицинской деятельности
                 </button>
               </h5>
@@ -489,7 +471,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingLicenseNarco">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#LicenseNarco" aria-expanded="false" aria-controls="LicenseNarco">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#LicenseNarco" aria-expanded="false" aria-controls="LicenseNarco">
                   Лицензия на осуществление оборота наркотических и психотропных средств
                 </button>
               </h5>
@@ -551,7 +533,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingLicenseFarma">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#LicenseFarma" aria-expanded="false" aria-controls="LicenseFarma">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#LicenseFarma" aria-expanded="false" aria-controls="LicenseFarma">
                   Лицензия на осуществление фармацевтической деятельности
                 </button>
               </h5>
@@ -585,7 +567,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingND">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#ND" aria-expanded="false" aria-controls="ND">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#ND" aria-expanded="false" aria-controls="ND">
                   Документы налоговой службы
                 </button>
               </h5>
@@ -614,7 +596,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingAcr">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#Acr" aria-expanded="false" aria-controls="Acr">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#Acr" aria-expanded="false" aria-controls="Acr">
                   Свидетельство об аккредитации
                 </button>
               </h5>
@@ -636,7 +618,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingUD">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#UD" aria-expanded="false" aria-controls="UD">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#UD" aria-expanded="false" aria-controls="UD">
                   Результаты проведения оценки условий труда
                 </button>
               </h5>
@@ -663,7 +645,7 @@ get_template_part('parts/breadcrumbs'); ?>
           <div class="card">
             <div class="card-header" id="headingSez">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#Sez" aria-expanded="false" aria-controls="Sez">
+                <button class="w-100 btn btn-link collapsed left accordion-btn" data-toggle="collapse" data-target="#Sez" aria-expanded="false" aria-controls="Sez">
                   Санитарно-эпидемиологическое заключение
                 </button>
               </h5>
