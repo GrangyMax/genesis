@@ -140,7 +140,7 @@ span.wpcf7-not-valid-tip {
 						include_once 'parts/oftalmolog_queue.php';
 					}
 				  ?>
-                <h2 class="mt-4">Цены и места предоставления услуги  <span style="color: #0969A2; "> &#171;<?php echo get_the_title() ?>&#187;</span></h2>
+                <h2 class="mt-4">Цены и места предоставления услуги  <span style="color: #888484;"> &#171;<?php echo get_the_title() ?>&#187;</span></h2>
 				                
                 <!--  <div class="accordion accordion-bg clearfix accordion-usluga" <?=$accordion_state?>>-->
 				<?php  foreach ($the_query->posts as $clinic){  
