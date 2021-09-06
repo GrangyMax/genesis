@@ -63,7 +63,11 @@ set_query_var('subtitle', $subtitle );
 														the_content(); 	
 													endwhile; ?>
 											</div>	
-										</div>											
+										</div>	
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="$.magnificPopup.close(); return false;" >Закрыть</button>
+										</div>	
+										
 										</div>
 									  </div>
 									</div>
