@@ -67,8 +67,7 @@ get_template_part('parts/breadcrumbs');
 								<a href="<?php the_permalink($value); ?>">
 										 <h3 class="hoverdoctor" style="margin-bottom: 0">
 											<?php echo get_the_title($value); ?>
-										 </h3>
-										 
+										 </h3>										 
 										<span>
 											<?php /*the_field('адрес', $value->ID)  
 											форматирование адреса, чтобы "ул" было с новой строки*/								 
@@ -79,8 +78,7 @@ get_template_part('parts/breadcrumbs');
 											if(stripos($town[1], 'Мирное')) {$town[1] = ", ".$town[1].","; } else{ unset($town[1]); $town[0]= $town[0].","; }		
 											echo $town[0].$town[1]."<br>".$street;
 											?>									
-										</span>
-								 
+										</span>								 
 								</a>
 								<br>
 									
@@ -113,13 +111,9 @@ get_template_part('parts/breadcrumbs');
 													 <?php 	}
 													} 											
 											}																	
-									endwhile;
-									
-								endif;		
-																		 
+									endwhile;									
+								endif;								 
 								  ?> 
-								  							
-                             
                            </div>
                            <?php } ?>
 								   <!--<?php if(get_field('детский_врач')) { ?>

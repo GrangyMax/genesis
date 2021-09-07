@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html dir="ltr" lang="ru-RU">
 
 <head>
@@ -132,7 +132,7 @@ foreach ($query->posts as $key => $clinic) {
 		<header id="header" class="dark">
 			<div id="header-wrap">
 				<div class="container clearfix">
-					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i><i class="icon-line-cross" style="display:none;"></i></div>
 					<!-- Логотип
 					============================================= -->
 					<div id="logo">
@@ -149,14 +149,13 @@ foreach ($query->posts as $key => $clinic) {
 						============================================= -->
 						<div id="top-search">
 							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
-							<form action="<?= site_url() . "/" ?>" method="get" class="search_form">
-							
-							<table class="search-el"><tr>
-								<td><i class="icon-search-run icon-search3"></i></td>
-								<td><input type="text" name="s" class="input-search form-control" value="<?php echo isset($_GET['s']) ? $_GET['s'] : ''; ?>" placeholder="Введите запрос" autofocus></td>
-								<td><input type="submit" value="Найти" class="search_button form-control"></td>
-								</tr>
-							</table>
+							<form action="<?= site_url() . "/" ?>" method="get" class="search_form">							
+								<table class="search-el"><tr>
+									<td><i class="icon-search-run icon-search3"></i></td>
+									<td><input type="text" name="s" class="input-search form-control" value="<?php echo isset($_GET['s']) ? $_GET['s'] : ''; ?>" placeholder="Введите запрос" autofocus></td>
+									<td><input type="submit" value="Найти" class="search_button form-control"></td>
+									</tr>
+								</table>
 							</form>
 						</div> 						
 					</nav>							

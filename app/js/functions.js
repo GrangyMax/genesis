@@ -1833,6 +1833,7 @@ var SEMICOLON = SEMICOLON || {};
                 }
                 $pagemenu.toggleClass("pagemenu-active", false);
                 $body.toggleClass("primary-menu-open", false);
+				
               }
 
               $("html,body")
@@ -5003,13 +5004,16 @@ var SEMICOLON = SEMICOLON || {};
             $(
               "#primary-menu > ul.mobile-primary-menu, #primary-menu > div > ul.mobile-primary-menu"
             ).toggleClass("d-block");
+			
           } else {
             $("#primary-menu > ul, #primary-menu > div > ul").toggleClass(
               "d-block"
             );
           }
-          $body.toggleClass("primary-menu-open");
-          return false;
+          $body.toggleClass("primary-menu-open");			
+		  $('#primary-menu-trigger > i.icon-reorder').toggleClass("d-none");
+		  $('#primary-menu-trigger > i.icon-line-cross').toggleClass("d-block");
+          return false; 		  
         });
       $("#page-submenu-trigger")
         .off("click")
