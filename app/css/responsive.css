@@ -22,7 +22,6 @@
 	}	
 }
 
-
 @media (max-width:420px) {
 	.title-desctop{display: none;}
 	.title-mobile{display: block;}
@@ -47,7 +46,6 @@
 }
 	
 @media (max-width: 1199.98px) {
-
 	canvas {
 		max-width: 100%;
 		height: auto !important;
@@ -69,20 +67,16 @@
 	.promo-uppercase>span,
 	.promo-uppercase>.container>span {
 		font-size: 14px;
-	}
-	
+	}	
 	.template_switch{
 		display: none;
 			
-		}
-		
+		}		
 	
 	.modal-frontpage{
 		width: auto !important;
-		height: auto !important;
-		background: none !important;
-	}
-	
+		height: auto !important;		
+	}	
 	.btn-zapis{
 			position: relative !important; 
 			margin-left: 0px !important;
@@ -90,8 +84,7 @@
 			display: inline;
 			text-align:left;	
 			/*width: 100%;*/
-		}
-	
+		}	
 }
 
 

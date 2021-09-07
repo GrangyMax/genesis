@@ -267,7 +267,7 @@ get_template_part('parts/breadcrumbs');
 								</script>	
                               </form>
                                 <?php } else { ?>
-                                    <p>Ваш вопрос поступил в обработку.</p>     
+                                    <p class="alert-success p-2">Ваш вопрос поступил в обработку.</p>     
                                 <?php } ?>
                            </div>
                         </div>

@@ -1,11 +1,7 @@
-
-
 <?php 
-
 /*
     Template Name: .сontact
 */
-
 ?>
 
 
