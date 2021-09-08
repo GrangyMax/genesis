@@ -8,6 +8,7 @@
     --headerbg: var(--themecontrast);
     --primary-menu-font-size: 16px;
 }
+
 .timetable {
     border: 1px solid #ced4da;
 }
@@ -1707,9 +1708,10 @@ span.wpcf7-list-item-label:before {
 .direction--clinics {
     border-spacing: 10px 0;
     border-collapse: separate;
+	
 }
 .direction--clinics a {
-    color: var(--themecontrast);
+    color: var(--themecontrast) !important;
 }
 .direction--clinics td,
 .direction--clinics th {
@@ -2108,7 +2110,7 @@ a.nav-link {
 	   z-index:1050;
 	   font-size: 1.2rem;
 	}	
-	.togglet.toggleta:before{
+	.accordion-btn.toggleta:before{
 		position: absolute;
 	   content: "-";
 	   z-index:1050;

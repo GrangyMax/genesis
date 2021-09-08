@@ -75,7 +75,7 @@ foreach ($query->posts as $key => $clinic) {
 									</ul>
 									<div class="tab-content rounded  bg-white pt-4 px-5">
 										<div class="tab-pane fade show active" id="appointment" role="tabpanel" aria-labelledby="appointment-tab">
-										 <p class="mb-4">Введите ваши данные, место жительства, удобную для вас дату, необходимого специалиста, и мы организуем вам прием. Обязательно свяжемся с вами, для согласования деталей.</p> 
+										 <!--<p class="mb-4">Введите ваши данные, место жительства, удобную для вас дату, необходимого специалиста, и мы организуем вам прием. Обязательно свяжемся с вами, для согласования деталей.</p> -->
 											<div class="form-widget">
 												<div class="form-result"></div>											
 												<?php echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36216" title="Запись на прием(Главная)" html_class="row home-moving-form position-relative mb-0"]')); ?>

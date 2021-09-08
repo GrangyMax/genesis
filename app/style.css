@@ -10128,49 +10128,8 @@ button.toast-close-button {
     background-color: #000;
     opacity: .4;
 }
-@media all and (max-width:240px) {
-    #toast-container>div {
-    padding: 10px 15px;
-    width: 11em;
-}
-#toast-container .toast-close-button {
-    right: -.2em;
-    top: -.2em;
-}
-#toast-container .rtl .toast-close-button {
-    left: -.2em;
-    right: .2em;
-}
-#top-search form input {
-    font-size: 16px;
-}
-.feature-box.fbox-plain .fbox-icon i {
-    bottom: 15px;
-}
-.card {
-    border: 0;
-}
-}@media all and (min-width:481px) and (max-width:768px) {
-    #side-panel-trigger a, #top-cart>a, #top-search a {
-    font-size: 24px;
-}
-#toast-container>div {
-    padding: 15px 20px;
-    width: 25em;
-}
-#top-search form input {
-    font-size: 16px;
-}
-.feature-box.fbox-plain .fbox-icon i {
-    bottom: 15px;
-}
-.card {
-    border: 0;
-}
-.uslugi-row td {
-    font-size: 1.3em!important;
-}
-}#footer {
+
+#footer {
     position: relative;
     background-color: #eee;
     border-top: 5px solid rgba(0, 0, 0, .2);

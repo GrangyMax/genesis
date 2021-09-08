@@ -246,7 +246,7 @@
 	.portfolio-single-image-full .swiper-container {
 		height: 400px;
 	}
-
+	
 	.bnews-slider {
 		width: 817px;
 	}
@@ -254,14 +254,10 @@
 	.landing-form-overlay {
 		bottom: -142px;
 	}
-
 }
 
 
-@media (max-width: 991.98px) {
-	
-
-	
+@media (max-width: 991.98px) {	
 	
 	#wrapper {
 		width: 100%;
@@ -1513,11 +1509,12 @@
 	}
 
 	#page-title .breadcrumb {
-		position: relative !important;
-		top: 0 !important;
-		left: 0 !important;
-		right: 0 !important;
-		margin: 20px 0 0 !important;
+		display: none;
+		position: relative;
+		top: 0;
+		left: 0;
+		right: 0;
+		margin: 20px 0 0;
 		justify-content: center;
 	}
 
@@ -1884,8 +1881,7 @@
 	#copyrights .footer-logo {
 		margin-left: auto;
 		margin-right: auto;
-	}
-	
+	}	
 	
 	.img_grafic_priema{
 		display: none;
@@ -1932,7 +1928,18 @@
 		background-color: var(--themecontrast);
 		background-repeat: repeat;
 	}
-
+	
+	 .togglec, .block-head__shortname{	
+		padding: 5px !important;
+	 }
+	 
+	 .direction--clinics{
+		font-size: 1.1rem;
+	 }
+	 
+	 .service_contact_block{
+		 padding: 8px 15px 8px 35px;
+	 }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -2089,7 +2096,6 @@
 	.error404-wrap .error404 {
 		font-size: 160px;
 	}
-
 }
 
 @media (max-width: 575.98px) {
@@ -2326,8 +2332,6 @@
 		font-size: 11px;
 	}
 	
-	
-	
 }
 
 @media all and (min-width: 241px) and (max-width: 480px) {
@@ -2384,10 +2388,8 @@
 		font-size: 1.1rem;
 		text-align: center;
 		background-color: var(--themecolor);
-		width: 100%;
-			
-	}
-		
+		width: 100%;			
+	}		
 }
 
 @media screen  and (min-width: 240px) and (max-width: 1199px) {
@@ -2395,9 +2397,7 @@
 	.service_price_klinic{
 		float: none;
 		padding: 10px 0px;
-	}
-	
-	
+	}	
 }
 
 
@@ -2450,13 +2450,6 @@
 	 .contacts-usluga{
 		 border: 0;
 	 }
-	 .togglec, .block-head__shortname{	
-		padding: 5px !important;
-	 }
-	 
-	
-	
-	
 }
 
 /* ----------------------------------------------------------------
@@ -2534,6 +2527,56 @@ only screen and (min-resolution: 2dppx) {
 	}
 
 }
+
+
+@media all and (max-width:240px) {
+    #toast-container>div {
+    padding: 10px 15px;
+    width: 11em;
+}
+#toast-container .toast-close-button {
+    right: -.2em;
+    top: -.2em;
+}
+#toast-container .rtl .toast-close-button {
+    left: -.2em;
+    right: .2em;
+}
+#top-search form input {
+    font-size: 16px;
+}
+.feature-box.fbox-plain .fbox-icon i {
+    bottom: 15px;
+}
+.card {
+    border: 0;
+}
+}@media all and (min-width:481px) and (max-width:768px) {
+    #side-panel-trigger a, #top-cart>a, #top-search a {
+    font-size: 24px;
+}
+#toast-container>div {
+    padding: 15px 20px;
+    width: 25em;
+}
+#top-search form input {
+    font-size: 16px;
+}
+.feature-box.fbox-plain .fbox-icon i {
+    bottom: 15px;
+}
+.card {
+    border: 0;
+}
+
+.uslugi-row td {
+    font-size: 1.3em!important;
+}
+
+}
+
+
+
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 991.98px),
 only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 991.98px),

@@ -19,7 +19,7 @@ set_query_var('subtitle', $subtitle );
                         <div class="lab-tabs tabs side-tabs tabs-bordered clearfix ui-tabs ui-corner-all ui-widget ui-widget-content"
                             id="tab-5">						
 							
-                            <input class="js-search-block-lab form-control form-control-lg p-4 mb-4" type="text"
+                            <input class="js-search-block-lab form-control form-control-lg p-4 mt-4 mb-4" type="text"
                                 placeholder="Поиск анализа" />
 
                             <!-- <i class="icon-lab"></i> Анализы
