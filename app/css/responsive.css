@@ -1940,6 +1940,11 @@
 	 .service_contact_block{
 		 padding: 8px 15px 8px 35px;
 	 }
+	 
+	 .uslugi-row td {
+    font-size: 1.3em!important;
+}
+
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -2569,9 +2574,6 @@ only screen and (min-resolution: 2dppx) {
     border: 0;
 }
 
-.uslugi-row td {
-    font-size: 1.3em!important;
-}
 
 }
 
