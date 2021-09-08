@@ -74,8 +74,7 @@ foreach ($sliders as $slider) {
 							?>
 								<div class="oc-item">									
 											<div class="clearfix mb-4">										
-															<a href="<?php echo $link_direction_0 ?>"
-																target="blank">																
+															<a href="<?php echo $link_direction_0 ?>">																																
 																<div class="portfolio-image">
 																	<img loading="lazy"
 																		src="<?php echo $p_direction_img_0; ?> "
@@ -90,8 +89,7 @@ foreach ($sliders as $slider) {
 											</div>  											
 								
 											<div class="clearfix">												
-															<a href="<?php echo $link_direction_1 ?>"
-																	target="blank">
+															<a href="<?php echo $link_direction_1 ?>">																
 																	<div class="portfolio-image">
 																		<img loading="lazy"
 																			src="<?php echo $p_direction_img_1; ?> "
