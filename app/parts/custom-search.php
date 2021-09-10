@@ -56,7 +56,66 @@
 							
 					}	
 				else{
-					echo "<h4>По Вашему запросу ничего не найдено.</h4>";
+					echo "<h4>По Вашему запросу ничего не найдено. Возможно Вас заинтересует: </h4>";
+					?>
+				<div class="content-wrap pt-4 front-page">
+					<div class="container ">
+					<?php
+						$p_directions = get_posts( array(
+							'post_type'   => 'popular_direction',
+							'showposts' => -1	
+						) );
+					?>
+							
+							<div id="oc-events" class="owl-carousel events-carousel carousel-widget" data-margin="20" 
+							data-nav="true" data-pagi="true" data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="5" 
+							data-loop="false" data-animate-in="fadeInRight" data-speed="700" data-animate-out="fadeOutLeft" data-autoplay="5000"  >				
+										<?php foreach (array_chunk($p_directions , 2)  as $p_direction) {								
+											$p_direction_img_0 = get_the_post_thumbnail_url($p_direction[0]);
+											$p_direction_title_0 = $p_direction[0]->post_title; 
+											$link_direction_0 = get_field('link_direction', $p_direction[0]);  
+											$p_direction_img_1 = get_the_post_thumbnail_url($p_direction[1]);	
+											$p_direction_title_1 = $p_direction[1]->post_title; 
+											$link_direction_1 = get_field('link_direction', $p_direction[1]);  								
+										?>
+											<div class="oc-item">									
+														<div class="clearfix mb-4">										
+																		<a href="<?php echo $link_direction_0 ?>">																																
+																			<div class="portfolio-image">
+																				<img loading="lazy"
+																					src="<?php echo $p_direction_img_0; ?> "
+																					style="width: auto; height: 120px; margin: 0 auto;">
+																			</div>																
+																			<div class="portfolio-desc">
+																				<h3 style="text-align: center;">
+																				<?php echo $p_direction_title_0; ?>
+																				</h3>
+																			</div>
+																		</a>
+														</div>  											
+											
+														<div class="clearfix">												
+																		<a href="<?php echo $link_direction_1 ?>">																
+																				<div class="portfolio-image">
+																					<img loading="lazy"
+																						src="<?php echo $p_direction_img_1; ?> "
+																						style="width: auto; height: 120px; margin: 0 auto;">
+																				</div>																	
+																				<div class="portfolio-desc">
+																					<h3 style="text-align: center;">
+																					<?php echo $p_direction_title_1; ?>
+																					</h3>
+																				</div>
+																		</a>
+														</div> 	
+												</div>
+															
+											<?php  } ?>
+							</div>          
+						<div class="owl-dots disabled"></div>
+						</div>
+					</div>
+					<?php
 				}		
 				
 				//обход сразу всего массива	
