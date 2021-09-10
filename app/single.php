@@ -11,7 +11,7 @@ if(!$thumb)$thumb = false;
                         <!-- тайтл страницы -->
                         <section id="content" style="margin-bottom: 0px;">
 
-                            <div class="content-wrap" style="padding: 10px;">
+                            <div class="content-wrap pb-0">
                 
                                 <div class="container clearfix">
                 

@@ -2096,7 +2096,7 @@ a.nav-link {
 	.accordion-btn:before {		
 	   position: absolute;
 	   content: "+";
-	   right: 20px;	 
+	   right: 18px;	 
 	   font-size: 1.5rem;
 	}
 	.btn_grafic_priema.accordion-btn:before {		

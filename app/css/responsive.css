@@ -1943,8 +1943,27 @@
 	 
 	 .uslugi-row td {
     font-size: 1.3em!important;
-}
-
+	}
+	
+	/*отступы на мобильных*/
+	.entry, .postcontent {    
+		margin-bottom: 20px !important;
+		padding-bottom: 20px !important;
+	}	
+	.line{
+		margin: 20px 0;
+	}
+	
+	.accordion-btn:before{
+		right: 18px;
+	}
+	
+	.license-page .accordion-btn:before{
+		right: -10px;
+	}
+	.content-wrap{
+		padding: 0;
+	}
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -2139,7 +2158,6 @@
 	#top-search form input {
 		padding-right: 55px;
 	}
-
 
 	#top-search form .search_button{
 		width: 40%;
@@ -2406,9 +2424,7 @@
 }
 
 
-@media screen  and (min-width: 381px) and (max-width: 480px) {
-	
-	
+@media screen  and (min-width: 381px) and (max-width: 480px) {	
 	.analis_price_klinic{
 		margin: 0 0 0 5px !important;
 	}
@@ -2421,13 +2437,11 @@
 @media screen  and (min-width: 240px) and (max-width: 400px) {
 	#top-search form input {
 		padding-right: 41px;
-	}
-	
+	}	
 		
 	.service_contact_block, .contacts-usluga, .service_button_contacts{
 		padding: 7px 0px 5px 0px;
-	}
-	
+	}	
 	.service_link_clinic{
 		display: block;
 		float: none;
