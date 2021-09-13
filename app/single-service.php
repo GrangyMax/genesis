@@ -73,8 +73,7 @@ span.wpcf7-not-valid-tip {
 			foreach ( $service_onk  as $onk )
 			{ 
 				if($onk->ID == get_the_ID())	{$is_onkolog = true;}			
-			}	
-		
+			}		
                ?>
                <section>
                   <div class="modal fade" id="clinic_modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -129,14 +128,11 @@ span.wpcf7-not-valid-tip {
                         </div>
                      </div>
                   </div>
-                  <?php
-				  	  
+                  <?php				  	  
 					if($is_onkolog){
 						include_once 'parts/onkolog_queue.php';
-					}
-					
-					if($is_oftalmolog){					
-						
+					}					
+					if($is_oftalmolog){	
 						include_once 'parts/oftalmolog_queue.php';
 					}
 				  ?>
@@ -153,8 +149,7 @@ span.wpcf7-not-valid-tip {
 				<div class="block-head">
 					<div class="toggle toggle-border tabs-uslugi">
 															
-							 <div class="togglet block-head__title">
-							 
+							 <div class="togglet block-head__title">							 
 							 
 								<i class="toggle-closed icon-ok-circle"></i>
 								<i class="toggle-open icon-remove-circle block-head__title" style="padding: 2px 15px;"></i>
@@ -171,7 +166,6 @@ span.wpcf7-not-valid-tip {
 									  $services = array_filter($services, function ($v) {
 										 return $v['услуга']->ID == get_the_ID();
 									  });
-
 									  $services_unique = [];
 
 									  $is_unique = true;
@@ -204,11 +198,8 @@ span.wpcf7-not-valid-tip {
 										echo format_price($v['цена_новая']);
 										}   
 									?>
-								</div>
-								 
-								
-							 </div>
-																
+								</div>	
+							 </div>																
 							   <div class="togglec block-head__shortname" style="display: none; padding: 0 15px 15px 36px">	<!--блок с контактами -->
 							   
 									<div class="service_contact_block">
@@ -230,10 +221,8 @@ span.wpcf7-not-valid-tip {
 										<div class="service_link_clinic">
 											<a href="<?= get_permalink($clinic->ID) ?>" class="more-link">Страница клиники →</a>
 										</div>
-									</div> 
-									
-								</div>
-														
+									</div> 									
+								</div>														
 					</div>
 				</div>
 			</div>
@@ -252,8 +241,7 @@ span.wpcf7-not-valid-tip {
                                  $rang = get_post_meta($doctor->ID, 'rang', 1);
                               ?>
                                  <div class="owl-item" style="width: 455px; margin-right: 20px;">
-                                    <div class="oc-item">
-									
+                                    <div class="oc-item">									
 									
 								 <?php if ($doctor->post_status == 'publish'){ ?>
                                        <div class="iportfolio">									   
@@ -272,9 +260,8 @@ span.wpcf7-not-valid-tip {
 											 </a>
                                           </div>
                                        </div>
-									  <?php } ?> 
-									   
-									   
+									  <?php } ?>
+									  
                                     </div>
                                  </div>
                               <?php } ?>
@@ -283,10 +270,8 @@ span.wpcf7-not-valid-tip {
                         <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="icon-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-right"></i></button></div>
                         <div class="owl-dots disabled"></div>
                      </div>
-                  </section>
-				  
-				  <?php } ?>
-				  			  
+                  </section>				  
+				  <?php } ?>				  			  
 				
 			    <div class="container">
 					 <div class="fancy-title title-border title-center ">
@@ -303,8 +288,7 @@ span.wpcf7-not-valid-tip {
                     <?php echo str_replace('{{clinics_list}}', $clinic_select_form, do_shortcode('[contact-form-7 id="36239" title="Запись на прием(Услуга)" html_class="nobottommargin"]')); ?>
                   </div>
                </div>
-			  	   
-			   
+			  	   			   
             </div>
 
          </div>
