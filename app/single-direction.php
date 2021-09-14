@@ -168,7 +168,8 @@
                            'showposts' => -1,
                            'meta_key' => 'parentem',
                            'meta_value' => get_the_ID()
-                        ));
+                        ));					
+						
                         $specs = get_posts(array(
                            'post_type' => 'specialisation',
                            'showposts' => -1,
@@ -187,17 +188,76 @@
                            }
                         }
                         echo service_list_start();
-                        foreach ($services as $service) {
+						 $doctors_list=[]; 
+                        foreach ($services as $service) { /*прокрутить услуги, взять оттуда врачей и вставить в массив*/
                            $title = get_the_title($service->ID);
+							if(get_field('doctor_for_this_service', $service->ID)){ //добавляем в новый массив только те элементы, у которых есть врачи
+								array_push($doctors_list, get_field('doctor_for_this_service', $service->ID));	/*мы получили по массиву из каждой услуги, 
+																													в каждом массиве массив из врачей */
+							}						  					    
                            $price = get_post_meta($service->ID, 'price', 1);
 						   $price_repeat = get_post_meta($service->ID, 'price_repeat', 1);
                            $link = get_permalink($service->ID);
                            echo service_row($title, $price, $price_repeat, $link);
+						   
                         }
+						
                         echo service_list_end();
+						$doctor_merge=[]; 						
+						for($i=0; $i< count($doctors_list); $i++ )	
+							{
+								$doctor_merge = array_merge($doctor_merge, $doctors_list[$i]);		/*объединяем сложную структуру массивов в один одномерный,
+																										чтобы можно было удалить дублирующие значения*/	
+							}
+							
+						$doctor_merge= array_unique($doctor_merge, SORT_REGULAR); /* оставляем только уникальные значения */						
                         ?>
                      </div>
-                  </div>
+                  </div>					  
+				 				  
+				     <?php if($doctor_merge) {  ?> 
+			    <section>
+                     <div class="fancy-title title-border title-center">
+                        <h2>Врачи</h2>
+                     </div>
+                     <div id="oc-portfolio" class="owl-carousel portfolio-carousel carousel-widget owl-loaded owl-drag" data-margin="20" data-nav="true" data-pagi="false" data-items-xs="2" data-items-sm="3" data-items-md="3" data-items-lg="3">
+                        <div class="owl-stage-outer">
+                           <div class="owl-stage" style="transform: translate3d(-475px, 0px, 0px); transition: all 0.25s ease 0s; width: 3800px;">
+                              <?php foreach ($doctor_merge as $doctor_item) {
+                                 $rang = get_post_meta($doctor_item, 'rang', 1);
+                              ?>
+                                 <div class="owl-item" style="width: 455px; margin-right: 20px;">
+                                    <div class="oc-item">									
+									
+								 <?php if ($doctor_item->post_status == 'publish'){ ?>
+                                       <div class="iportfolio">									   
+                                          <div class="portfolio-img-container portfolio-image">
+                                             <a href="<?php the_permalink($doctor_item); ?>">
+                                                <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($doctor_item, 'doctor') ?>" alt="Врач клиники Генезис">
+                                             </a>
+											 
+                                          </div>
+                                          <div class="portfolio-desc">
+                                             <h3><a href="<?php the_permalink($doctor_item); ?>"><?php echo get_the_title($doctor_item); ?></h3>
+                                             <span><?= $rang ?></span>											
+											 </a>
+                                          </div>
+                                       </div>
+									  <?php } ?>
+									  
+                                    </div>
+                                 </div>
+                              <?php } ?>
+                           </div>
+                        </div>
+                        <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="icon-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-right"></i></button></div>
+                        <div class="owl-dots disabled"></div>
+                     </div>
+                  </section>				  
+				  <?php } ?>
+				  <!-- вывод врачей из направления -->
+				  			  
+				  
             </div>
          </div>
       </section>
