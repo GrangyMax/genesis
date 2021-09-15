@@ -9154,6 +9154,10 @@ blockquote.float-right {
     -o-transition: all .3s ease;
     transition: all .3s ease;
 }
+.clinic.owl-nav [class*=owl-]{
+	 opacity: 1;
+}
+
 .front-page_news .owl-carousel .owl-nav [class*=owl-] {
     top: 25%!important;
 }

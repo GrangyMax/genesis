@@ -234,7 +234,7 @@ if (have_posts()) : while (have_posts()) : the_post();
                               <?php } ?>
                            </div>
                         </div>
-                        <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="icon-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-right"></i></button></div>
+                        <div class="clinic owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="icon-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-right"></i></button></div>
                         <div class="owl-dots disabled"></div>
                      </div>
                   </section>

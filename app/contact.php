@@ -1,11 +1,7 @@
 <?php 
 /*
     Template Name: .сontact
-*/
-?>
-
-
-<?php 
+*/ 
 get_header();
 set_query_var('title', 'Контакты');
 get_template_part('parts/breadcrumbs'); ?>
@@ -56,7 +52,9 @@ get_template_part('parts/breadcrumbs'); ?>
                      </div>
 					  <div class="ogrn pricing-title">
 					   <div class="feature-box" style="padding: 0;">
-                        <p>ОГРН: <?php the_field('огрн', $clinic->ID); ?></p>
+                        <p>ОГРН: <?php the_field('огрн', $clinic->ID); ?> <br>
+							Юридический адрес: <?php the_field('юридический_адрес', $clinic->ID); ?>
+						</p>
 						 </div>
                      </div>
                      <div class="pricing-features">
@@ -75,8 +73,8 @@ get_template_part('parts/breadcrumbs'); ?>
                                  <div class="fbox-icon">
                                     <a><i class="icon-location"></i></a>
                                  </div>
-                                 <h3>Юридический адрес:</h3>
-                                 <p><?php the_field('юридический_адрес', $clinic->ID); ?></p>
+                                 <h3>Адрес:</h3>
+                                 <p><?php the_field('адрес', $clinic->ID); ?></p>
                               </div>
                            </div>
 
@@ -111,9 +109,7 @@ get_template_part('parts/breadcrumbs'); ?>
          <div class="fancy-title title-border title-center ">
             <h2>Оставить заявку</h2>
          </div>
-      </div>
-	  
-		 
+      </div>  
          <div id="contact-form-overlay" class="contact-form-overlay-clinic clearfix mt-5 mb-5">
             <div class="form-widget">
                <div class="form-result"></div>
@@ -125,5 +121,4 @@ get_template_part('parts/breadcrumbs'); ?>
       </div>
    </div>
 </section>
-
 <?php get_footer(); ?>
