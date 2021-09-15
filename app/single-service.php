@@ -230,9 +230,9 @@ span.wpcf7-not-valid-tip {
                </section>
 			   
 			   <?php if(get_field('doctor_for_this_service')) {  ?> <!-- если поле с врачами заполнено, тогда выводим блок с врачами--> 
-			    <section>
+			    <section class="mt-4">
                      <div class="fancy-title title-border title-center">
-                        <h2>Наши врачи</h2>
+                        <h2>Врачи, оказывающие эту услугу</h2>
                      </div>
                      <div id="oc-portfolio" class="owl-carousel portfolio-carousel carousel-widget owl-loaded owl-drag" data-margin="20" data-nav="true" data-pagi="false" data-items-xs="2" data-items-sm="3" data-items-md="3" data-items-lg="3">
                         <div class="owl-stage-outer">
@@ -273,7 +273,7 @@ span.wpcf7-not-valid-tip {
                   </section>				  
 				  <?php } ?>				  			  
 				
-			    <div class="container">
+			    <div class="container mt-4">
 					 <div class="fancy-title title-border title-center ">
 							<h2>Оставить заявку</h2>
 						</div>

@@ -10,8 +10,7 @@ $acco = get_post_meta($post->ID, 'acco', 1);
 set_query_var('title', get_the_title() );
 set_query_var('subtitle',  $rang );
 get_template_part('parts/breadcrumbs');
-//  'compare'	=> 'REGEXP',
-
+include_once 'parts/service-search-block.php';
  ?>
 
          <section id="content" style="margin-bottom: 0px;">
@@ -58,7 +57,7 @@ get_template_part('parts/breadcrumbs');
                               )
                           );
                           $the_query = new WP_Query( $args );
-                        //   var_dump(count($the_query->posts));
+						 
                           foreach ($the_query->posts as $key => $value) { ?>      
                            <div class="feature-box fbox-small fbox-plain">
                               <div class="fbox-icon">
@@ -144,10 +143,73 @@ get_template_part('parts/breadcrumbs');
                            </h3>
                            <?php the_content(); ?>
                         </div>
-                     </section>
+                     </section>					 		 
+					
+                     <!-- .postcontent end -->
+                  </div>
+                  <!-- Sidebar
+                     ============================================= -->
+                  <?php 
+                  set_query_var('classes', 'sidebar nobottommargin notopmargin col_last clearfix mt-5' );
+                  get_template_part('parts/blog','latest-single-author'); 
+				  
+				  ?>
+                  <!-- .sidebar end -->
+				  <div class="divider"><i class="icon-circle"></i></div>				 
+				  	<div class="container clearfix">					
+						<input class="js-search-block form-control form-control-lg p-4 mb-4" type="text" placeholder="Поиск услуги" />
+						  <div class="row container legend-row">
+							<div class="legend-row__block">
+								<div class="legend-row__first-visit-icon">
+								</div>
+								<div class="legend-row__text">
+									<p> - Первичный прием </p>
+								</div>						
+							</div>
+							
+							<div class="legend-row__block">
+								<div class="legend-row__last-visit-icon">
+								</div>
+								<div class="legend-row__text">
+									<p> - Повторный прием</p>
+								</div>
+							</div>
+						</div>
+						
+						  <div class="togglec block-head__shortname">
+							<?php /*вытащить услуги, где привязан текущий врач*/
+						 
+						    $args_service = array(
+                              'numberposts'	=> -1,
+                              'post_type'		=> 'service',
+                              'meta_query'	=> array(
+                                  'relation'		=> 'OR',
+                                  array(
+                                      'key'		=> 'doctor_for_this_service',									 
+                                      'compare'	=> 'LIKE',
+                                      'value'	=>  ':"'. get_the_ID().'"', // id клиники
+                                  ),
+                              )
+                          );  						  
+						  $the_query_service = new WP_Query( $args_service );	
+						  echo service_list_start();
+						  
+						  foreach ($the_query_service->posts as $key => $service){
+							$title = $service->post_title;	
+							$price = get_post_meta($service->ID, 'price', 1);							
+							$price_repeat = get_post_meta($service->ID, 'price_repeat', 1);
+							$link = get_permalink($service->ID);
+							echo service_row($title, $price, $price_repeat, $link);
+						  }	
+						  echo service_list_end();
+						  ?>
+                        
+						  </div>
+					</div>
+									   
                      <div class="divider"><i class="icon-circle"></i></div>
                      <div class="clear"></div>
-                     <div class="container-fluid">
+                     <div class="container-fluid mt-4">
                         <div class="col">
                            <div class="fancy-title title-dotted-border">
                               <h3>Задать вопрос врачу</h3>
@@ -266,16 +328,7 @@ get_template_part('parts/breadcrumbs');
                            </div>
                         </div>
                      </div>
-                     <!-- .postcontent end -->
-                  </div>
-                  <!-- Sidebar
-                     ============================================= -->
-                  <?php 
-                  set_query_var('classes', 'sidebar nobottommargin notopmargin col_last clearfix mt-5' );
-                  get_template_part('parts/blog','latest-single-author'); 
 				  
-				  ?>
-                  <!-- .sidebar end -->
                </div>
             </div>
          </section>

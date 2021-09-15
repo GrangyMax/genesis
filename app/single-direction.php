@@ -145,22 +145,22 @@
                   <div class="blocks">
                      <input class="js-search-block form-control form-control-lg p-4 mb-4" type="text" placeholder="Поиск услуги" />
 					    <div class="row container legend-row">
-                    <div class="legend-row__block">
-                        <div class="legend-row__first-visit-icon">
-                        </div>
-                        <div class="legend-row__text">
-							<p> - Первичный прием </p>
-						</div>						
-                    </div>
-					
-                    <div class="legend-row__block">
-                        <div class="legend-row__last-visit-icon">
-                        </div>
-						<div class="legend-row__text">
-							<p> - Повторный прием</p>
+							<div class="legend-row__block">
+								<div class="legend-row__first-visit-icon">
+								</div>
+								<div class="legend-row__text">
+									<p> - Первичный прием </p>
+								</div>						
+							</div>
+							
+							<div class="legend-row__block">
+								<div class="legend-row__last-visit-icon">
+								</div>
+								<div class="legend-row__text">
+									<p> - Повторный прием</p>
+								</div>
+							</div>
 						</div>
-                    </div>
-                </div>
                      <div class="togglec block-head__shortname">
                         <?php
                         $services = get_posts(array(
@@ -216,9 +216,9 @@
                   </div>					  
 				 				  
 				     <?php if($doctor_merge) {  ?> 
-			    <section>
+			    <section class="mb-4">
                      <div class="fancy-title title-border title-center">
-                        <h2>Врачи</h2>
+                        <h2>Врачи направления</h2>
                      </div>
                      <div id="oc-portfolio" class="owl-carousel portfolio-carousel carousel-widget owl-loaded owl-drag" data-margin="20" data-nav="true" data-pagi="false" data-items-xs="2" data-items-sm="3" data-items-md="3" data-items-lg="3">
                         <div class="owl-stage-outer">
