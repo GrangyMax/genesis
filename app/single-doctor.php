@@ -153,11 +153,28 @@ include_once 'parts/service-search-block.php';
                   set_query_var('classes', 'sidebar nobottommargin notopmargin col_last clearfix mt-5' );
                   get_template_part('parts/blog','latest-single-author'); 
 				  
+					/*.sidebar end */
+					
+				   /*вытащить услуги, где привязан текущий врач*/						 
+						    $args_service = array(
+                              'numberposts'	=> -1,
+                              'post_type'		=> 'service',
+                              'meta_query'	=> array(
+                                  'relation'		=> 'OR',
+                                  array(
+                                      'key'		=> 'doctor_for_this_service',									 
+                                      'compare'	=> 'LIKE',
+                                      'value'	=>  ':"'. get_the_ID().'"', // id клиники
+                                  ),
+                              )
+                          );  						  
+						  $the_query_service = new WP_Query( $args_service );						
 				  ?>
-                  <!-- .sidebar end -->
+                 <?php if ($the_query_service->posts){
+					?>	
 				  <div class="divider"><i class="icon-circle"></i></div>				 
 				  	<div class="container clearfix">					
-						<input class="js-search-block form-control form-control-lg p-4 mb-4" type="text" placeholder="Поиск услуги" />
+						<!--<input class="js-search-block form-control form-control-lg p-4 mb-4" type="text" placeholder="Поиск услуги" />
 						  <div class="row container legend-row">
 							<div class="legend-row__block">
 								<div class="legend-row__first-visit-icon">
@@ -174,39 +191,24 @@ include_once 'parts/service-search-block.php';
 									<p> - Повторный прием</p>
 								</div>
 							</div>
-						</div>
+						</div>-->
 						
-						  <div class="togglec block-head__shortname">
-							<?php /*вытащить услуги, где привязан текущий врач*/
-						 
-						    $args_service = array(
-                              'numberposts'	=> -1,
-                              'post_type'		=> 'service',
-                              'meta_query'	=> array(
-                                  'relation'		=> 'OR',
-                                  array(
-                                      'key'		=> 'doctor_for_this_service',									 
-                                      'compare'	=> 'LIKE',
-                                      'value'	=>  ':"'. get_the_ID().'"', // id клиники
-                                  ),
-                              )
-                          );  						  
-						  $the_query_service = new WP_Query( $args_service );	
-						  echo service_list_start();
-						  
-						  foreach ($the_query_service->posts as $key => $service){
-							$title = $service->post_title;	
-							$price = get_post_meta($service->ID, 'price', 1);							
-							$price_repeat = get_post_meta($service->ID, 'price_repeat', 1);
-							$link = get_permalink($service->ID);
-							echo service_row($title, $price, $price_repeat, $link);
-						  }	
-						  echo service_list_end();
+						  <div class="togglec block-head__shortname">						
+						  <?php 
+							  echo service_list_start();						  
+							  foreach ($the_query_service->posts as $key => $service){
+								$title = $service->post_title;	
+								$price = get_post_meta($service->ID, 'price', 1);							
+								$price_repeat = get_post_meta($service->ID, 'price_repeat', 1);
+								$link = get_permalink($service->ID);
+								echo service_row($title, $price, $price_repeat, $link);
+							  }	
+							  echo service_list_end();						  
 						  ?>
                         
 						  </div>
 					</div>
-									   
+					 <?php } ?>			   
                      <div class="divider"><i class="icon-circle"></i></div>
                      <div class="clear"></div>
                      <div class="container-fluid mt-4">
