@@ -49,61 +49,76 @@ foreach ($query->posts as $key => $clinic) {
 					</div>
 				</div>
 
-				<div class="col_half nobottommargin text-md-right btn-zapis" style="position: absolute; margin-left: 612px">	
-					<a href="#myModal1" data-lightbox="inline">
-							<button class="btn btn-zapis">
-								<span><img src="http://migrate.genesis82.ru/wp-content/uploads/2021/07/outline_calendar_today_white_24dp.png"
+				<div class="button_block">
+					<div class="col_half nobottommargin text-md-right lk-wrap">	
+						<a href="https://lk.genesis82.ru/" target="_blank">
+							<button class="lk-button btn">
+								<span><img src="https://xn----7sbkiambaglcj1ag7d.xn--p1ai/wp-content/uploads/2021/09/icon_lk.svg"
 									style="width: 20px;  padding: 0px 3px 3px 0px;"></span>
-								<span class="animated-text-button"></span>
+									<span> Личный кабинет</span>
 							</button>
-					</a>				
-				<!-- Modal -->
-				<div class="container row clearfix">				
-					<div class="modal1 mfp-hide" id="myModal1">					
-						<div class="block divcenter rounded shadow modal-frontpage">
-								<div class="nomargin clearfix">	
-									<ul class="nav nav-tabs nav-justified flex-column border-bottom-0 flex-md-row bgcolor rounded" role="tablist">
-										<li class="nav-item">
-											<a class="nav-link py-3 active" id="home-moving-tab" data-toggle="tab" href="#appointment" role="tab" aria-controls="appointment" aria-selected="true">Заявка на прием</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link py-3" id="office-moving-tab" data-toggle="tab" href="#callback" role="tab" aria-controls="callback" aria-selected="false">Обратный звонок</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link py-3" id="others-moving-tab" data-toggle="tab" href="#ask" role="tab" aria-controls="ask" aria-selected="false">Задать вопрос</a>
-										</li>
-									</ul>
-									<div class="tab-content rounded  bg-white pt-4 px-5">
-										<div class="tab-pane fade show active" id="appointment" role="tabpanel" aria-labelledby="appointment-tab">
-										 <!--<p class="mb-4">Введите ваши данные, место жительства, удобную для вас дату, необходимого специалиста, и мы организуем вам прием. Обязательно свяжемся с вами, для согласования деталей.</p> -->
-											<div class="form-widget">
-												<div class="form-result"></div>											
-												<?php echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36216" title="Запись на прием(Главная)" html_class="row home-moving-form position-relative mb-0"]')); ?>
-															
-											</div>						
-										</div>
-										<div class="tab-pane fade" id="callback" role="tabpanel" aria-labelledby="callback-tab">
-									 <p class="mb-4">Оставьте ваши данные и мы свяжемся с вами, в течение нескольких минут, в рабочее время.</p>
-											<div class="form-widget">
-												<div class="form-result"></div>
-												<?php echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36217" title="Обратный звонок(Главная)" html_class="row office-moving-form position-relative mb-0"]')); ?>
-											</div>
-										</div>
-										<div class="tab-pane fade" id="ask" role="tabpanel" aria-labelledby="ask-tab">
-											<div class="form-widget">
-												<div class="form-result"></div>
-												<?php echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36218" title="Задать вопрос(Главная)" html_class="row others-moving-form position-relative mb-0"]')); ?>
-											</div>
-										</div>										
-									</div>						
-								</div>								
-							 <div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="$.magnificPopup.close(); return false;" >Закрыть</button>
-							</div>					
-						</div>	
+						</a>
+					</div>	
+
+					<div class="col_half nobottommargin text-md-right btn-wrap" style="position: relative;">	
+						<a href="#myModal1" data-lightbox="inline">
+							<button class="btn-zapis btn">
+									<span><img src="https://xn----7sbkiambaglcj1ag7d.xn--p1ai/wp-content/uploads/2021/09/icon_message.svg"
+											style="width: 20px;  padding: 0px 3px 3px 0px;"></span>
+									<span class="animated-text-button"></span>
+							</button>
+						</a>
+					
+					<!-- Modal -->
+							<div class="container row clearfix">				
+								<div class="modal1 mfp-hide" id="myModal1">					
+									<div class="block divcenter rounded shadow modal-frontpage">
+											<div class="nomargin clearfix">	
+												<ul class="nav nav-tabs nav-justified flex-column border-bottom-0 flex-md-row bgcolor rounded" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link py-3 active" id="home-moving-tab" data-toggle="tab" href="#appointment" role="tab" aria-controls="appointment" aria-selected="true">Заявка на прием</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link py-3" id="office-moving-tab" data-toggle="tab" href="#callback" role="tab" aria-controls="callback" aria-selected="false">Обратный звонок</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link py-3" id="others-moving-tab" data-toggle="tab" href="#ask" role="tab" aria-controls="ask" aria-selected="false">Задать вопрос</a>
+													</li>
+												</ul>
+												<div class="tab-content rounded  bg-white pt-4 px-5">
+													<div class="tab-pane fade show active" id="appointment" role="tabpanel" aria-labelledby="appointment-tab">
+													 <!--<p class="mb-4">Введите ваши данные, место жительства, удобную для вас дату, необходимого специалиста, и мы организуем вам прием. Обязательно свяжемся с вами, для согласования деталей.</p> -->
+														<div class="form-widget">
+															<div class="form-result"></div>											
+															<?php echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36216" title="Запись на прием(Главная)" html_class="row home-moving-form position-relative mb-0"]')); ?>
+																		
+														</div>						
+													</div>
+													<div class="tab-pane fade" id="callback" role="tabpanel" aria-labelledby="callback-tab">
+												 <p class="mb-4">Оставьте ваши данные и мы свяжемся с вами, в течение нескольких минут, в рабочее время.</p>
+														<div class="form-widget">
+															<div class="form-result"></div>
+															<?php echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36217" title="Обратный звонок(Главная)" html_class="row office-moving-form position-relative mb-0"]')); ?>
+														</div>
+													</div>
+													<div class="tab-pane fade" id="ask" role="tabpanel" aria-labelledby="ask-tab">
+														<div class="form-widget">
+															<div class="form-result"></div>
+															<?php echo str_replace('{{clinics_list}}', $clinic_select, do_shortcode('[contact-form-7 id="36218" title="Задать вопрос(Главная)" html_class="row others-moving-form position-relative mb-0"]')); ?>
+														</div>
+													</div>										
+												</div>						
+											</div>								
+										 <div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="$.magnificPopup.close(); return false;" >Закрыть</button>
+										</div>					
+									</div>	
+								</div>
+							</div>
 					</div>
 				</div>
-			</div>
+				
+				
 				<div class="col_half fright dark col_last clearfix nobottommargin">
 					<!-- Соцсети
 					============================================= -->

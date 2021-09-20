@@ -108,7 +108,7 @@ include_once 'parts/service-search-block.php';
 														</div>
 													</ul>													
 													 <?php 	}
-													} 											
+													} 										
 											}																	
 									endwhile;									
 								endif;								 
@@ -170,8 +170,7 @@ include_once 'parts/service-search-block.php';
                           );  						  
 						  $the_query_service = new WP_Query( $args_service );						
 				  ?>
-                 <?php if ($the_query_service->posts){
-					?>	
+                 <?php if ($the_query_service->posts){ ?>	
 				  <div class="divider"><i class="icon-circle"></i></div>				 
 				  	<div class="container clearfix">					
 						<!--<input class="js-search-block form-control form-control-lg p-4 mb-4" type="text" placeholder="Поиск услуги" />
@@ -211,7 +210,7 @@ include_once 'parts/service-search-block.php';
 					 <?php } ?>			   
                      <div class="divider"><i class="icon-circle"></i></div>
                      <div class="clear"></div>
-                     <div class="container-fluid mt-4">
+                     <div class="postcontent container-fluid mt-4">
                         <div class="col">
                            <div class="fancy-title title-dotted-border">
                               <h3>Задать вопрос врачу</h3>

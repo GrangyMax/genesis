@@ -53,7 +53,7 @@ get_template_part('parts/breadcrumbs'); ?>
 					  <div class="ogrn pricing-title">
 					   <div class="feature-box" style="padding: 0;">
                         <p>ОГРН: <?php the_field('огрн', $clinic->ID); ?> <br>
-							Юридический адрес: <?php the_field('юридический_адрес', $clinic->ID); ?>
+							<?php the_field('юридический_адрес', $clinic->ID); ?>
 						</p>
 						 </div>
                      </div>

@@ -77,16 +77,21 @@
 		width: auto !important;
 		height: auto !important;		
 	}	
-	.btn-zapis{
-			position: relative !important; 
-			margin-left: 0px !important;
-			/*background: none !important;*/
-			display: inline;
-			text-align:left;	
-			/*width: 100%;*/
-		}	
+	.btn-zapis{	
+		/*background: none !important;*/
+		display: inline;			
+		width: 100%;
+		padding: 6px 5px;	
+	}	
+				
+	#top-social,
+	.flex-caption {
+		display: none !important;
+	}	
+	.lk-button{
+		margin-left: 0;
+	}
 }
-
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
 
@@ -1401,7 +1406,7 @@
 	}
 
 	#top-bar .col_half {
-		width: 100%;
+		/*width: 100%;*/
 		margin-bottom: 0 !important;
 	}
 
@@ -1433,11 +1438,7 @@
 		padding: 20px 15px;
 	}
 
-	#top-social,
-	.flex-caption {
-		display: none !important;
-	}
-
+	
 	.flex-control-nav li {
 		opacity: 1 !important;
 	}
@@ -1961,13 +1962,50 @@
 	.license-page .accordion-btn:before{
 		right: -10px;
 	}
+	
+		
 	.content-wrap{
 		padding: 0;
+		
 	}
+	
+	#top-bar .container{
+		padding: 0px !important;
+	}
+	
+	.button_block{
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-around;
+		width: 100%;	
+		box-sizing: border-box;		
+	}	
+	
+	.lk-button, .btn-zapis{		
+		font-size: 0.9rem;
+		margin: 7px 0px;	
+		vertical-align: middle;
+		box-sizing: border-box;
+		width: 47vw;
+		height: 50px; 
+		border-radius: 4px;		
+		line-height: 1;
+	}	
+		
+	.btn-zapis{
+		position: relative; 	
+		text-align: center;		
+		background-color: var(--themecolor);			
+	}		
+	
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-	
+		
+	.lk-button, .btn-zapis{		
+		width: 250px;	
+	}		
+		
 	.feature-box.fbox-plain{
 		margin-bottom: 15px;
 	}
@@ -1993,7 +2031,7 @@
 		width: 40%;
 		/*margin-left: -20%;*/
 	}
-#top-search .icon-search-run{
+#	top-search .icon-search-run{
 		display: none;
 	}
 	
@@ -2401,18 +2439,11 @@
 		/*margin-left: -20%;*/
 	}
 	
-	#top-bar.dark a{
-		font-size:1.1rem;
+	#top-bar.dark a {
+		font-size: 1.1rem;
 		margin: 0 auto;
 	}
-	.btn-zapis{
-		position: relative !important; 
-		margin-left: 0px !important;
-		font-size: 1.1rem;
-		text-align: center;
-		background-color: var(--themecolor);
-		width: 100%;			
-	}		
+		
 }
 
 @media screen  and (min-width: 240px) and (max-width: 1199px) {
@@ -2421,6 +2452,13 @@
 		float: none;
 		padding: 10px 0px;
 	}	
+}
+
+@media screen and (min-width: 370px) {	
+	.lk-button, .btn-zapis{		
+		font-size: 1rem;
+	}		
+	
 }
 
 

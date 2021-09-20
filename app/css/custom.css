@@ -1950,11 +1950,16 @@ div.feature-box.fbox-center:not(.fbox-bg) h3:after {
     border-left: 4px solid var(--themecolor);
 }
 .btn-zapis {
+	width: 180px;
+	padding: 6px 0px;
+	margin:0; 
     background-color: var(--themecolor);
     color: #fff;
     border: 0;
     border-radius: 0;
     line-height: 2;
+	box-sizing: border-box;
+	
 }
 .col_half .btn-zapis:hover {
     background-color: #ef6c00 !important;
@@ -2119,3 +2124,25 @@ a.nav-link {
 	p.toggle-title{
 		padding-right: 40px;
 	}
+	
+	
+	.lk-wrapper a{
+		text-align: center;
+		width: 100%;
+	}
+	
+	.lk-button{
+		line-height:2;
+		color:#fff !important;
+		border: 0;
+		border-radius:0;
+		margin-left: 30px;		
+		background: rgba(61, 61, 61, 0.16);		
+	}
+	
+	.lk-button:hover{
+		background: rgba(61, 61, 61, 0.36);
+	}
+	
+	
+	
