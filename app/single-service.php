@@ -23,7 +23,7 @@ span.wpcf7-not-valid-tip {
                <!-- Post Content
                      ============================================= -->
                <section>			
-                    <div class="text_review">
+                    <div>
 						<?php the_content(); ?>					 
 					</div>
                </section>

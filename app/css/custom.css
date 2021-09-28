@@ -2143,6 +2143,19 @@ a.nav-link {
 	.lk-button:hover{
 		background: rgba(61, 61, 61, 0.36);
 	}
+
+[class*=cl-]{
+	width: 25px;
+}
+.cl-1149102025907 {
+	filter: invert(52%) sepia(84%) saturate(1237%) hue-rotate(351deg) brightness(97%) contrast(92%);	
+}
+.cl-1149102106273 {
+	filter: invert(78%) sepia(52%) saturate(7499%) hue-rotate(147deg) brightness(104%) contrast(101%);
+}
+.cl-1149102085527 {
+	filter: invert(28%) sepia(87%) saturate(6622%) hue-rotate(190deg) brightness(88%) contrast(93%);	
+}
 	
 	
 	

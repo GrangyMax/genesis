@@ -1,7 +1,8 @@
 <?php 
 /*
     Template Name: .сontact
-*/ 
+*/
+
 get_header();
 set_query_var('title', 'Контакты');
 get_template_part('parts/breadcrumbs'); ?>
@@ -42,19 +43,25 @@ get_template_part('parts/breadcrumbs'); ?>
                     data-placemark-phone="
                             <?php foreach (get_field('номера_телефонов', $clinic->ID) as $key => $value) { ?>
                                     <a href='tel:<?php echo $value['номер_телефона'] ?>'><?php echo $value['номер_телефона'] ?></a> <br>
-                            <?php } ?>"                    
+                            <?php } ?>"	                 
                     >                
                
                   <!-- clinic.description -->
                   <div class="pricing-desc">
                      <div class="pricing-title">
-                        <a href="<?php echo get_post_permalink($clinic); ?>"><h3><?php echo the_field('юр-наим', $clinic->ID); ?></h3></a>
+						 <div style="dispay: inline; float: left; padding: 3px 6px; ">								
+						
+							<a href="#legend"><img src="/wp-content/uploads/2021/09/clinig_logo_svg.svg" 
+														class="cl-<?php echo get_field('огрн', $clinic->ID); ?>" title="ООО Клиника Генезис"></a>																						
+						</div>
+						
+                        <a href="<?php echo get_post_permalink($clinic); ?>">
+						<h3><?php echo get_the_title($clinic->ID); ?></h3></a>
                      </div>
 					  <div class="ogrn pricing-title">
 					   <div class="feature-box" style="padding: 0;">
-                        <p>ОГРН: <?php the_field('огрн', $clinic->ID); ?> <br>
-							<?php the_field('юридический_адрес', $clinic->ID); ?>
-						</p>
+                        <p>ОГРН: <?php the_field('огрн', $clinic->ID); ?><br>
+						   <?php the_field('юридический_адрес', $clinic->ID); ?></p>
 						 </div>
                      </div>
                      <div class="pricing-features">
@@ -77,7 +84,6 @@ get_template_part('parts/breadcrumbs'); ?>
                                  <p><?php the_field('адрес', $clinic->ID); ?></p>
                               </div>
                            </div>
-
                         </div>
                      </div>
                   </div>
@@ -105,11 +111,31 @@ get_template_part('parts/breadcrumbs'); ?>
 
             <?php } ?>
          </section>
+		 <a name="legend"></a>
+		 <div class="divider"><i class="icon-circle"></i></div>
+		 
+		 <section style="background-color: #f1f1f1;">
+		 <div class="p-4">
+		 <h3>Условные обозначения</h3>
+			 <div>
+				<a href='#legend'><img src='/wp-content/uploads/2021/09/clinig_logo_svg.svg' class='cl-1149102025907' title='ООО Клиника Генезис'></a> <h4 class="p-2 d-inline">- ООО Клиника Генезис</h4>
+			 </div>
+			 <div>
+				<a href='#legend'><img src='/wp-content/uploads/2021/09/clinig_logo_svg.svg' class='cl-1149102106273' title='ООО Центр зрения Генезис'></a> <h4 class="p-2 d-inline">- ООО Центр зрения Генезис </h4>
+			 </div>
+			  <div>
+				<a href='#legend'> <img src='/wp-content/uploads/2021/09/clinig_logo_svg.svg' class='cl-1149102085527' title='ООО Центр онкологии и гематологии'></a><h4 class="p-2 d-inline">- ООО Центр клинической онкологии и гематологии </h4>
+			 </div>
+		 </div>
+		 
+		 </section>
 		     <div class="container">
          <div class="fancy-title title-border title-center ">
             <h2>Оставить заявку</h2>
          </div>
-      </div>  
+      </div>
+	  
+		 
          <div id="contact-form-overlay" class="contact-form-overlay-clinic clearfix mt-5 mb-5">
             <div class="form-widget">
                <div class="form-result"></div>
@@ -121,4 +147,5 @@ get_template_part('parts/breadcrumbs'); ?>
       </div>
    </div>
 </section>
+
 <?php get_footer(); ?>

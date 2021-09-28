@@ -74,8 +74,8 @@ function load_style_script()
 	wp_enqueue_style('font-icons.css', get_stylesheet_directory_uri() . '/css/font-icons.css');
 	wp_enqueue_style('animate.css', get_stylesheet_directory_uri() . '/css/animate.css');
 	wp_enqueue_style('magnific-popup.css', get_stylesheet_directory_uri() . '/css/magnific-popup.css');
-	wp_enqueue_style('custom.css', get_stylesheet_directory_uri() . '/css/custom.css?v=24');
-	wp_enqueue_style('responsive.css', get_stylesheet_directory_uri() . '/css/responsive.css?v=25');
+	wp_enqueue_style('custom.css', get_stylesheet_directory_uri() . '/css/custom.css?v=25');
+	wp_enqueue_style('responsive.css', get_stylesheet_directory_uri() . '/css/responsive.css?v=26');
 	wp_enqueue_style('fonts.css', get_stylesheet_directory_uri() . '/css/fonts.css');
 	wp_enqueue_style('datepicker.css', get_stylesheet_directory_uri() . '/css/components/datepicker.css');
 	wp_enqueue_style('devtip-block.css', get_stylesheet_directory_uri() . '/css/devtip-block.css');
