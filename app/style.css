@@ -1558,7 +1558,7 @@ body.top-search-open #top-search form {
     color: #fff!important;
     margin-left: -5%;
     border: 0 1px 1x 0;
-    background-color: #fd9c38!important;
+    background-color: var(--themecolor)!important;
     font-weight: 600;
     border: 0;
 }

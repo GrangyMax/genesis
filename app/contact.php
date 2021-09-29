@@ -130,11 +130,10 @@ get_template_part('parts/breadcrumbs'); ?>
 		 
 		 </section>
 		     <div class="container">
-         <div class="fancy-title title-border title-center ">
-            <h2>Оставить заявку</h2>
-         </div>
-      </div>
-	  
+				 <div class="fancy-title title-border title-center ">
+					<h2>Оставить заявку</h2>
+				 </div>
+			</div>  
 		 
          <div id="contact-form-overlay" class="contact-form-overlay-clinic clearfix mt-5 mb-5">
             <div class="form-widget">
