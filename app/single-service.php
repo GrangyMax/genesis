@@ -228,8 +228,8 @@ span.wpcf7-not-valid-tip {
 			</div>
 			 <? } ?>
                </section>
-			   
-			   <?php if(get_field('doctor_for_this_service')) {  ?> <!-- если поле с врачами заполнено, тогда выводим блок с врачами--> 
+			   <!--  Временно скрываем блок, пока не все врачи заполнены
+			   <?php if(get_field('doctor_for_this_service')) {  ?> <!-- если поле с врачами заполнено, тогда выводим блок с врачами
 			    <section class="mt-4">
                      <div class="fancy-title title-border title-center">
                         <h2>Врачи, оказывающие эту услугу</h2>
@@ -249,10 +249,7 @@ span.wpcf7-not-valid-tip {
                                              <a href="<?php the_permalink($doctor); ?>">
                                                 <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($doctor, 'doctor') ?>" alt="Врач клиники Генезис">
                                              </a>
-											 <!-- убираем кругляши по центру при наведении
-                                             <div class="portfolio-overlay">
-                                                <a href="<?php the_permalink($doctor); ?>" class="center-icon"><i class="icon-line-ellipsis"></i></a>
-                                             </div> -->
+											
                                           </div>
                                           <div class="portfolio-desc">
                                              <h3><a href="<?php the_permalink($doctor); ?>"><?php echo get_the_title($doctor); ?></h3>
@@ -271,8 +268,8 @@ span.wpcf7-not-valid-tip {
                         <div class="owl-dots disabled"></div>
                      </div>
                   </section>				  
-				  <?php } ?>				  			  
-				
+				  <?php } ?>		  			  
+				-->
 			    <div class="container mt-4">
 					 <div class="fancy-title title-border title-center ">
 							<h2>Оставить заявку</h2>

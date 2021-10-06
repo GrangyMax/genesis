@@ -216,7 +216,7 @@
                   </div>					  
 				 				  
 				     <?php if($doctor_merge) {  ?> 
-			    <section class="mb-4">
+			   <!-- <section class="mb-4">
                      <div class="fancy-title title-border title-center">
                         <h2>Врачи направления</h2>
                      </div>
@@ -253,7 +253,7 @@
                         <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="icon-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="icon-angle-right"></i></button></div>
                         <div class="owl-dots disabled"></div>
                      </div>
-                  </section>				  
+                  </section>	-->			  
 				  <?php } ?>
 				  <!-- вывод врачей из направления -->
 				  			  

@@ -1956,8 +1956,8 @@ div.feature-box.fbox-center:not(.fbox-bg) h3:after {
     background-color: var(--themecolor);
     color: #fff;
     border: 0;
-    border-radius: 0;
-    line-height: 2;
+    border-radius: 4px;
+    line-height: 1.5;
 	box-sizing: border-box;
 	
 }
@@ -2132,11 +2132,11 @@ a.nav-link {
 	}
 	
 	.lk-button{
-		line-height:2;
-		color:#fff !important;
+		line-height: 1.5;
+		color: #fff !important;
 		border: 0;
-		border-radius:0;
-		margin-left: 30px;		
+		border-radius:4px;
+		margin-left: 20px;		
 		background: rgba(61, 61, 61, 0.16);		
 	}
 	

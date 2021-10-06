@@ -81,7 +81,8 @@ echo "Создано " . $n . " пользователей <br>";
 	<tr>
 		<th>№</th>
 		<th>ФИО</th>
-		<th>Статус</th>	
+		<th>Статус</th>
+		<th>Аккаунт</th>
 		<th>Согласие</th>
 	</tr>
 </thead>
@@ -96,12 +97,17 @@ echo "Создано " . $n . " пользователей <br>";
 	 foreach ($query->posts as $doctor) {
 		$akk = get_field('acco', $doctor->ID);
 		$i++;
-		echo "<tr>";
+		if($akk  ==  160) {
+			echo "<tr>";
 			echo "<td>". $i. '</td> ' ;
 			echo  '<td>'. get_the_title($doctor). '</td> ' ;
 			echo  '<td>'. $doctor->post_status . '</td> ';
 			$soglasie = get_field('soglasie', $doctor->ID);			
-		
+			echo  '<td>'. 
+			
+			$akk 
+			
+			. '</td> ';
 			if($soglasie){
 				echo  "<td style='background-color: lime;'> Согласен на обработку</td>";
 				$yes++;				
@@ -111,11 +117,11 @@ echo "Создано " . $n . " пользователей <br>";
 			{ echo  "<td style='background-color: gold;'> Согласие не давал</td>";}
 		  
 	   echo "</tr>";	
-		
+		}
 	
 	
     }	
-	echo "<strong>Дали согласие ". $yes . " врача </strong><br>"; 
+	//echo "<strong>Дали согласие ". $yes . " врача </strong><br>"; 
 	
 
 	

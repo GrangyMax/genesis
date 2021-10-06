@@ -5562,14 +5562,21 @@ let map_loaded = false;
         capture: true
     };	
 		
-let map_klinik_link = document.getElementById('klinik-link-maps');
+//let map_klinik_link = document.getElementById('klinik-link-maps');
+
+let arr_map_klinik_link = document.querySelectorAll('#klinik-link-maps');
+Array.from(arr_map_klinik_link).forEach((item, index) => {
+item.addEventListener('mouseover', start_lazy_map, options_map);
+})
+
+//map_klinik_link.addEventListener('mouseover', start_lazy_map, options_map);
 //старт функции загрузки карты при наведении на кнопку
 $pageID = $('.pageId').attr('data-attr');	
  if( window.innerWidth < 768 && $pageID != 36205){   //не подгружать карту на главной странице в мобильной версии
 	console.log('Карта подгрузилась. ID страницы = ', $pageID);	
 	setTimeout(start_lazy_map, 3500);		
  } 
-map_klinik_link.addEventListener('mouseover', start_lazy_map, options_map);
+
 //функция формирования карты, после того, как она будет загружена
   $(document).ready(() => {
     if (!window.ymaps) {

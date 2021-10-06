@@ -562,7 +562,7 @@ body.stretched .container-fullwidth {
 .col_five_sixth, .col_four_fifth, .col_full, .col_half, .col_one_fifth, .col_one_fourth, .col_one_sixth, .col_one_third, .col_three_fifth, .col_three_fourth, .col_two_fifth, .col_two_third, .postcontent, .sidebar {
     display: block;
     position: relative;
-    margin-right: 4%;
+    margin-right: 20px;
     margin-bottom: 50px;
     float: left;
 }
