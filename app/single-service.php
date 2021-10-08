@@ -75,9 +75,10 @@ span.wpcf7-not-valid-tip {
 				if($onk->ID == get_the_ID())	{$is_onkolog = true;}			
 			}		
                ?>
-               <section>
-                  <div class="modal fade" id="clinic_modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                     style="display: none;" aria-hidden="true">
+               <section>               
+					
+					<div class="modal fade" id="clinic_modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                     style="display: none;" aria-hidden="true">			
                      <div class="modal-dialog">
                         <div class="modal-body">
                            <div class="modal-content">
@@ -128,6 +129,8 @@ span.wpcf7-not-valid-tip {
                         </div>
                      </div>
                   </div>
+				</section>
+				
                   <?php				  	  
 					if($is_onkolog){
 						include_once 'parts/onkolog_queue.php';
@@ -227,7 +230,7 @@ span.wpcf7-not-valid-tip {
 				</div>
 			</div>
 			 <? } ?>
-               </section>
+              
 			   <!--  Временно скрываем блок, пока не все врачи заполнены
 			   <?php if(get_field('doctor_for_this_service')) {  ?> <!-- если поле с врачами заполнено, тогда выводим блок с врачами
 			    <section class="mt-4">
