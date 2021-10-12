@@ -11,6 +11,7 @@ set_query_var('title', get_the_title() );
 set_query_var('subtitle',  $rang );
 get_template_part('parts/breadcrumbs');
 include_once 'parts/service-search-block.php';
+				
  ?>
 
          <section id="content" style="margin-bottom: 0px;">
@@ -235,11 +236,15 @@ include_once 'parts/service-search-block.php';
                                     if ($recaptcha->score >= 0.5 || !GOG_API) {
                                        // Verified - send email
                                    
+								   
                                     $vrach = get_userdata($acco);
-                                    $first_name = $vrach->first_name;
-                                    $last_name = $vrach->last_name;
+									$vrach_name = $vrach->first_name . $vrach->last_name;                                    
+									if($vrach->user_nicename == 'admin_genesis'){
+										$vrach_name = get_the_title($post->ID);
+									}
+                                   
                                     $new_answer = array(
-                                          'post_title' => "* Новый вопрос ({$q[name]}, {$q[email]}) врачу ({$first_name} {$last_name})",
+                                          'post_title' => "* Новый вопрос ({$q[name]}, {$q[email]}) врачу ({$vrach_name})",
                                           'post_content' => $q['question'],
                                           'post_type' => 'answers'
                                     );
@@ -307,7 +312,7 @@ include_once 'parts/service-search-block.php';
 									  const $result = $("#result");
 									  const email = $("#template-contactform-email").val();
 									  $result.text("");
-									  if (!validateEmail(email)) {		
+									  if (email && !validateEmail(email)) {		
 										$result.text("Неверный формат email");
 										$result.css("color", "red");
 										$('#submit-button').attr('disabled','disabled');

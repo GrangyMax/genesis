@@ -231,8 +231,8 @@ span.wpcf7-not-valid-tip {
 			</div>
 			 <? } ?>
               
-			   <!--  Временно скрываем блок, пока не все врачи заполнены
-			   <?php if(get_field('doctor_for_this_service')) {  ?> <!-- если поле с врачами заполнено, тогда выводим блок с врачами
+		
+			   <?php if(get_field('doctor_for_this_service')) {  ?> <!-- если поле с врачами заполнено, тогда выводим блок с врачами-->
 			    <section class="mt-4">
                      <div class="fancy-title title-border title-center">
                         <h2>Врачи, оказывающие эту услугу</h2>
@@ -272,7 +272,7 @@ span.wpcf7-not-valid-tip {
                      </div>
                   </section>				  
 				  <?php } ?>		  			  
-				-->
+			
 			    <div class="container mt-4">
 					 <div class="fancy-title title-border title-center ">
 							<h2>Оставить заявку</h2>

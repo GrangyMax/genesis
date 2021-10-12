@@ -45,7 +45,7 @@ span.wpcf7-not-valid-tip {
  ?>
 
 <section id="content" class="container pagebreak" style="padding: 30px;">
-<h2>Услуги и направления</h2>
+<h2>Услуги и направления клиники онкологии в Мирном</h2>
 
 <div class="pagebreak">
 	<table border="1" class="doctor_list">
@@ -55,18 +55,18 @@ span.wpcf7-not-valid-tip {
 		<tbody>
 		<?php 
 		
-		$list=get_field('услуги', 39519);
-		
+		$list_service_for_clinic = get_field('услуги', 38798); //вытаскивает услуги по ID клиники		
+				
 		$i=0;
-		foreach ($list as $key => $serv){
-			echo "<h2>".$serv['направление']->post_title."</h2>";
+		foreach ($list_service_for_clinic as $key => $serv){
+			//echo "<h2>".$serv['направление']->post_title."</h2>";
 			
 		foreach($serv['услуги'] as $service => $value){
 			$i++;
 			echo "<tr>";
 				echo "<td>". $i ."</td>";
 				echo "<td width='600'>".$value['услуга']->post_title."</td>";
-				echo "<td width='150'></td>";
+				echo "<td width='350'></td>";
 			echo "</tr>";	
 		}
 			
