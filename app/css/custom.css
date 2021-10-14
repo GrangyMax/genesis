@@ -2157,5 +2157,38 @@ a.nav-link {
 	filter: invert(28%) sepia(87%) saturate(6622%) hue-rotate(190deg) brightness(88%) contrast(93%);	
 }
 	
-	
-	
+	/*стили баннера с услугой для сниппета*/
+
+.banner_service{	
+	width: 100%;
+	background-color: #F2F2F2;	
+	border-radius: 10px;
+	border: 1px solid #e5e4e4;	
+	cursor: pointer;
+	margin: 15px 0px; 
+}
+
+.banner_service_wrap{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 20px; 
+} 	
+.banner_service:hover{
+	background-color: #F0F0F0;	
+}
+.banner_service__title h3{
+	padding: 30px 25px 30px 0px;	
+}
+.banner_service__button h3{
+	width: 10vw;
+	background-color: #ef7f1a;
+	padding:10px;
+	border: 1px solid #e5e4e4;	
+	border-radius: 4px;
+	color: #fff;
+	text-align: center;	
+}
+.banner_service__button h3:hover{
+	background-color: #ef6c00;
+}

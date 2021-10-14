@@ -1,8 +1,7 @@
 <?php get_header(); ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <?php get_template_part('parts/breadcrumbs'); ?>
-    <section id="content" style="margin-bottom: 0px;">
-        <div class="content-wrap single-blog123  ">
+    <section id="content" style="margin-bottom: 0px;">       
             <div class="container clearfix">
                 <div class="postcontent nobottommargin clearfix">
                     <div class="single-post nobottommargin">
@@ -74,7 +73,6 @@
 
             </div>
 
-        </div>
 
     </section>
 <?php endwhile; else : ?>
