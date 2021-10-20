@@ -4478,6 +4478,22 @@ body:not(.device-touch) .entry-link {
     padding: 5px;
     font-style: normal!important;
 }
+
+.more-link--news {
+    display: inline;    
+    padding: 10px;
+    font-style: normal!important;
+	background-color: var(--themecolor);
+	color: #FFF;
+	border-radius: 4px;
+}
+
+
+a.more-link--news:hover {  
+	color: #FFF;
+	text-decoration: underline !important;
+}
+
 .more-link:hover {
     border-color: #ef7f1a;
     color: #ef7f1a;

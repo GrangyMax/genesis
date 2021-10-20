@@ -2,7 +2,7 @@
 <?php get_template_part('parts/breadcrumbs'); ?>
                         <!-- тайтл страницы -->
 
-                        <div class="container clearfix mt-5">
+                        <div class="container clearfix mt-2">
 
                            <!-- Post Content
                            ============================================= -->
@@ -14,7 +14,7 @@
             
                                  <div class="timeline-border"></div>
                                  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                                 <div class="entry clearfix">
+                                 <div class="entry">
                                     <div class="entry-timeline">
                                        <?php the_date('d'); ?><span><?php echo get_the_date('M', $post); ?></span>
                                        <div class="timeline-divider"></div>
@@ -23,7 +23,7 @@
                                     <div class="entry-title">
                                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                     </div>
-                                    <ul class="entry-meta clearfix">
+                                    <ul class="pl-0 pb-1 entry-meta">
                                        <!-- <li><a href="single-klinik.html"><i class="icon-hospital"></i> Онкологическая клиника</a></li> -->
                                        <li><i class="icon-folder-open"></i> <a href="#"><?php echo get_the_title(get_post_meta($post->ID, 'direction', 1)); ?></a></li>
                                        <!-- <li><a href="blog-single.html#comments"><i class="icon-comments"></i> <?php // comments_number('Комментариев нет', '1 комментарий', '% коммент.'); ?></a></li> -->
@@ -32,9 +32,10 @@
                                        <p>
                                            <?php the_excerpt(); ?>
                                        </p>
-                                       <a href="<?php the_permalink(); ?>" class="more-link">Читать дальше</a>
+                                       <a href="<?php the_permalink(); ?>" class="more-link--news">Читать дальше</a>
                                     </div>
                                  </div>
+								 <hr>
                                  <?php endwhile; else : ?>
                                     <p>Записей нет.</p>
                                  <?php endif; ?>  

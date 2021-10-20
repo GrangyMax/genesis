@@ -5,11 +5,11 @@
             <div class="container clearfix">
                 <div class="postcontent nobottommargin clearfix">
                     <div class="single-post nobottommargin">
-                        <div class="entry clearfix">
+                        <div class="entry">
                             <div class="entry-title">
                                 <h1><?php the_title(); ?></h1>
                             </div>
-                            <ul class="entry-meta clearfix">
+                            <ul class="p-0 entry-meta clearfix">
                                 <li><i class="icon-calendar3"></i> <?php the_date('d F Y'); ?></li>
                                 <li><i class="icon-folder-open"></i> <a href="#"><?php echo get_the_title(get_post_meta(get_the_ID(), 'direction', 1)); ?></a></li>
                                 <!-- <li><a href="#"><i class="icon-comments"></i> <?php // echo  get_comments_number() ?> коментариев</a></li> -->
@@ -28,13 +28,14 @@
                                 <?php the_content(); ?>
                             </div>
                         </div>
-                        <div class="post-navigation clearfix">
+						
+                        <div class="post-navigation">
                             <?php
                             $prev_post = get_previous_post();
                             // var_dump($prev_post);
                             if( ! empty($prev_post) ){
                                 ?>
-                                <div class="col_half nobottommargin">
+                                <div class="col_half">
                                     <a href="<?php echo get_permalink( $prev_post ); ?>">⇐ <?php echo esc_html($prev_post->post_title); ?></a>
                                 </div>
                                 <?php
@@ -46,7 +47,7 @@
                             // var_dump($next_post);
                             if( ! empty($next_post) ){
                                 ?>
-                                 <div class="col_half col_last tright nobottommargin">
+                                 <div class="col_half col_last tright ">
                                     <a href="<?php echo get_permalink( $next_post ); ?>"><?php echo esc_html($next_post->post_title); ?> ⇒</a>
                                 </div>
                                 <?php
