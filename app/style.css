@@ -23,10 +23,12 @@
 .dropdown-menu, body {
     font-size: .875rem;
 }
-dd, dl, dt, li, ol, ul {
+dd, dl, dt, li, ol {
     margin: 0;
     padding: 0;
 }
+
+
 .postcontent dd, .postcontent dl, .postcontent dt, .postcontent li, .postcontent ol, .postcontent ul, .text_review dd, .text_review dl, .text_review dt, .text_review li, .text_review ol, .text_review ul {
     margin: revert;
     padding: revert;
@@ -11703,6 +11705,6 @@ label.checkbox, label.radio {
     border-radius: 4px!important;
 }
 .bvi-link-shortcode {
-    width: 55px!important;
+    width: 40px !important;
     bottom: 4px;
 }
