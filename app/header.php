@@ -134,6 +134,7 @@ foreach ($query->posts as $key => $clinic) {
 								<a href="#" class="bvi-link-shortcode bvi-open">	
 									<img src="/wp-content/uploads/2020/11/icon_41.png">
 								</a>
+								<?php echo do_shortcode( '[bvi]' ); ?>
 							</li>
 						</ul>						
 					</div>
